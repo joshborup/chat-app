@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500");
+.group-chatroom-container {
+  min-height: 90vh;
+  min-width: 100vw;
+  background: red; }
+
+.group-chatroom-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  overflow: hidden; }
+  .group-chatroom-container > div .users-list-container {
+    width: 25%;
+    background: #333333;
+    height: 100%;
+    overflow: scroll;
+    padding: 10px; }
+    .group-chatroom-container > div .users-list-container .download-convo-button {
+      background: #888888;
+      padding: 5px;
+      text-decoration: none;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.342); }
+    .group-chatroom-container > div .users-list-container .user-card {
+      width: 100%;
+      margin: 10px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      border-radius: 3px;
+      font-family: "Hind Siliguri", sans-serif;
+      color: black;
+      padding: 5px; }
+      .group-chatroom-container > div .users-list-container .user-card div:first-child {
+        min-height: 30px;
+        min-width: 30px;
+        max-width: 30px;
+        max-height: 30px;
+        overflow: hidden;
+        border-radius: 50%; }
+        .group-chatroom-container > div .users-list-container .user-card div:first-child img {
+          width: 100%; }
+      .group-chatroom-container > div .users-list-container .user-card div:last-child {
+        flex: 9; }
+  .group-chatroom-container > div .messaging-container {
+    width: 75%;
+    height: 100%;
+    padding: 0px 20px 25px;
+    overflow: scroll;
+    background: white; }
+    .group-chatroom-container > div .messaging-container .spacer {
+      height: 20px; }
+    .group-chatroom-container > div .messaging-container .messages {
+      display: flex;
+      flex-direction: column;
+      font-family: "Hind Siliguri", sans-serif;
+      justify-content: center; }
+      .group-chatroom-container > div .messaging-container .messages .individual-message-container:first-child {
+        margin-bottom: 10px; }
+      .group-chatroom-container > div .messaging-container .messages .individual-message-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 40px;
+        max-width: 100%;
+        animation: messagein .35s ease-in-out 1 forwards; }
+
+@keyframes messagein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+        .group-chatroom-container > div .messaging-container .messages .individual-message-container .user-image-container-for-messages {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-width: 50px;
+          min-width: 50px;
+          flex: 1;
+          border-radius: 50%;
+          overflow: hidden;
+          box-shadow: 0px 1px 5px #888888; }
+          .group-chatroom-container > div .messaging-container .messages .individual-message-container .user-image-container-for-messages img {
+            width: 100%; }
+        .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date {
+          background: lightgray;
+          border-radius: 10px;
+          width: 80%;
+          min-width: 250px;
+          position: relative;
+          padding: 8px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          top: 20px;
+          box-shadow: 0px 1px 5px #888888; }
+          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date img:first-child {
+            position: absolute;
+            top: 0px;
+            left: -40px;
+            width: 70px;
+            height: 40px;
+            transform: rotate(180deg);
+            z-index: -2px; }
+          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%; }
+          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .name-date {
+            color: #888888; }
+          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .message-text {
+            display: flex;
+            margin-bottom: 10px;
+            justify-content: flex-start;
+            align-items: flex-start; }
+            .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .message-text p {
+              width: 100%;
+              word-wrap: break-word; }
+    .group-chatroom-container > div .messaging-container .messages > * + * {
+      margin: 10px 0px; }
+    .group-chatroom-container > div .messaging-container .message-input-container {
+      position: fixed;
+      bottom: 0;
+      width: 75%;
+      right: 0;
+      display: flex; }
+      .group-chatroom-container > div .messaging-container .message-input-container input {
+        flex: 9;
+        height: 40px;
+        font-size: 16px;
+        border: none;
+        background: lightgray;
+        padding-left: 5px; }
+      .group-chatroom-container > div .messaging-container .message-input-container input:focus {
+        outline: none; }
+      .group-chatroom-container > div .messaging-container .message-input-container button {
+        flex: 2;
+        height: 40px;
+        margin: 0;
+        border: none;
+        background: #6964ef;
+        cursor: pointer;
+        color: white;
+        font-size: 16px; }
+      .group-chatroom-container > div .messaging-container .message-input-container button:hover {
+        background: #5955c0; }
+      .group-chatroom-container > div .messaging-container .message-input-container button:focus {
+        outline: none; }

@@ -39,12 +39,12 @@ class Login extends Component {
   }
 
   logout = () => {
-    axios.post('/api/logout').then(() => {
+    axios.post('/user/logout').then(() => {
       this.setState({
            user: null
          });
     });
-    window.location.href = '/'
+    window.location.href = '/user/login';
   }
 
 

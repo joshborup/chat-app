@@ -3,8 +3,8 @@ class Users {
         this.users = [];
     }
 
-    AddUserData(id, name, room){
-        let users = {id, name, room}
+    AddUserData(id, name, picture, room){
+        let users = {id, name, picture, room}
         this.users.push(users)
         return users;
     }
@@ -23,7 +23,7 @@ class Users {
         let users = this.users.filter(user => user.room === room);
 
         let namesArray = users.map(user => {
-            return user.name;
+            return user;
         })
 
         return namesArray;

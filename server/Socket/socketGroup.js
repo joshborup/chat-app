@@ -8,7 +8,7 @@ module.exports = (io, Users) =>
     socket.on('room', (connectionObj) => {
         console.log(connectionObj)
         if(socket.handshake.session.user){
-            users.AddUserData(socket.id, socket.handshake.session.user.nickname, connectionObj.room);
+            users.AddUserData(socket.id, socket.handshake.session.user.nickname,socket.handshake.session.user.picture, connectionObj.room);
             console.log('passed', socket.handshake.session.user);
         
         
@@ -22,7 +22,7 @@ module.exports = (io, Users) =>
     socket.on('message', (messageObj)=> {
         
 
-        io.in(messageObj.room).emit('message', messageObj.message)
+        io.in(messageObj.room).emit('message', messageObj)
     })
 
     socket.on('disconnect', () => {

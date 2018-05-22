@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500");
+.header-container {
+  min-height: 10vh;
+  background: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Hind Siliguri", sans-serif; }
+  .header-container h1 {
+    color: white;
+    font-size: 32px; }
