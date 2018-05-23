@@ -11,9 +11,9 @@ class Login extends Component {
       user: null,
     };
   }
+
   componentDidMount(){
-    
- 
+    console.log('componentDidMount')
         axios.get('/user/user_data').then(response => {
           console.log(response)
             this.setState({

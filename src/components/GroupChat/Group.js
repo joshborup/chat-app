@@ -29,7 +29,16 @@ export default class Group extends Component {
         });
 
         socket.on('message', (message)=>{
-            let messages = [...this.state.messages, message]
+            console.log(message)
+            let messages;
+            if(message.message){
+                 messages = [...this.state.messages, message]
+            }else {
+
+                 messages = [...this.state.messages]
+            }
+
+
             this.setState({
                 messages: messages
             })
@@ -47,8 +56,9 @@ export default class Group extends Component {
 
     componentDidMount(){
         axios.get('/user/user_data').then(response => {
+            console.log(response)
             this.setState({
-                user: response.data
+                user: response.data[0]
             })
         })
     }
@@ -58,15 +68,6 @@ export default class Group extends Component {
                 [key]:value
             })
     }
-        
-    submitMessage = () => {
-        let messageObj = {
-            message: this.state.message,
-            room: this.props.match.params.room,
-            name: this.state.user.nickname
-        }
-        socket.emit('message', messageObj);
-    }
 
     send = () => {
         let time = new Date();
@@ -75,15 +76,16 @@ export default class Group extends Component {
         let messageObj = {
             message: this.state.message,
             room: this.props.match.params.room,
-            name: this.state.user.nickname,
+            name: this.state.user.name,
             picture: this.state.user.picture,
             timestamp: timestamp
         }
-
+        if(this.state.message){
         socket.emit("message", messageObj) 
             this.setState({
               message: ''
             })
+        }
       }
     
       sendOnEnter = (e) => {
@@ -93,24 +95,24 @@ export default class Group extends Component {
         let messageObj = {
             message: this.state.message,
             room: this.props.match.params.room,
-            name: this.state.user.nickname,
+            name: this.state.user.name,
             picture: this.state.user.picture,
             timestamp: timestamp
         }
 
         if(e.key == 'Enter'){
 
-        socket.emit("message", messageObj) 
-            this.setState({
-                message: ''
-            })
+            if(this.state.message){
+                socket.emit("message", messageObj) 
+                    this.setState({
+                      message: ''
+                    })
+                }
         }
       }
 
 
     render() {
-
-        console.log(this.state.messages);
 
         return (
             

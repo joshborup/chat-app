@@ -1,5 +1,7 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 import {CSVLink} from 'react-csv';
+import Save from '@material-ui/icons/Save';
 
 const UsersList = (props) => {
 
@@ -19,10 +21,15 @@ const UsersList = (props) => {
 
     return (
         <div className='users-list-container'>
-            
-            <CSVLink data={props.csvData} className="download-convo-button" target="_blank" >
-                Download Conversation
+
+        <CSVLink className='download-convo-button' data={props.csvData}  target="_blank" >
+        <Button title='Save chat conversation'  variant="raised" size="small">
+        <Save />
+                Save
+      </Button>
             </CSVLink>
+            
+            
             {usersList}
         </div>
     );

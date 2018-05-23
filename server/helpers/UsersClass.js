@@ -3,8 +3,9 @@ class Users {
         this.users = [];
     }
 
-    AddUserData(id, name, picture, room){
+    async AddUserData(id, name, picture, room){
         let users = {id, name, picture, room}
+        console.log('innneer', users);
         this.users.push(users)
         return users;
     }

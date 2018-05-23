@@ -25,13 +25,7 @@
         padding: 10px;
 
         .download-convo-button {
-            background: #888888;
-            padding: 5px;
             text-decoration: none;
-            color: white;
-            border-radius: 3px;
-            cursor: pointer;
-            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.342);
         }
 
         .user-card {
@@ -143,16 +137,20 @@
                     box-shadow:0px 1px 5px #888888;
 
 
-                    img:first-child {
+                    .corner {
 
                         position: absolute;
                         top: 0px;
-                        left: -40px;
-                        width: 70px;
-                        height: 40px;
+                        left: -45px;
+                        width: 40px;
+                        
+                        background: transparent;
                         transform: rotate(180deg);
-                        z-index: -2px;
-
+                        
+                        border-top: 26px solid transparent;
+                        border-left: 40px solid rgb(211, 211, 211);
+                        border-right: 20px solid transparent;
+                        
                     }
 
                     div {
