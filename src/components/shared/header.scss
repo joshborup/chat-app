@@ -1,16 +1,19 @@
 @import '../styles/_shared.scss';
 
 .header-container {
-    min-height: 10vh;
-    background: grey;
+    min-height: 70px;
+    background: rgb(211, 211, 211);
+    position: absolute;
+    width: 100%;
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-family: $font-stack;
-
+    z-index: 3;
     h1 {
-        color: white;
+        color: rgb(105, 105, 105);
         font-size: 32px;
     }
 }

@@ -28,16 +28,29 @@ export default class MessageContainer extends Component {
     render() {
         
         let messages = this.props.messages.map((e, i) => {
-            
+
+                if(e.name == this.props.name){
+
                 return <Message 
                             key={i}
                             name={e.name}
                             message={e.message}
                             picture={e.picture}
                             timestamp={e.timestamp}
-                            username={true}
+                            self={true}
                         />
-            
+                } else {
+
+                    return <Message 
+                            key={i}
+                            name={e.name}
+                            message={e.message}
+                            picture={e.picture}
+                            timestamp={e.timestamp}
+                            self={false}
+                        />
+
+                }
         }) 
 
         return (

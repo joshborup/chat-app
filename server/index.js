@@ -30,8 +30,10 @@ const routeGroup = require('./Routes/routeGroup');
 const routeUser = require('./Routes/routeUser')
 
 app.use(bodyParser.json());
+
 app.use('/group', routeGroup);
-app.use('/user', routeUser)
+
+app.use('/user', routeUser);
 
 require('./Socket/socketGroup')(io, Users);
 

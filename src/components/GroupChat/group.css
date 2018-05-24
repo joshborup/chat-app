@@ -1,51 +1,81 @@
 @import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500");
+button:focus {
+  outline: none;
+  cursor: pointer; }
+
 .group-chatroom-container {
+  margin-top: 70px;
   min-height: 90vh;
   min-width: 100vw;
-  background: red; }
+  background: white; }
 
 .group-chatroom-container > div {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   height: 90vh;
   overflow: hidden; }
+  .group-chatroom-container > div .drawer-container {
+    width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .group-chatroom-container > div .drawer-container button {
+      border: none;
+      position: absolute;
+      top: 2.7vh;
+      left: 2.5vw;
+      font-size: 20px;
+      z-index: 5; }
   .group-chatroom-container > div .users-list-container {
-    width: 25%;
-    background: #333333;
     height: 100%;
     overflow: scroll;
-    padding: 10px; }
+    background: green;
+    padding: 10px;
+    width: 100%; }
     .group-chatroom-container > div .users-list-container .download-convo-button {
-      text-decoration: none; }
+      text-decoration: none;
+      display: flex !important;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%; }
     .group-chatroom-container > div .users-list-container .user-card {
       width: 100%;
       margin: 10px auto;
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
-      background: white;
+      background: #fafafa;
       border-radius: 3px;
       font-family: "Hind Siliguri", sans-serif;
       color: black;
       padding: 5px; }
+      .group-chatroom-container > div .users-list-container .user-card div:nth-child(2) {
+        flex: 12; }
+      .group-chatroom-container > div .users-list-container .user-card div:last-child {
+        flex: 1; }
+      .group-chatroom-container > div .users-list-container .user-card .online {
+        max-height: 10px;
+        max-width: 10px;
+        background: green;
+        border-radius: 50%; }
       .group-chatroom-container > div .users-list-container .user-card div:first-child {
-        min-height: 30px;
-        min-width: 30px;
-        max-width: 30px;
-        max-height: 30px;
+        height: 25px;
+        width: 25px;
         overflow: hidden;
         border-radius: 50%; }
         .group-chatroom-container > div .users-list-container .user-card div:first-child img {
           width: 100%; }
-      .group-chatroom-container > div .users-list-container .user-card div:last-child {
-        flex: 9; }
   .group-chatroom-container > div .messaging-container {
-    width: 75%;
+    position: relative;
     height: 100%;
     padding: 0px 20px 25px;
     overflow: scroll;
-    background: white; }
+    background: whitesmoke;
+    width: 100%; }
+    @media (min-width: 960px) {
+      .group-chatroom-container > div .messaging-container {
+        width: 80%; } }
     .group-chatroom-container > div .messaging-container .spacer {
       height: 20px; }
     .group-chatroom-container > div .messaging-container .messages {
@@ -82,7 +112,7 @@
           .group-chatroom-container > div .messaging-container .messages .individual-message-container .user-image-container-for-messages img {
             width: 100%; }
         .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date {
-          background: lightgray;
+          background: #ffe2e2;
           border-radius: 10px;
           width: 80%;
           min-width: 250px;
@@ -92,7 +122,7 @@
           flex-direction: column;
           align-items: flex-start;
           top: 20px;
-          box-shadow: 0px 1px 5px #888888; }
+          box-shadow: 0px 1px 5px #888888be; }
           .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .corner {
             position: absolute;
             top: 0px;
@@ -101,7 +131,7 @@
             background: transparent;
             transform: rotate(180deg);
             border-top: 26px solid transparent;
-            border-left: 40px solid lightgray;
+            border-left: 40px solid #ffe2e2;
             border-right: 20px solid transparent; }
           .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date div {
             display: flex;
@@ -118,14 +148,21 @@
             .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .message-text p {
               width: 100%;
               word-wrap: break-word; }
+        .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date.myself {
+          background: #d7e1ff; }
+          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date.myself .corner {
+            border-left: 40px solid #d7e1ff; }
     .group-chatroom-container > div .messaging-container .messages > * + * {
       margin: 10px 0px; }
     .group-chatroom-container > div .messaging-container .message-input-container {
       position: fixed;
       bottom: 0;
-      width: 75%;
+      width: 80%;
       right: 0;
       display: flex; }
+      @media (max-width: 960px) {
+        .group-chatroom-container > div .messaging-container .message-input-container {
+          width: 100%; } }
       .group-chatroom-container > div .messaging-container .message-input-container input {
         flex: 9;
         height: 40px;
@@ -148,3 +185,58 @@
         background: #5955c0; }
       .group-chatroom-container > div .messaging-container .message-input-container button:focus {
         outline: none; }
+
+.MuiDrawer-paperAnchorDockedLeft-23 {
+  background: white !important; }
+
+.MuiDrawer-paperAnchorLeft-19 {
+  background: white !important;
+  width: 20%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: scroll;
+  padding: 70px 10px 10px; }
+  @media (max-width: 959px) {
+    .MuiDrawer-paperAnchorLeft-19 {
+      min-width: 320px; } }
+  .MuiDrawer-paperAnchorLeft-19 .close-save-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%; }
+  .MuiDrawer-paperAnchorLeft-19 .download-convo-button {
+    text-decoration: none;
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%; }
+  .MuiDrawer-paperAnchorLeft-19 .user-card {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #fafafa;
+    border-radius: 3px;
+    font-family: "Hind Siliguri", sans-serif;
+    color: black;
+    padding: 5px; }
+    .MuiDrawer-paperAnchorLeft-19 .user-card div:nth-child(2) {
+      flex: 12; }
+    .MuiDrawer-paperAnchorLeft-19 .user-card div:last-child {
+      flex: 1; }
+    .MuiDrawer-paperAnchorLeft-19 .user-card .online {
+      max-height: 10px;
+      max-width: 10px;
+      background: green;
+      border-radius: 50%; }
+    .MuiDrawer-paperAnchorLeft-19 .user-card div:first-child {
+      height: 25px;
+      width: 25px;
+      overflow: hidden;
+      border-radius: 50%; }
+      .MuiDrawer-paperAnchorLeft-19 .user-card div:first-child img {
+        width: 100%; }

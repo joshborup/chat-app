@@ -33,7 +33,6 @@ userRouter.post('/login', (req, res) => {
 })
 
 userRouter.get('/user_data', (req, res) => {
-    console.log('hithithithtihtihtihithtihtihthihtih')
     res.status(200).json(req.session.user);
 })
 

@@ -10,34 +10,36 @@ const socket = socketIOClient(`${socketOrigin}:3500`);
 export default class Group extends Component {
     constructor(props){
         super(props)
+
         this.state = {
           baseURL: window.location.href.split('/').pop(),
           message: '',
           messages:[],
           name:'',
-          username: '',
           userslist:[],
-          user:''
+          user: {
+              name:''
+          }
         }
+
         this.bottomScroll = React.createRef();
 
         socket.on('connect', () => {
             let connectionObj={
                 room: this.state.baseURL
             }
-          socket.emit('room', connectionObj);
+            socket.emit('room', connectionObj);
         });
 
         socket.on('message', (message)=>{
             console.log(message)
             let messages;
             if(message.message){
-                 messages = [...this.state.messages, message]
+                messages = [...this.state.messages, message]
             }else {
 
-                 messages = [...this.state.messages]
+                messages = [...this.state.messages]
             }
-
 
             this.setState({
                 messages: messages
@@ -64,9 +66,9 @@ export default class Group extends Component {
     }
 
     changeHandler = (key, value) => {
-            this.setState({
-                [key]:value
-            })
+        this.setState({
+            [key]:value
+        })
     }
 
     send = () => {
@@ -80,15 +82,16 @@ export default class Group extends Component {
             picture: this.state.user.picture,
             timestamp: timestamp
         }
+
         if(this.state.message){
-        socket.emit("message", messageObj) 
+            socket.emit("message", messageObj) 
             this.setState({
-              message: ''
+            message: ''
             })
         }
-      }
+    }
     
-      sendOnEnter = (e) => {
+    sendOnEnter = (e) => {
         let time = new Date();
         let timestamp = time.toLocaleTimeString('en-US')
         
@@ -100,33 +103,28 @@ export default class Group extends Component {
             timestamp: timestamp
         }
 
-        if(e.key == 'Enter'){
-
-            if(this.state.message){
-                socket.emit("message", messageObj) 
-                    this.setState({
-                      message: ''
-                    })
-                }
+        if(e.key == 'Enter'  && this.state.message){
+            socket.emit("message", messageObj) 
+            this.setState({
+                message: ''
+            }) 
         }
-      }
+    }
 
 
     render() {
-
         return (
             
             <div className='group-chatroom-container'>
                 {
-                    this.state.user ?
-                <div> 
-                    
-                    <UsersList usersList={this.state.userslist} csvData={this.state.messages} />
-                    <MessageContainer username={this.state.username} enter={this.sendOnEnter} className='scroller' messages={this.state.messages} changeHandler={this.changeHandler} message={this.state.message} submitMessage={this.send}/>
-                    
-                </div>
-                :
-                'login to chat'
+                    this.state.user
+                    ?
+                    <div> 
+                        <UsersList usersList={this.state.userslist} csvData={this.state.messages} />
+                        <MessageContainer name={this.state.user.name}  enter={this.sendOnEnter} className='scroller' messages={this.state.messages} changeHandler={this.changeHandler} message={this.state.message} submitMessage={this.send}/>
+                    </div>
+                    :
+                    'login to chat'
                 }
             </div>
         
