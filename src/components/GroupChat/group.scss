@@ -10,7 +10,6 @@ button:focus {
     min-height: 90vh;
     min-width: 100vw;
     background: rgb(255, 255, 255);
-
 }
 
 .group-chatroom-container > div {
@@ -54,14 +53,14 @@ button:focus {
 
         .user-card {
             width: 100%;
-            margin: 10px auto;
+            margin: 5px auto;
             display: flex;
             justify-content:space-evenly;
             align-items: center;
             background:  rgb(250, 250, 250);
             border-radius: 3px;
             font-family: $font-stack;
-            color: black;
+            color: $darker-text;
             padding: 5px;
 
             div:nth-child(2){
@@ -104,6 +103,10 @@ button:focus {
             width: 800px / 1000px * 100%;
         }
 
+        @media (max-width:600px) {
+           
+        }
+
         .spacer {
             height: 20px;
         }
@@ -127,6 +130,10 @@ button:focus {
                 min-height: 40px;
                 max-width: 100%;
                 animation: messagein .35s ease-in-out 1 forwards;
+
+                @media (max-width:600px) {
+                    justify-content: space-between;
+                }
                 
 
                 @keyframes messagein {
@@ -169,6 +176,16 @@ button:focus {
                     top:20px;
                     box-shadow:0px 1px 5px #888888be;
 
+
+                    @media  (max-width:500px){
+                        min-width: 150px;
+                        max-width: 70%;
+                    }
+
+                    @media (min-width:1150px) {
+                        width: 85%;
+                    }
+
                     .corner {
 
                         position: absolute;
@@ -208,21 +225,38 @@ button:focus {
                     }
                 }
 
-                .message-name-date.myself {
-                    background:rgb(215, 225, 255);
+                
+            }
 
-                    .corner {
-                        border-left: 40px solid rgb(215, 225, 255);
-                    }
+            
+            
+            .individual-message-container.myself  .message-name-date{
+                background:rgb(215, 225, 255);
+                order: 1;
+                position: relative;
+
+                .corner {
+                    border-right: 40px solid rgb(215, 225, 255);
+                    border-left: none;
+                    position: absolute;
+                    top: 0px;
+                    left: initial;
+                    right: -30px;
+                    width: 40px;
+                    transform: rotate(360deg) scale(-1, -1);
+                    
 
                 }
 
             }
 
+            .individual-message-container.myself .user-image-container-for-messages {
+                order: 2;
+            }
         }
 
         .messages > *+* {
-            margin: 10px 0px;
+            margin: 15px 0px;
         }
         
 
@@ -327,7 +361,7 @@ button:focus {
         background:  rgb(250, 250, 250);
         border-radius: 3px;
         font-family: $font-stack;
-        color: black;
+        color: $darker-text;
         padding: 5px;
 
         div:nth-child(2){

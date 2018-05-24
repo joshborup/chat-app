@@ -41,14 +41,14 @@ button:focus {
       width: 100%; }
     .group-chatroom-container > div .users-list-container .user-card {
       width: 100%;
-      margin: 10px auto;
+      margin: 5px auto;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       background: #fafafa;
       border-radius: 3px;
       font-family: "Hind Siliguri", sans-serif;
-      color: black;
+      color: #111111;
       padding: 5px; }
       .group-chatroom-container > div .users-list-container .user-card div:nth-child(2) {
         flex: 12; }
@@ -93,6 +93,9 @@ button:focus {
         min-height: 40px;
         max-width: 100%;
         animation: messagein .35s ease-in-out 1 forwards; }
+        @media (max-width: 600px) {
+          .group-chatroom-container > div .messaging-container .messages .individual-message-container {
+            justify-content: space-between; } }
 
 @keyframes messagein {
   0% {
@@ -123,6 +126,13 @@ button:focus {
           align-items: flex-start;
           top: 20px;
           box-shadow: 0px 1px 5px #888888be; }
+          @media (max-width: 500px) {
+            .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date {
+              min-width: 150px;
+              max-width: 70%; } }
+          @media (min-width: 1150px) {
+            .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date {
+              width: 85%; } }
           .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .corner {
             position: absolute;
             top: 0px;
@@ -148,12 +158,23 @@ button:focus {
             .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .message-text p {
               width: 100%;
               word-wrap: break-word; }
-        .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date.myself {
-          background: #d7e1ff; }
-          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date.myself .corner {
-            border-left: 40px solid #d7e1ff; }
+      .group-chatroom-container > div .messaging-container .messages .individual-message-container.myself .message-name-date {
+        background: #d7e1ff;
+        order: 1;
+        position: relative; }
+        .group-chatroom-container > div .messaging-container .messages .individual-message-container.myself .message-name-date .corner {
+          border-right: 40px solid #d7e1ff;
+          border-left: none;
+          position: absolute;
+          top: 0px;
+          left: initial;
+          right: -30px;
+          width: 40px;
+          transform: rotate(360deg) scale(-1, -1); }
+      .group-chatroom-container > div .messaging-container .messages .individual-message-container.myself .user-image-container-for-messages {
+        order: 2; }
     .group-chatroom-container > div .messaging-container .messages > * + * {
-      margin: 10px 0px; }
+      margin: 15px 0px; }
     .group-chatroom-container > div .messaging-container .message-input-container {
       position: fixed;
       bottom: 0;
@@ -222,7 +243,7 @@ button:focus {
     background: #fafafa;
     border-radius: 3px;
     font-family: "Hind Siliguri", sans-serif;
-    color: black;
+    color: #111111;
     padding: 5px; }
     .MuiDrawer-paperAnchorLeft-19 .user-card div:nth-child(2) {
       flex: 12; }
