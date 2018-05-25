@@ -3,8 +3,8 @@ class Users {
         this.users = [];
     }
 
-    async AddUserData(id, name, picture, room){
-        let users = {id, name, picture, room}
+    async AddUserData(id, name, picture, room, color){
+        let users = {id, name, picture, room, color}
         console.log('innneer', users);
         this.users.push(users)
         return users;

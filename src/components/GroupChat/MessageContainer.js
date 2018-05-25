@@ -38,6 +38,8 @@ export default class MessageContainer extends Component {
                             picture={e.picture}
                             timestamp={e.timestamp}
                             self={true}
+                            color={e.color}
+                            border={{borderRightColor: e.color}}
                         />
                 } else {
 
@@ -48,6 +50,8 @@ export default class MessageContainer extends Component {
                             picture={e.picture}
                             timestamp={e.timestamp}
                             self={false}
+                            color={e.color}
+                            border={{borderLeftColor: e.color}}
                         />
 
                 }

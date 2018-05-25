@@ -20,19 +20,37 @@ button:focus {
     display: flex;
     justify-content: center;
     align-items: center; }
-    .group-chatroom-container > div .drawer-container button {
+    .group-chatroom-container > div .drawer-container .hamburger-button {
       border: none;
       position: absolute;
-      top: 2.7vh;
-      left: 2.5vw;
+      top: 18px;
+      left: 18px;
       font-size: 20px;
-      z-index: 5; }
+      z-index: 5;
+      font-weight: 800;
+      background: transparent;
+      color: #525252; }
+    .group-chatroom-container > div .drawer-container .close-button {
+      border: none;
+      font-size: 12px;
+      z-index: 5;
+      font-weight: 800; }
   .group-chatroom-container > div .users-list-container {
     height: 100%;
     overflow: scroll;
     background: green;
     padding: 10px;
     width: 100%; }
+    .group-chatroom-container > div .users-list-container .desktop-sidebar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center; }
+      .group-chatroom-container > div .users-list-container .desktop-sidebar button {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
     .group-chatroom-container > div .users-list-container .download-convo-button {
       text-decoration: none;
       display: flex !important;
@@ -136,7 +154,7 @@ button:focus {
           .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .corner {
             position: absolute;
             top: 0px;
-            left: -45px;
+            left: -50px;
             width: 40px;
             background: transparent;
             transform: rotate(180deg);

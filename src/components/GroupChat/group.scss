@@ -25,13 +25,24 @@ button:focus {
         display: flex;
         justify-content: center;
         align-items: center;
-        button {
+
+        .hamburger-button {
             border: none;
             position: absolute;
-            top:2.7vh;
-            left:2.5vw;
+            top:18px;
+            left:18px;
             font-size: 20px;
             z-index: 5;
+            font-weight: 800;
+            background:transparent;
+            color: $lighter-text;
+        }
+
+        .close-button {
+            border: none;
+            font-size: 12px;
+            z-index: 5;
+            font-weight: 800;
         }
     }
 
@@ -42,6 +53,19 @@ button:focus {
         background: green;
         padding: 10px;
         width: 100%;
+        .desktop-sidebar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
         
         .download-convo-button {
             text-decoration: none;
@@ -190,7 +214,7 @@ button:focus {
 
                         position: absolute;
                         top: 0px;
-                        left: -45px;
+                        left: -50px;
                         width: 40px;
                         background: transparent;
                         transform: rotate(180deg);
@@ -236,6 +260,7 @@ button:focus {
                 position: relative;
 
                 .corner {
+                    
                     border-right: 40px solid rgb(215, 225, 255);
                     border-left: none;
                     position: absolute;

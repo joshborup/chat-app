@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import { CSVLink } from 'react-csv';
 import Save from '@material-ui/icons/Save';
 import Hidden from '@material-ui/core/Hidden';
 import Drawer from '@material-ui/core/Drawer';
 import { withStyles } from '@material-ui/core/styles';
-import Menu from '@material-ui/icons/Menu'; 
+import Menu from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import PropTypes from 'prop-types';
-
-
-
 
 const styles = {
     root: {
@@ -33,8 +32,11 @@ class UsersList extends Component{
     }
 
     handleDrawerToggle = () => {
-        this.setState({ mobileOpen: !this.state.mobileOpen });
-      };
+        this.setState({ 
+            mobileOpen: !this.state.mobileOpen 
+        });
+    };
+
     render(){
     let usersList = this.props.usersList.map((user) => {
        return <div className='user-card'>
@@ -58,7 +60,7 @@ class UsersList extends Component{
     
     return (
         <div className='drawer-container' >
-            <button onClick={this.handleDrawerToggle}>&#x2630;</button>
+            <button className='hamburger-button' onClick={this.handleDrawerToggle}>&#x2630;</button>
 
         <Hidden classes={
         styles.root
@@ -79,7 +81,8 @@ class UsersList extends Component{
                             Save
                     </Button>
                 </CSVLink>
-                <button style={{position: 'absolute', top:'10px', right:'10px', fontSize: '20px'}} onClick={this.handleDrawerToggle}>X</button>
+                <button className='close-button' style={{position: 'absolute', top:'10px', right:'10px', fontSize: '20px'}} onClick={this.handleDrawerToggle}>X</button>
+                <button onClick={() => window.alert('hello')}>Test Button</button>
             </div>
             {usersList}
           </Drawer>
@@ -91,15 +94,17 @@ class UsersList extends Component{
             variant="permanent"
             open
           >
-
-        <CSVLink className='download-convo-button' data={this.props.csvData}  target="_blank" >
-            <Button title='Save chat conversation'  variant="raised" size="small">
-                <Save />
-                    Save
-            </Button>
-        </CSVLink>
-            
-            
+        <div className='desktop-sidebar'>
+            <CSVLink className='download-convo-button' data={this.props.csvData}  target="_blank" >
+                <Button title='Save chat conversation'  variant="raised" size="small">
+                    <Save />
+                        Save
+                </Button>
+            </CSVLink>
+            <Link to='/user/login'>
+                <button><AccountCircle/></button>
+            </Link>
+        </div>
             {usersList}
             
           </Drawer>

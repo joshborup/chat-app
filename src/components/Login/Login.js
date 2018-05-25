@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import * as auth0 from 'auth0-js';
 import axios from 'axios';
 import './login.css';
+import SnackBar from '../GroupChat/SnackBar'
 
 class Login extends Component {
   constructor(props) {
@@ -60,11 +61,12 @@ class Login extends Component {
           ?
           <div>
             <button className='logout-button' onClick={this.logout}>LOG OUT</button>
-            <a href={`/group/cool`}>Chat</a>
+            <a href='/group/cool'>Chat</a>
+            
           </div>
            :
           <button className='login-button' onClick={this.login}>LOGIN</button>}
-        
+          <SnackBar/>
         </div>
       </div>
     );

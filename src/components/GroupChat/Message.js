@@ -12,8 +12,8 @@ const Message = (props) => {
             <div className='user-image-container-for-messages'>
                 <img src={props.picture} />
             </div>
-            <div className='message-name-date'>
-                <div className='corner'></div>
+            <div style={{background: props.color}} className='message-name-date'>
+                <div style={props.border} className='corner'></div>
                 <div className='message-text'>
                     <p>{props.message}</p>
                 </div>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import socketIOClient from 'socket.io-client';
 import UsersList from './UsersList';
 import MessageContainer from './MessageContainer';
+import myColors from '../styles/colors';
 import './group.css';
 let socketOrigin = window.location.origin.split(':30')[0];
 const socket = socketIOClient(`${socketOrigin}:3500`);
@@ -26,7 +27,8 @@ export default class Group extends Component {
 
         socket.on('connect', () => {
             let connectionObj={
-                room: this.state.baseURL
+                room: this.state.baseURL,
+                color: myColors()
             }
             socket.emit('room', connectionObj);
         });
@@ -113,6 +115,8 @@ export default class Group extends Component {
 
 
     render() {
+
+        
         return (
             
             <div className='group-chatroom-container'>

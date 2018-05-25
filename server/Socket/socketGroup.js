@@ -11,9 +11,9 @@ module.exports = (io, Users) =>
 
             users.AddUserData(socket.id, socket.handshake.session.user[0].name, socket.handshake.session.user[0].picture, connectionObj.room);
             console.log('passed', socket.handshake.session.user[0]);
-        
-        
-        socket.join(connectionObj.room);
+            socket.handshake.session.user.color = connectionObj.color;
+            socket.join(connectionObj.room);
+            
         }
         
         let userslist = users.GetUserList(connectionObj.room)
@@ -21,8 +21,9 @@ module.exports = (io, Users) =>
       });
 
     socket.on('message', (messageObj)=> {
-        console.log('duh message', socket.handshake.session.user)
-        console.log(messageObj);
+        messageObj.color = socket.handshake.session.user.color;
+
+
         io.in(messageObj.room).emit('message', messageObj)
     })
 
