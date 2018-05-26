@@ -154,10 +154,6 @@ button:focus {
                 min-height: 40px;
                 max-width: 100%;
                 animation: messagein .35s ease-in-out 1 forwards;
-
-                @media (max-width:600px) {
-                    justify-content: space-between;
-                }
                 
 
                 @keyframes messagein {
@@ -191,7 +187,7 @@ button:focus {
                     background:rgb(255, 226, 226);
                     border-radius: 10px;
                     width: 80%;
-                    min-width: 250px;
+                    min-width: 300px;
                     position: relative;
                     padding: 8px 10px;
                     display: flex;
@@ -203,7 +199,7 @@ button:focus {
 
                     @media  (max-width:500px){
                         min-width: 150px;
-                        max-width: 70%;
+                        max-width: 100%;
                     }
 
                     @media (min-width:1150px) {
@@ -213,14 +209,11 @@ button:focus {
                     .corner {
 
                         position: absolute;
-                        top: 0px;
-                        left: -50px;
+                        top: -20px;
+                        left: -24px;
+                        right: initial;
                         width: 40px;
-                        background: transparent;
-                        transform: rotate(180deg);
-                        border-top: 26px solid transparent;
-                        border-left: 40px solid rgb(255, 226, 226);
-                        border-right: 20px solid transparent;
+                        
                         
                     }
 
@@ -261,14 +254,13 @@ button:focus {
 
                 .corner {
                     
-                    border-right: 40px solid rgb(215, 225, 255);
-                    border-left: none;
+                    
                     position: absolute;
-                    top: 0px;
+                    top: -20px;
                     left: initial;
                     right: -30px;
                     width: 40px;
-                    transform: rotate(360deg) scale(-1, -1);
+                    
                     
 
                 }

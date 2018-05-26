@@ -1,10 +1,10 @@
 const colors = [
-    {color: 'green', hex:'#9EF9D5'},
-    {color: 'orange', hex:'#F9D7AB'},
-    {color: 'red', hex:'#F9ABB9'},
-    {color: 'blue', hex:'#D6ECF9'},
-    {color: 'yellow', hex:'#F9F6AC'},
-    {color: 'purple', hex:'#DEC9FF'},
+    {color: 'green', hex:'#9EF9D580'},
+    {color: 'orange', hex:'#F9D7AB80'},
+    {color: 'red', hex:'#F9ABB980'},
+    {color: 'blue', hex:'#D6ECF980'},
+    {color: 'yellow', hex:'#F9F6AC80'},
+    {color: 'purple', hex:'#DEC9FF80'},
 ]
 
 

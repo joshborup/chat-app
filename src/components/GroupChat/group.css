@@ -111,9 +111,6 @@ button:focus {
         min-height: 40px;
         max-width: 100%;
         animation: messagein .35s ease-in-out 1 forwards; }
-        @media (max-width: 600px) {
-          .group-chatroom-container > div .messaging-container .messages .individual-message-container {
-            justify-content: space-between; } }
 
 @keyframes messagein {
   0% {
@@ -136,7 +133,7 @@ button:focus {
           background: #ffe2e2;
           border-radius: 10px;
           width: 80%;
-          min-width: 250px;
+          min-width: 300px;
           position: relative;
           padding: 8px 10px;
           display: flex;
@@ -147,20 +144,16 @@ button:focus {
           @media (max-width: 500px) {
             .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date {
               min-width: 150px;
-              max-width: 70%; } }
+              max-width: 100%; } }
           @media (min-width: 1150px) {
             .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date {
               width: 85%; } }
           .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .corner {
             position: absolute;
-            top: 0px;
-            left: -50px;
-            width: 40px;
-            background: transparent;
-            transform: rotate(180deg);
-            border-top: 26px solid transparent;
-            border-left: 40px solid #ffe2e2;
-            border-right: 20px solid transparent; }
+            top: -20px;
+            left: -24px;
+            right: initial;
+            width: 40px; }
           .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date div {
             display: flex;
             flex-direction: row;
@@ -181,14 +174,11 @@ button:focus {
         order: 1;
         position: relative; }
         .group-chatroom-container > div .messaging-container .messages .individual-message-container.myself .message-name-date .corner {
-          border-right: 40px solid #d7e1ff;
-          border-left: none;
           position: absolute;
-          top: 0px;
+          top: -20px;
           left: initial;
           right: -30px;
-          width: 40px;
-          transform: rotate(360deg) scale(-1, -1); }
+          width: 40px; }
       .group-chatroom-container > div .messaging-container .messages .individual-message-container.myself .user-image-container-for-messages {
         order: 2; }
     .group-chatroom-container > div .messaging-container .messages > * + * {

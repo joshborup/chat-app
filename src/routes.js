@@ -7,8 +7,8 @@ import Callback from './components/Login/Callback';
 export default (
     
     <Switch>
+        <Route exact path='/' component={Login} />
         <Route path='/group/:room' component={Group} />
-        <Route path='/user/login' component={Login} />
         <Route path='/callback' component={Callback} />
     </Switch>
 

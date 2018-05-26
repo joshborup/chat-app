@@ -24,7 +24,7 @@ export default class Callback extends Component {
             
             axios.post('/user/login', {access_token: test}).then(()=>{
                 
-                window.location.href = `${window.location.origin}/user/login`
+                window.location.href = `${window.location.origin}`
             })
 
             }

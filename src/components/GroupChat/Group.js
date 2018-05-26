@@ -17,6 +17,8 @@ export default class Group extends Component {
           message: '',
           messages:[],
           name:'',
+          snackBarOpen: false,
+          justJoined:'',
           userslist:[],
           user: {
               name:''
@@ -30,6 +32,7 @@ export default class Group extends Component {
                 room: this.state.baseURL,
                 color: myColors()
             }
+         
             socket.emit('room', connectionObj);
         });
 
@@ -39,7 +42,6 @@ export default class Group extends Component {
             if(message.message){
                 messages = [...this.state.messages, message]
             }else {
-
                 messages = [...this.state.messages]
             }
 
@@ -51,9 +53,27 @@ export default class Group extends Component {
         
 
         socket.on('users_list', (userslist)=> {
-            this.setState({
-                userslist: userslist
-            })
+            if(this.state.userslist.length < userslist.length){
+                console.log('userslist', userslist)
+                console.log('state userslist', this.state.userslist)
+                let listCopy = userslist.slice()
+                let newJoin = listCopy.pop().name
+                this.setState({
+                    userslist: userslist,
+                    snackBarOpen: true,
+                    justJoined: newJoin
+                })
+                setTimeout(()=> {
+                    this.setState({ 
+                        snackBarOpen: false,
+                        justJoined: ''
+                    });
+                }, 2000)
+            } else{
+                this.setState({
+                    userslist: userslist
+                })
+            }
         })
         
     }
@@ -66,6 +86,12 @@ export default class Group extends Component {
             })
         })
     }
+
+    snackBarClose = () => {
+        this.setState({ 
+            open: false 
+        });
+      };
 
     changeHandler = (key, value) => {
         this.setState({
@@ -116,6 +142,7 @@ export default class Group extends Component {
 
     render() {
 
+        console.log(this.state.open)
         
         return (
             
@@ -124,7 +151,7 @@ export default class Group extends Component {
                     this.state.user
                     ?
                     <div> 
-                        <UsersList usersList={this.state.userslist} csvData={this.state.messages} />
+                        <UsersList justJoined={this.state.justJoined} snackBarClose={this.snackBarClose} snackBarOpen={this.state.snackBarOpen} usersList={this.state.userslist} csvData={this.state.messages} />
                         <MessageContainer name={this.state.user.name}  enter={this.sendOnEnter} className='scroller' messages={this.state.messages} changeHandler={this.changeHandler} message={this.state.message} submitMessage={this.send}/>
                     </div>
                     :

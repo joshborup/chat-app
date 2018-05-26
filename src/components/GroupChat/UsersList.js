@@ -9,6 +9,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Menu from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import PropTypes from 'prop-types';
+import { Snackbar } from '@material-ui/core';
+import StatusSnackBar from '../GroupChat/SnackBar'
 
 const styles = {
     root: {
@@ -82,9 +84,12 @@ class UsersList extends Component{
                     </Button>
                 </CSVLink>
                 <button className='close-button' style={{position: 'absolute', top:'10px', right:'10px', fontSize: '20px'}} onClick={this.handleDrawerToggle}>X</button>
-                <button onClick={() => window.alert('hello')}>Test Button</button>
+                <a href='/'>
+                <button><AccountCircle/></button>
+            </a>
             </div>
             {usersList}
+            <StatusSnackBar justJoined={this.props.justJoined} close={this.props.snackBarClose} open={this.props.snackBarOpen}/>
           </Drawer>
         </Hidden>
         <Hidden classes={
@@ -101,12 +106,12 @@ class UsersList extends Component{
                         Save
                 </Button>
             </CSVLink>
-            <Link to='/user/login'>
+            <a href='/'>
                 <button><AccountCircle/></button>
-            </Link>
+            </a>
         </div>
             {usersList}
-            
+            <StatusSnackBar justJoined={this.props.justJoined} close={this.props.snackBarClose} open={this.props.snackBarOpen}/>
           </Drawer>
         </Hidden>
         </div>

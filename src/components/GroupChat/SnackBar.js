@@ -40,47 +40,36 @@ const styles = theme => ({
     }),
   },
   snackbar: {
+    width: '100%',
     position: 'absolute',
   },
   snackbarContent: {
-    width: 360,
-  },
+    width: '100%',
+    minWidth:'initial',
+    maxWidth:'initial'
+  }
 });
 
 class FabIntegrationSnackbar extends React.Component {
-  state = {
-    open: false,
-  };
-
-  handleClick = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
+   
 
   render() {
-    const { classes } = this.props;
-    const { open } = this.state;
+    const { classes, handleClick, justJoined, open, close} = this.props;
+    
     const fabClassName = classNames(classes.fab, open ? classes.fabMoveUp : classes.fabMoveDown);
 
+    console.log(open, close)
     return (
       <div className={classes.root}>
-        <Button className={classes.button} onClick={this.handleClick}>
-          Open snackbar
-        </Button>
-      
-          
           <Snackbar
             open={open}
             autoHideDuration={4000}
-            onClose={this.handleClose}
+            onClose={() => close()}
             ContentProps={{
               'aria-describedby': 'snackbar-fab-message-id',
               className: classes.snackbarContent,
             }}
-            message={<span id="snackbar-fab-message-id">Archived</span>}
+            message={<span id="snackbar-fab-message-id">Just Joined: {justJoined}</span>}
             
             className={classes.snackbar}
           />
