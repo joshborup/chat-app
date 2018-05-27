@@ -21,8 +21,15 @@ module.exports = (io, Users) => {
             io.in(messageObj.room).emit('message', messageObj)
         })
 
+        socket.on('left', (left)=> {
+            console.log('user disconnected from room')
+            let room = users.RemoveUser(socket.id)
+            let userslist = users.GetUserList(room)
+            io.in(room).emit('users_list', userslist)   
+        })
+
         socket.on('disconnect', () => {
-            console.log('user disconnected')
+            console.log('user disconnected from site')
             let room = users.RemoveUser(socket.id)
             let userslist = users.GetUserList(room)
             io.in(room).emit('users_list', userslist)    

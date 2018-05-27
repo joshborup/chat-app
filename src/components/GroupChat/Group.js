@@ -65,8 +65,7 @@ export default class Group extends Component {
                 })
                 setTimeout(()=> {
                     this.setState({ 
-                        snackBarOpen: false,
-                        justJoined: ''
+                        snackBarOpen: false
                     });
                 }, 2000)
             } else{
@@ -85,6 +84,10 @@ export default class Group extends Component {
                 user: response.data[0]
             })
         })
+    }
+
+    componentWillUnmount(){
+        socket.emit('left', {message: 'i just left this shit'})
     }
 
     snackBarClose = () => {

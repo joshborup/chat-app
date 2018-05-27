@@ -84,9 +84,9 @@ class UsersList extends Component{
                     </Button>
                 </CSVLink>
                 <button className='close-button' style={{position: 'absolute', top:'10px', right:'10px', fontSize: '20px'}} onClick={this.handleDrawerToggle}>X</button>
-                <a href='/'>
+                <Link to='/'>
                 <button><AccountCircle/></button>
-            </a>
+            </Link>
             </div>
             {usersList}
             <StatusSnackBar justJoined={this.props.justJoined} close={this.props.snackBarClose} open={this.props.snackBarOpen}/>
@@ -106,9 +106,9 @@ class UsersList extends Component{
                         Save
                 </Button>
             </CSVLink>
-            <a href='/'>
+            <Link to='/'>
                 <button><AccountCircle/></button>
-            </a>
+                </Link>
         </div>
             {usersList}
             <StatusSnackBar justJoined={this.props.justJoined} close={this.props.snackBarClose} open={this.props.snackBarOpen}/>
