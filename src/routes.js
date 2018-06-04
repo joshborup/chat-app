@@ -9,7 +9,8 @@ export default (
     <Switch>
         <Route exact path='/' component={Login} />
         <Route path='/group/:room' component={Group} />
-        <Route basename='/callback' component={Callback} />
+        <Route path='/callback' component={Callback} />
+        <Route path='*' component={Login}/>
     </Switch>
 
 )

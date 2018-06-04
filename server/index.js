@@ -9,7 +9,6 @@ const massive = require('massive');
 
 require('dotenv').config();
 
-
 massive(process.env.CONNECTION_STRING).then(db => {
     console.log('database connected')
     app.set('db', db)
@@ -20,6 +19,11 @@ const session = require('express-session')({
     saveUninitialized: true,
     resave: true
 })
+
+app.use('*', express.static(path.join(__dirname,'../build')));
+app.get('*', function (req, res) {
+   res.sendFile(path.join(__dirname,'../build'));
+});
 
 const sharedSession = require('express-socket.io-session');
 app.use(session);
@@ -40,12 +44,6 @@ app.use('/user', routeUser);
 require('./Socket/socketGroup')(io, Users);
 
 
-app.use(express.static(`${__dirname}/../build`) );
-
-
-app.get('/*', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../build', 'index.html'));
-})
 
 const port = 3500;
 server.listen(port, () => console.log(`server listening on port ${port}`));
