@@ -20,9 +20,10 @@ const session = require('express-session')({
     resave: true
 })
 
-app.use('*', express.static(path.join(__dirname,'../build')));
-app.get('*', function (req, res) {
-   res.sendFile(path.join(__dirname,'../build'));
+app.use('/*', express.static(path.join(__dirname, '../build')));
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
 const sharedSession = require('express-socket.io-session');
