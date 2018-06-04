@@ -23,9 +23,6 @@ class Login extends Component {
         })
     }
 
-  
-
-
   login = () => {
     
     this.auth0 = new auth0.WebAuth({
