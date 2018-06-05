@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch} from 'react-router-dom';
+import { Route, Switch, Redirect} from 'react-router-dom';
 import Group from './components/GroupChat/Group';
 import Login from './components/Login/Login';
 import Callback from './components/Login/Callback';
@@ -10,7 +10,7 @@ export default (
         <Route exact path='/' component={Login} />
         <Route path='/group/:room' component={Group} />
         <Route basename='/callback' component={Callback} />
-        
+        <Redirect to='/' />
     </Switch>
 
 )

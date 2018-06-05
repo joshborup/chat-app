@@ -20,11 +20,8 @@ const session = require('express-session')({
     resave: true
 })
 
-app.use(express.static(path.join(__dirname, '../build/')));
- app.get('/*', function (req, res) {
-    console.log(__dirname)
-    res.sendFile(path.join(__dirname, '../build/index.html'));
-  });
+app.use(express.static(path.join(__dirname, '/../build')));
+
 
 const sharedSession = require('express-socket.io-session');
 app.use(session);
@@ -44,6 +41,10 @@ app.use('/user', routeUser);
 
 require('./Socket/socketGroup')(io, Users);
 
+app.get('*', function (req, res) {
+    console.log(__dirname)
+    res.sendFile(path.join(__dirname, '/../build/index.html'));
+});
 
 const port = 3500;
 server.listen(port, () => console.log(`server listening on port ${port}`));

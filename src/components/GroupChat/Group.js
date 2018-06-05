@@ -6,8 +6,8 @@ import MessageContainer from './MessageContainer';
 import myColors from '../styles/colors';
 import './group.css';
 let socketOrigin = window.location.origin.split(':30')[0];
-const socket = socketIOClient(`${socketOrigin}:3500`);
-
+const socket = socketIOClient(socketOrigin);
+console.log(socketOrigin)
 export default class Group extends Component {
     constructor(props){
         super(props)

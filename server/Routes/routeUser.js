@@ -2,8 +2,6 @@ const express = require('express');
 const userRouter = express.Router();
 const axios = require('axios');
 
-
-
 userRouter.post('/login', (req, res) => {
     console.log('hit')
     axios.get(`https://${process.env.REACT_APP_AUTH0_DOMAIN}/userinfo/?access_token=${req.body.access_token}`).then(userInfoResponse => {
