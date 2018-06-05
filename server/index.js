@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const path = require('path')
+const path = require('path');
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 const { Users } = require('./helpers/UsersClass');
@@ -20,11 +20,11 @@ const session = require('express-session')({
     resave: true
 })
 
-app.use('/*', express.static(path.join(__dirname, '../build')));
-
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
-});
+app.use(express.static(path.join(__dirname, '../build/')));
+ app.get('/*', function (req, res) {
+    console.log(__dirname)
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+  });
 
 const sharedSession = require('express-socket.io-session');
 app.use(session);
@@ -43,7 +43,6 @@ app.use('/group', routeGroup);
 app.use('/user', routeUser);
 
 require('./Socket/socketGroup')(io, Users);
-
 
 
 const port = 3500;
