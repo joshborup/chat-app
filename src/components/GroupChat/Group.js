@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import socketIOClient from 'socket.io-client';
-import UsersList from './UsersList';
+import UsersList from './UsersLists';
 import MessageContainer from './MessageContainer';
 import myColors from '../styles/colors';
 import './group.css';

@@ -16,10 +16,25 @@ button:focus {
   height: 90vh;
   overflow: hidden; }
   .group-chatroom-container > div .drawer-container {
-    width: 0;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media (max-width: 959px) {
+      .group-chatroom-container > div .drawer-container {
+        width: 0; } }
+    .group-chatroom-container > div .drawer-container .desktop-drawer-content {
+      display: flex; }
+      .group-chatroom-container > div .drawer-container .desktop-drawer-content > div {
+        padding: 10px;
+        width: 20%; }
+        .group-chatroom-container > div .drawer-container .desktop-drawer-content > div > div {
+          display: flex;
+          justify-content: space-between; }
+      @media (max-width: 959px) {
+        .group-chatroom-container > div .drawer-container .desktop-drawer-content {
+          width: 0;
+          display: none; } }
     .group-chatroom-container > div .drawer-container .hamburger-button {
       border: none;
       position: absolute;
@@ -30,242 +45,223 @@ button:focus {
       font-weight: 800;
       background: transparent;
       color: #525252; }
-    .group-chatroom-container > div .drawer-container .close-button {
-      border: none;
-      font-size: 12px;
-      z-index: 5;
-      font-weight: 800; }
-  .group-chatroom-container > div .users-list-container {
-    height: 100%;
-    overflow: scroll;
-    background: green;
-    padding: 10px;
-    width: 100%; }
-    .group-chatroom-container > div .users-list-container .desktop-sidebar {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-      align-items: center; }
-      .group-chatroom-container > div .users-list-container .desktop-sidebar button {
-        display: flex;
-        align-items: center;
-        justify-content: center; }
-    .group-chatroom-container > div .users-list-container .download-convo-button {
-      text-decoration: none;
-      display: flex !important;
-      justify-content: flex-start;
-      align-items: flex-start;
-      width: 100%; }
-    .group-chatroom-container > div .users-list-container .user-card {
-      width: 100%;
-      margin: 5px auto;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      background: #fafafa;
-      border-radius: 3px;
-      font-family: "Hind Siliguri", sans-serif;
-      color: #111111;
-      padding: 5px; }
-      .group-chatroom-container > div .users-list-container .user-card div:nth-child(2) {
-        flex: 12; }
-      .group-chatroom-container > div .users-list-container .user-card div:last-child {
-        flex: 1; }
-      .group-chatroom-container > div .users-list-container .user-card .online {
-        max-height: 10px;
-        max-width: 10px;
-        background: green;
-        border-radius: 50%; }
-      .group-chatroom-container > div .users-list-container .user-card div:first-child {
-        height: 25px;
-        width: 25px;
-        overflow: hidden;
-        border-radius: 50%; }
-        .group-chatroom-container > div .users-list-container .user-card div:first-child img {
-          width: 100%; }
-  .group-chatroom-container > div .messaging-container {
-    position: relative;
-    height: 100%;
-    padding: 0px 20px 25px;
-    overflow: scroll;
-    background: whitesmoke;
-    width: 100%; }
-    @media (min-width: 960px) {
-      .group-chatroom-container > div .messaging-container {
-        width: 80%; } }
-    .group-chatroom-container > div .messaging-container .spacer {
-      height: 20px; }
-    .group-chatroom-container > div .messaging-container .messages {
-      display: flex;
-      flex-direction: column;
-      font-family: "Hind Siliguri", sans-serif;
-      justify-content: center; }
-      .group-chatroom-container > div .messaging-container .messages .individual-message-container:first-child {
-        margin-bottom: 10px; }
-      .group-chatroom-container > div .messaging-container .messages .individual-message-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        min-height: 40px;
-        max-width: 100%;
-        animation: messagein .35s ease-in-out 1 forwards; }
-
-@keyframes messagein {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-        .group-chatroom-container > div .messaging-container .messages .individual-message-container .user-image-container-for-messages {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          max-width: 50px;
-          min-width: 50px;
-          flex: 1;
-          border-radius: 50%;
-          overflow: hidden;
-          box-shadow: 0px 1px 5px #888888; }
-          .group-chatroom-container > div .messaging-container .messages .individual-message-container .user-image-container-for-messages img {
-            width: 100%; }
-        .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date {
-          background: #ffe2e2;
-          border-radius: 10px;
-          width: 80%;
-          min-width: 300px;
-          position: relative;
-          padding: 8px 10px;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          top: 20px;
-          box-shadow: 0px 1px 5px #888888be; }
-          @media (max-width: 500px) {
-            .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date {
-              min-width: 150px;
-              max-width: 100%; } }
-          @media (min-width: 1150px) {
-            .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date {
-              width: 85%; } }
-          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .corner {
-            position: absolute;
-            top: -20px;
-            left: -24px;
-            right: initial;
-            width: 40px; }
-          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date div {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%; }
-          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .name-date {
-            color: #888888; }
-          .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .message-text {
-            display: flex;
-            margin-bottom: 10px;
-            justify-content: flex-start;
-            align-items: flex-start; }
-            .group-chatroom-container > div .messaging-container .messages .individual-message-container .message-name-date .message-text p {
-              width: 100%;
-              word-wrap: break-word; }
-      .group-chatroom-container > div .messaging-container .messages .individual-message-container.myself .message-name-date {
-        background: #d7e1ff;
-        order: 1;
-        position: relative; }
-        .group-chatroom-container > div .messaging-container .messages .individual-message-container.myself .message-name-date .corner {
-          position: absolute;
-          top: -20px;
-          left: initial;
-          right: -30px;
-          width: 40px; }
-      .group-chatroom-container > div .messaging-container .messages .individual-message-container.myself .user-image-container-for-messages {
-        order: 2; }
-    .group-chatroom-container > div .messaging-container .messages > * + * {
-      margin: 15px 0px; }
-    .group-chatroom-container > div .messaging-container .message-input-container {
-      position: fixed;
-      bottom: 0;
-      width: 80%;
-      right: 0;
-      display: flex; }
-      @media (max-width: 960px) {
-        .group-chatroom-container > div .messaging-container .message-input-container {
-          width: 100%; } }
-      .group-chatroom-container > div .messaging-container .message-input-container input {
-        flex: 9;
-        height: 40px;
-        font-size: 16px;
-        border: none;
-        background: lightgray;
-        padding-left: 5px; }
-      .group-chatroom-container > div .messaging-container .message-input-container input:focus {
-        outline: none; }
-      .group-chatroom-container > div .messaging-container .message-input-container button {
-        flex: 2;
-        height: 40px;
-        margin: 0;
-        border: none;
-        background: #6964ef;
-        cursor: pointer;
-        color: white;
-        font-size: 16px; }
-      .group-chatroom-container > div .messaging-container .message-input-container button:hover {
-        background: #5955c0; }
-      .group-chatroom-container > div .messaging-container .message-input-container button:focus {
-        outline: none; }
-
-.MuiDrawer-paperAnchorDockedLeft-23 {
-  background: white !important; }
-
-.MuiDrawer-paperAnchorLeft-19 {
-  background: white !important;
-  width: 20%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  overflow: scroll;
-  padding: 70px 10px 10px; }
-  @media (max-width: 959px) {
-    .MuiDrawer-paperAnchorLeft-19 {
-      min-width: 320px; } }
-  .MuiDrawer-paperAnchorLeft-19 .close-save-container {
+  .group-chatroom-container > div .desktop-sidebar {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%; }
-  .MuiDrawer-paperAnchorLeft-19 .download-convo-button {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center; }
+    .group-chatroom-container > div .desktop-sidebar button {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+  .group-chatroom-container > div .download-convo-button {
     text-decoration: none;
     display: flex !important;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%; }
-  .MuiDrawer-paperAnchorLeft-19 .user-card {
+  .group-chatroom-container > div .user-card {
     width: 100%;
-    margin: 10px auto;
+    margin: 5px auto;
     display: flex;
     justify-content: space-evenly;
+    flex-direction: row;
     align-items: center;
     background: #fafafa;
     border-radius: 3px;
     font-family: "Hind Siliguri", sans-serif;
     color: #111111;
     padding: 5px; }
-    .MuiDrawer-paperAnchorLeft-19 .user-card div:nth-child(2) {
+    .group-chatroom-container > div .user-card div:nth-child(2) {
       flex: 12; }
-    .MuiDrawer-paperAnchorLeft-19 .user-card div:last-child {
+    .group-chatroom-container > div .user-card div:last-child {
       flex: 1; }
-    .MuiDrawer-paperAnchorLeft-19 .user-card .online {
+    .group-chatroom-container > div .user-card .online {
       max-height: 10px;
       max-width: 10px;
       background: green;
       border-radius: 50%; }
-    .MuiDrawer-paperAnchorLeft-19 .user-card div:first-child {
+    .group-chatroom-container > div .user-card div:first-child {
       height: 25px;
       width: 25px;
       overflow: hidden;
       border-radius: 50%; }
-      .MuiDrawer-paperAnchorLeft-19 .user-card div:first-child img {
+      .group-chatroom-container > div .user-card div:first-child img {
         width: 100%; }
+
+.messaging-container {
+  position: relative;
+  height: 100%;
+  padding: 0px 20px 25px;
+  overflow: scroll;
+  background: whitesmoke;
+  width: 100%; }
+  @media (min-width: 960px) {
+    .messaging-container {
+      width: 80%; } }
+  .messaging-container .spacer {
+    height: 20px; }
+  .messaging-container .messages {
+    display: flex;
+    flex-direction: column;
+    font-family: "Hind Siliguri", sans-serif;
+    justify-content: center; }
+    .messaging-container .messages .individual-message-container:first-child {
+      margin-bottom: 10px; }
+    .messaging-container .messages .individual-message-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      min-height: 40px;
+      max-width: 100%;
+      animation: messagein .35s ease-in-out 1 forwards; }
+
+@keyframes messagein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+      .messaging-container .messages .individual-message-container .user-image-container-for-messages {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 50px;
+        min-width: 50px;
+        flex: 1;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0px 1px 5px #888888; }
+        .messaging-container .messages .individual-message-container .user-image-container-for-messages img {
+          width: 100%; }
+      .messaging-container .messages .individual-message-container .message-name-date {
+        background: #ffe2e2;
+        border-radius: 10px;
+        width: 80%;
+        min-width: 300px;
+        position: relative;
+        padding: 8px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        top: 20px;
+        box-shadow: 0px 1px 5px #888888be; }
+        @media (max-width: 500px) {
+          .messaging-container .messages .individual-message-container .message-name-date {
+            min-width: 150px;
+            max-width: 100%; } }
+        @media (min-width: 1150px) {
+          .messaging-container .messages .individual-message-container .message-name-date {
+            width: 85%; } }
+        .messaging-container .messages .individual-message-container .message-name-date .corner {
+          position: absolute;
+          top: -20px;
+          left: -24px;
+          right: initial;
+          width: 40px; }
+        .messaging-container .messages .individual-message-container .message-name-date div {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%; }
+        .messaging-container .messages .individual-message-container .message-name-date .name-date {
+          color: #888888; }
+        .messaging-container .messages .individual-message-container .message-name-date .message-text {
+          display: flex;
+          margin-bottom: 10px;
+          justify-content: flex-start;
+          align-items: flex-start; }
+          .messaging-container .messages .individual-message-container .message-name-date .message-text p {
+            width: 100%;
+            word-wrap: break-word; }
+    .messaging-container .messages .individual-message-container.myself .message-name-date {
+      background: #d7e1ff;
+      order: 1;
+      position: relative; }
+      .messaging-container .messages .individual-message-container.myself .message-name-date .corner {
+        position: absolute;
+        top: -20px;
+        left: initial;
+        right: -30px;
+        width: 40px; }
+    .messaging-container .messages .individual-message-container.myself .user-image-container-for-messages {
+      order: 2; }
+  .messaging-container .messages > * + * {
+    margin: 15px 0px; }
+  .messaging-container .message-input-container {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    right: 0;
+    display: flex; }
+    @media (max-width: 960px) {
+      .messaging-container .message-input-container {
+        width: 100%; } }
+    .messaging-container .message-input-container input {
+      flex: 9;
+      height: 40px;
+      font-size: 16px;
+      border: none;
+      background: lightgray;
+      padding-left: 5px; }
+    .messaging-container .message-input-container input:focus {
+      outline: none; }
+    .messaging-container .message-input-container button {
+      flex: 2;
+      height: 40px;
+      margin: 0;
+      border: none;
+      background: #6964ef;
+      cursor: pointer;
+      color: white;
+      font-size: 16px; }
+    .messaging-container .message-input-container button:hover {
+      background: #5955c0; }
+    .messaging-container .message-input-container button:focus {
+      outline: none; }
+
+.mobile-drawer-content {
+  display: flex; }
+  .mobile-drawer-content > div {
+    padding: 10px;
+    max-width: 320px;
+    width: 100%; }
+    .mobile-drawer-content > div > div {
+      display: flex;
+      justify-content: space-between; }
+    .mobile-drawer-content > div .close-save-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px; }
+    .mobile-drawer-content > div .close-button {
+      border: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 20px;
+      z-index: 7;
+      font-weight: 800; }
+    .mobile-drawer-content > div .user-card {
+      margin: 10px 0;
+      background: #f0f0f0;
+      padding: 5px 10px; }
+      .mobile-drawer-content > div .user-card > div {
+        overflow: hidden;
+        border: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; }
+      .mobile-drawer-content > div .user-card > div:first-child {
+        max-width: 35px;
+        border-radius: 50%; }
+        .mobile-drawer-content > div .user-card > div:first-child > img {
+          width: 100%; }
+      .mobile-drawer-content > div .user-card > div:last-child > .online {
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: green; }

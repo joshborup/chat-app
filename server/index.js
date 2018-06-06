@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
+const {test} = require('./Routes/function');
 const { Users } = require('./helpers/UsersClass');
 const massive = require('massive');
 
@@ -41,10 +42,7 @@ app.use('/user', routeUser);
 
 require('./Socket/socketGroup')(io, Users);
 
-app.get('*', function (req, res) {
-    console.log(__dirname)
-    res.sendFile(path.join(__dirname, '/../build/index.html'));
-});
+app.get('*', test);
 
 const port = 3500;
 server.listen(port, () => console.log(`server listening on port ${port}`));
