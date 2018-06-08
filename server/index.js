@@ -50,6 +50,7 @@ app.get('*', test);
 
 
 //used for github webhook to run git pull and npm run build
+app.use(xhub({ algorithm: 'sha1', secret: process.env.SECRET_TOKEN}));
 
 app.post('/chatit_hook', (req, res) => {
   
