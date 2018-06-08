@@ -345,6 +345,7 @@ button:focus {
 
 .mobile-drawer-content  {
     display: flex;
+
         > div {
             padding:10px;
             max-width: 320px;
@@ -405,6 +406,9 @@ button:focus {
                 }
             }
         }
+    }
+    >div:first-child {
+        max-width: none;
     }
 
 }

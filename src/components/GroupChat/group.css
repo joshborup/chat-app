@@ -265,3 +265,5 @@ button:focus {
         width: 15px;
         height: 15px;
         background: green; }
+  .mobile-drawer-content > div:first-child {
+    max-width: none; }
