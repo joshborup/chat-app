@@ -9,9 +9,8 @@ const { Users } = require('./helpers/UsersClass');
 const massive = require('massive');
 const exec = require('child_process').exec;
 const xhub = require('express-x-hub');
-app.use(xhub({ algorithm: 'sha1', secret: process.env.SECRET_TOKEN}));
 require('dotenv').config();
-
+app.use(xhub({ algorithm: 'sha1', secret: process.env.SECRET_TOKEN}));
 massive(process.env.CONNECTION_STRING).then(db => {
     console.log('database connected')
     app.set('db', db)
