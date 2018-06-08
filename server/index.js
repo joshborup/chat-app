@@ -7,6 +7,8 @@ const io = require('socket.io')(server);
 const {test} = require('./Routes/function');
 const { Users } = require('./helpers/UsersClass');
 const massive = require('massive');
+const exec = require('child_process').exec;
+const xhub = require('express-x-hub');
 
 require('dotenv').config();
 
@@ -44,5 +46,30 @@ require('./Socket/socketGroup')(io, Users);
 
 app.get('*', test);
 
-const port = 3500;
+
+
+
+//used for github webhook to run git pull and npm run build
+
+app.post('/chatit_hook', (req, res) => {
+  
+    console.log(req.isXHub && req.isXHubValid())
+    
+    if(req.isXHub && req.isXHubValid()){
+      exec('./pull_and_build.sh', (err, stdout, stderr)=> {
+          if(err){
+              console.log(err)
+          }else{
+              console.log(stdout)
+          }
+      })
+      console.log('success');
+      res.json({ success: 'X-Hub Is Valid' });  
+    } else {
+      console.log('failed')
+      res.status(400).json({ error: 'X-Hub Is Invalid' });
+    }     
+})
+
+const port = 4001;
 server.listen(port, () => console.log(`server listening on port ${port}`));
