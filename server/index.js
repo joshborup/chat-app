@@ -9,7 +9,7 @@ const { Users } = require('./helpers/UsersClass');
 const massive = require('massive');
 const exec = require('child_process').exec;
 const xhub = require('express-x-hub');
-
+app.use(xhub({ algorithm: 'sha1', secret: process.env.SECRET_TOKEN}));
 require('dotenv').config();
 
 massive(process.env.CONNECTION_STRING).then(db => {
@@ -50,8 +50,7 @@ app.get('*', test);
 
 
 //used for github webhook to run git pull and npm run build
-app.use(xhub({ algorithm: 'sha1', secret: process.env.SECRET_TOKEN}));
-console.log(process.env.SECRET_TOKEN);
+
 app.post('/chatit_hook', (req, res) => {
   
     console.log(req.isXHub && req.isXHubValid())
