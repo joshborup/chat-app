@@ -5,12 +5,10 @@ import Login from './components/Login/Login';
 import Callback from './components/Login/Callback';
 
 export default (
-    
     <Switch>
         <Route exact path='/' component={Login} />
         <Route path='/group/:room' component={Group} />
         <Route basename='/callback' component={Callback} />
         <Redirect to='/' />
     </Switch>
-
 )
