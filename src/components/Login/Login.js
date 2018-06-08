@@ -58,11 +58,11 @@ class Login extends Component {
           ?
           <div>
             <button className='logout-button' onClick={this.logout}>LOG OUT</button>
-            <a href='/group/cool'>Chat</a>
+            <a href='/group/cool'>Chat it up!!!</a>
             
           </div>
            :
-          <button className='login-button' onClick={this.login}>LOGIN</button>}
+          <button className='login-button' onClick={this.login}>LOGIN!</button>}
         </div>
       </div>
     );

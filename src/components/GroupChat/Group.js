@@ -44,7 +44,6 @@ export default class Group extends Component {
             }else {
                 messages = [...this.state.messages]
             }
-
             this.setState({
                 messages: messages
             })
