@@ -12,11 +12,50 @@
     align-items: center;
     font-family: $font-stack;
     z-index: 3;
-    h1 {
-        color: $lighter-text;
-        font-size: 32px;
-    }
-
-    
+    >div {
+        height: 100%;
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .links-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+    } 
 }
 
+
+
+@for $i from 1 through 4 {
+    .header-container{
+    
+    ul{
+        position: relative;
+        width:100px;
+        display: flex;
+        flex-direction: column;
+        height: 30px;
+        
+        .link-#{$i} {
+            position: absolute;
+            transition: .1113s * $i ;
+            color: white;
+            top: -5px;
+            background: black;
+            width: 100px;
+            padding: 10px 20px;
+        }
+    }
+    ul:hover .link-#{$i}{
+
+        transform: translate(0px, ($i - 1) * 29px);
+
+    }
+
+    }
+
+}

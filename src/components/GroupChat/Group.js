@@ -5,8 +5,13 @@ import UsersList from './UsersLists';
 import MessageContainer from './MessageContainer';
 import myColors from '../styles/colors';
 import './group.css';
-let socketOrigin = window.location.origin.split(':30')[0];
+
+// let socketOrigin = window.location.origin.split(':40')[0];
+// const socket = socketIOClient(socketOrigin);
+
+let socketOrigin = window.location.origin;
 const socket = socketIOClient(socketOrigin);
+
 console.log(socketOrigin)
 export default class Group extends Component {
     constructor(props){
@@ -143,8 +148,6 @@ export default class Group extends Component {
 
 
     render() {
-
-        console.log(this.state.open)
         
         return (
             

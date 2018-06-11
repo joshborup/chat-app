@@ -11,6 +11,87 @@
   align-items: center;
   font-family: "Hind Siliguri", sans-serif;
   z-index: 3; }
-  .header-container h1 {
-    color: #525252;
-    font-size: 32px; }
+  .header-container > div {
+    height: 100%;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .header-container > div .links-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; }
+
+.header-container ul {
+  position: relative;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 30px; }
+  .header-container ul .link-1 {
+    position: absolute;
+    transition: 0.1113s;
+    color: white;
+    top: -5px;
+    background: black;
+    width: 100px;
+    padding: 10px 20px; }
+
+.header-container ul:hover .link-1 {
+  transform: translate(0px, 0px); }
+
+.header-container ul {
+  position: relative;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 30px; }
+  .header-container ul .link-2 {
+    position: absolute;
+    transition: 0.2226s;
+    color: white;
+    top: -5px;
+    background: black;
+    width: 100px;
+    padding: 10px 20px; }
+
+.header-container ul:hover .link-2 {
+  transform: translate(0px, 29px); }
+
+.header-container ul {
+  position: relative;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 30px; }
+  .header-container ul .link-3 {
+    position: absolute;
+    transition: 0.3339s;
+    color: white;
+    top: -5px;
+    background: black;
+    width: 100px;
+    padding: 10px 20px; }
+
+.header-container ul:hover .link-3 {
+  transform: translate(0px, 58px); }
+
+.header-container ul {
+  position: relative;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 30px; }
+  .header-container ul .link-4 {
+    position: absolute;
+    transition: 0.4452s;
+    color: white;
+    top: -5px;
+    background: black;
+    width: 100px;
+    padding: 10px 20px; }
+
+.header-container ul:hover .link-4 {
+  transform: translate(0px, 87px); }

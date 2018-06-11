@@ -16,11 +16,32 @@ massive(process.env.CONNECTION_STRING).then(db => {
     app.set('db', db)
 })
 
-const session = require('express-session')({
-    secret: process.env.SESSION_SECRET,
-    saveUninitialized: true,
-    resave: true
+const userSession = require('express-session');
+var pgSession = require('connect-pg-simple')(userSession);
+
+const session = userSession({
+            store: new pgSession({
+                conString:process.env.CONNECTION_STRING
+                }),
+            secret: process.env.SESSION_SECRET,
+            resave: false,
+            saveUninitialized: true,
+            cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 }, // 14 days            
 })
+
+
+
+//for production 
+// app.use(session({
+//     store: new pgSession({
+//         conString:process.env.CONNECTION_STRING
+//         }),
+//     secret: process.env.SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 }, // 14 days 
+    
+// }));
 
 app.use(express.static(path.join(__dirname, '/../build')));
 
