@@ -4,7 +4,6 @@ button:focus {
   cursor: pointer; }
 
 .group-chatroom-container {
-  margin-top: 70px;
   min-height: 90vh;
   min-width: 100vw;
   background: white; }

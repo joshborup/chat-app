@@ -1,51 +1,50 @@
 import React, { Component } from 'react';
+import Login from '../shared/Login/Login';
+import HeaderLinks from '../shared/HeaderLinks';
+import axios from 'axios';
 import './header.css';
 
 export default class Header extends Component {
+
+    state = {
+        user: ''
+    }
+
+    componentDidMount(){
+
+        axios.get('/user/user_data').then(response => {
+            console.log(response)
+            this.setState({
+                user: response.data[0]
+            })
+        })
+    }
+
+    logout = () => {
+        axios.post('/user/logout').then(() => {
+          this.setState({
+               user: null
+             });
+        });
+        window.location.href = '/';
+      }
+
     render() {
+        console.log(this.state.user);
         return (
             <div className='header-container'>
                 <div>
                     <div>
                         {'logo here'}
                     </div>
-                    <div className='links-container'>
-                        <ul>
-                            <li className='link-1'>
-                                <a href={`https://${window.location.hostname}`}>Home</a>
-                            </li>
-
-                            <li className='link-2'>
-                                chat
-                            </li>
-
-                             <li className='link-3'>
-                                chat
-                            </li>
-
-                             <li className='link-4'>
-                                chat
-                            </li>
-                        </ul>
-
-                        <ul>
-                        <li className='link-1'>
-                                profile
-                            </li>
-
-                            <li className='link-2'>
-                                profile
-                            </li>
-
-                            <li className='link-3'>
-                                profile
-                            </li>
-
-                            <li className='link-4'>
-                                profile
-                            </li>
-                        </ul>
+                    {this.state.user ? 
+                    <div>
+                        <HeaderLinks />
+                        <button onClick={this.logout}>Logout</button>
                     </div>
+                    :
+                    <Login />
+                    }
                 </div>
             </div>
         );

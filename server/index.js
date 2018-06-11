@@ -9,6 +9,7 @@ const { Users } = require('./helpers/UsersClass');
 const massive = require('massive');
 const exec = require('child_process').exec;
 const xhub = require('express-x-hub');
+
 require('dotenv').config();
 app.use(xhub({ algorithm: 'sha1', secret: process.env.SECRET_TOKEN}));
 massive(process.env.CONNECTION_STRING).then(db => {
@@ -28,20 +29,6 @@ const session = userSession({
             saveUninitialized: true,
             cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 }, // 14 days            
 })
-
-
-
-//for production 
-// app.use(session({
-//     store: new pgSession({
-//         conString:process.env.CONNECTION_STRING
-//         }),
-//     secret: process.env.SESSION_SECRET,
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 }, // 14 days 
-    
-// }));
 
 app.use(express.static(path.join(__dirname, '/../build')));
 

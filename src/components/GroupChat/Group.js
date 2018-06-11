@@ -6,13 +6,8 @@ import MessageContainer from './MessageContainer';
 import myColors from '../styles/colors';
 import './group.css';
 
-// let socketOrigin = window.location.origin.split(':40')[0];
-// const socket = socketIOClient(socketOrigin);
+const socket = socketIOClient();
 
-let socketOrigin = window.location.origin;
-const socket = socketIOClient(socketOrigin);
-
-console.log(socketOrigin)
 export default class Group extends Component {
     constructor(props){
         super(props)
@@ -32,14 +27,13 @@ export default class Group extends Component {
 
         this.bottomScroll = React.createRef();
 
-        socket.on('connect', () => {
-            let connectionObj={
-                room: this.state.baseURL,
-                color: myColors()
-            }
-         
-            socket.emit('room', connectionObj);
-        });
+        let connectionObj={
+            room: this.state.baseURL,
+            color: myColors()
+        }
+        
+        socket.emit('room', connectionObj);
+        
 
         socket.on('message', (message)=>{
             console.log(message)
@@ -91,7 +85,7 @@ export default class Group extends Component {
     }
 
     componentWillUnmount(){
-        socket.emit('left', {message: 'i just left this shit'})
+        socket.emit('left', {message: 'just left'})
     }
 
     snackBarClose = () => {

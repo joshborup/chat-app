@@ -37,7 +37,8 @@
     top: -5px;
     background: black;
     width: 100px;
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    z-index: 4; }
 
 .header-container ul:hover .link-1 {
   transform: translate(0px, 0px); }
@@ -55,7 +56,8 @@
     top: -5px;
     background: black;
     width: 100px;
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    z-index: 3.5; }
 
 .header-container ul:hover .link-2 {
   transform: translate(0px, 29px); }
@@ -73,7 +75,8 @@
     top: -5px;
     background: black;
     width: 100px;
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    z-index: 3.33333; }
 
 .header-container ul:hover .link-3 {
   transform: translate(0px, 58px); }
@@ -91,7 +94,8 @@
     top: -5px;
     background: black;
     width: 100px;
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    z-index: 3.25; }
 
 .header-container ul:hover .link-4 {
   transform: translate(0px, 87px); }

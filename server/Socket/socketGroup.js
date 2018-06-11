@@ -1,6 +1,7 @@
 module.exports = (io, Users) => {   
     const users = new Users();
 
+    
     io.sockets.on('connection', (socket) => {
         console.log('client connected')
         

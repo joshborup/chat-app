@@ -48,6 +48,7 @@
             background: black;
             width: 100px;
             padding: 10px 20px;
+            z-index: 3 + (1/$i);
         }
     }
     ul:hover .link-#{$i}{

@@ -1,2 +1,7 @@
 .App {
-  text-align: center; }
+  text-align: center;
+}
+
+.App .routes {
+  padding-top: 70px;
+}

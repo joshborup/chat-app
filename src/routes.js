@@ -1,14 +1,16 @@
 import React from 'react';
 import { Route, Switch, Redirect} from 'react-router-dom';
 import Group from './components/GroupChat/Group';
-import Login from './components/Login/Login';
-import Callback from './components/Login/Callback';
+import HomeContainer from './components/Home/HomeContainer';
+import Callback from './components/shared/Login/Callback';
 
 export default (
     <Switch>
-        <Route exact path='/' component={Login} />
+        <Route exact path='/' component={HomeContainer} />
         <Route path='/group/:room' component={Group} />
         <Route basename='/callback' component={Callback} />
-        <Redirect to='/' />
+        <Route path='/' render={()=> {
+            return <div>you will not find anything here my boy!</div>
+        }} />
     </Switch>
 )
