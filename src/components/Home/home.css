@@ -1,0 +1,21 @@
+.home-container {
+  background: black;
+  min-height: 100vh; }
+  .home-container .home-display-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    max-height: 300px;
+    overflow: hidden;
+    position: relative; }
+    .home-container .home-display-container h1 {
+      position: absolute;
+      color: white;
+      top: 130px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      font-size: 60px; }
+    .home-container .home-display-container .home-banner-background-video {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 800px; }

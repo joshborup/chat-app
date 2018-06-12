@@ -27,7 +27,7 @@ class Login extends Component {
     
     this.auth0 = new auth0.WebAuth({
       domain: 'joshborup.auth0.com',
-      clientID: 'Hu0tt3KxizbhLTKxAhgXepjgPJwdvyvq',
+      clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
       redirectUri: `${window.location.origin}/callback`,
       audience: 'https://joshborup.auth0.com/userinfo',
       responseType: 'token',

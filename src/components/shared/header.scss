@@ -12,6 +12,23 @@
     align-items: center;
     font-family: $font-stack;
     z-index: 3;
+
+    img {
+        width: 100px;
+    }
+
+    .inner-header-container {
+        display: flex;
+        flex-direction: row;
+        
+        button {
+           width: 100px;
+           height: 36px;
+           border: none;
+        }
+    }
+
+
     >div {
         height: 100%;
         width: 100%;
@@ -23,7 +40,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
         }
     } 
 }
@@ -49,12 +65,14 @@
             width: 100px;
             padding: 10px 20px;
             z-index: 3 + (1/$i);
+
+            a {
+                color: white;
+            }
         }
     }
     ul:hover .link-#{$i}{
-
         transform: translate(0px, ($i - 1) * 29px);
-
     }
 
     }

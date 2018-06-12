@@ -11,6 +11,15 @@
   align-items: center;
   font-family: "Hind Siliguri", sans-serif;
   z-index: 3; }
+  .header-container img {
+    width: 100px; }
+  .header-container .inner-header-container {
+    display: flex;
+    flex-direction: row; }
+    .header-container .inner-header-container button {
+      width: 100px;
+      height: 36px;
+      border: none; }
   .header-container > div {
     height: 100%;
     width: 100%;
@@ -21,8 +30,7 @@
     .header-container > div .links-container {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100%; }
+      align-items: center; }
 
 .header-container ul {
   position: relative;
@@ -39,6 +47,8 @@
     width: 100px;
     padding: 10px 20px;
     z-index: 4; }
+    .header-container ul .link-1 a {
+      color: white; }
 
 .header-container ul:hover .link-1 {
   transform: translate(0px, 0px); }
@@ -58,6 +68,8 @@
     width: 100px;
     padding: 10px 20px;
     z-index: 3.5; }
+    .header-container ul .link-2 a {
+      color: white; }
 
 .header-container ul:hover .link-2 {
   transform: translate(0px, 29px); }
@@ -77,6 +89,8 @@
     width: 100px;
     padding: 10px 20px;
     z-index: 3.33333; }
+    .header-container ul .link-3 a {
+      color: white; }
 
 .header-container ul:hover .link-3 {
   transform: translate(0px, 58px); }
@@ -96,6 +110,8 @@
     width: 100px;
     padding: 10px 20px;
     z-index: 3.25; }
+    .header-container ul .link-4 a {
+      color: white; }
 
 .header-container ul:hover .link-4 {
   transform: translate(0px, 87px); }

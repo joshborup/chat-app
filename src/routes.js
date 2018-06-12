@@ -9,8 +9,6 @@ export default (
         <Route exact path='/' component={HomeContainer} />
         <Route path='/group/:room' component={Group} />
         <Route basename='/callback' component={Callback} />
-        <Route path='/' render={()=> {
-            return <div>you will not find anything here my boy!</div>
-        }} />
+        <Redirect to='/' />
     </Switch>
 )

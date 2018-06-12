@@ -14,8 +14,6 @@ export default class Callback extends Component {
     componentDidMount(){
         
         let test = window.location.href.includes('=') ? window.location.href.split('access_token=')[1].split('&')[0] : '';
-        
-        
 
         console.log(test)
         

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from '../shared/Login/Login';
 import HeaderLinks from '../shared/HeaderLinks';
 import axios from 'axios';
+import monkey from './media/monkeylogo.svg'
 import './header.css';
 
 export default class Header extends Component {
@@ -35,10 +36,10 @@ export default class Header extends Component {
             <div className='header-container'>
                 <div>
                     <div>
-                        {'logo here'}
+                        <img src={monkey} alt='monkey head logo' />
                     </div>
                     {this.state.user ? 
-                    <div>
+                    <div className='inner-header-container'>
                         <HeaderLinks />
                         <button onClick={this.logout}>Logout</button>
                     </div>
