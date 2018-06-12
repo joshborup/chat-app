@@ -38,12 +38,15 @@ button:focus {
       border: none;
       position: absolute;
       top: 18px;
-      left: 18px;
+      right: 18px;
       font-size: 20px;
       z-index: 5;
       font-weight: 800;
       background: transparent;
       color: #525252; }
+      @media (min-width: 959px) {
+        .group-chatroom-container > div .drawer-container .hamburger-button {
+          display: none; } }
   .group-chatroom-container > div .desktop-sidebar {
     display: flex;
     flex-direction: row;

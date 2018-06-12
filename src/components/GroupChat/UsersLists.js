@@ -53,7 +53,7 @@ class ResponsiveDrawer extends React.Component {
             <Drawer
                 className='mobile-drawer-content'
                 variant="temporary"
-                anchor='left'
+                anchor='right'
                 onClose={this.handleDrawerToggle}
                 open={this.state.mobileOpen}
                 ModalProps={{

@@ -20,6 +20,11 @@
       width: 100px;
       height: 36px;
       border: none; }
+      @media (max-width: 959px) {
+        .header-container .inner-header-container button {
+          position: absolute;
+          right: 50px;
+          top: 20px; } }
   .header-container > div {
     height: 100%;
     width: 100%;
@@ -31,6 +36,9 @@
       display: flex;
       justify-content: center;
       align-items: center; }
+      @media (max-width: 959px) {
+        .header-container > div .links-container {
+          display: none; } }
 
 .header-container ul {
   position: relative;

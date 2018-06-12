@@ -52,12 +52,15 @@ button:focus {
             border: none;
             position: absolute;
             top:18px;
-            left:18px;
+            right:18px;
             font-size: 20px;
             z-index: 5;
             font-weight: 800;
             background:transparent;
             color: $lighter-text;
+            @media (min-width:959px) {
+                display: none;
+            }
         }
     }
 
