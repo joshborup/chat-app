@@ -13,7 +13,7 @@ export default class Group extends Component {
         super(props)
 
         this.state = {
-          baseURL: window.location.href.split('/').pop(),
+          baseURL: this.props.match.params.room,
           message: '',
           messages:[],
           name:'',
@@ -142,7 +142,7 @@ export default class Group extends Component {
 
 
     render() {
-        
+        console.log(this.props.match.params.room)
         return (
             
             <div className='group-chatroom-container'>

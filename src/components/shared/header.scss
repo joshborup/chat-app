@@ -1,7 +1,6 @@
 @import '../styles/_shared.scss';
 
 .header-container {
-    min-height: 70px;
     background: rgb(211, 211, 211);
     position: absolute;
     width: 100%;
@@ -14,7 +13,7 @@
     z-index: 3;
 
     img {
-        width: 100px;
+        width:60px;
     }
 
     .inner-header-container {
@@ -28,7 +27,7 @@
            @media (max-width:959px) {
             position: absolute;
             right: 50px;
-            top:20px;
+            top:11px;
         }
         }
     }
