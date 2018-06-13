@@ -14,13 +14,16 @@ button:focus {
   align-items: center;
   height: 90vh;
   overflow: hidden; }
+  @media (max-width: 599px) {
+    .group-chatroom-container > div {
+      margin-top: 60px; } }
   .group-chatroom-container > div .drawer-container {
     width: 25%;
     height: 100%;
     padding: 10px;
     justify-content: center;
     align-items: center; }
-    @media (max-width: 600px) {
+    @media (max-width: 599px) {
       .group-chatroom-container > div .drawer-container {
         display: none; } }
 
@@ -60,7 +63,7 @@ button:focus {
   overflow: scroll;
   background: whitesmoke;
   width: 100%; }
-  @media (min-width: 600px) {
+  @media (min-width: 599px) {
     .messaging-container {
       width: 75%; } }
   .messaging-container .spacer {
@@ -101,7 +104,7 @@ button:focus {
       .messaging-container .messages .individual-message-container .message-name-date {
         background: #ffe2e2;
         border-radius: 10px;
-        width: 80%;
+        width: 90%;
         min-width: 300px;
         position: relative;
         padding: 8px 10px;
@@ -136,7 +139,8 @@ button:focus {
           justify-content: flex-start;
           align-items: flex-start; }
           .messaging-container .messages .individual-message-container .message-name-date .message-text p {
-            width: 100%;
+            width: 85%;
+            margin: 0 auto;
             word-wrap: break-word; }
     .messaging-container .messages .individual-message-container.myself .message-name-date {
       background: #d7e1ff;
@@ -146,7 +150,7 @@ button:focus {
         position: absolute;
         top: -20px;
         left: initial;
-        right: -30px;
+        right: -24px;
         width: 40px; }
     .messaging-container .messages .individual-message-container.myself .user-image-container-for-messages {
       order: 2; }
@@ -158,7 +162,7 @@ button:focus {
     width: 75%;
     right: 0;
     display: flex; }
-    @media (max-width: 600px) {
+    @media (max-width: 599px) {
       .messaging-container .message-input-container {
         width: 100%; } }
     .messaging-container .message-input-container input {

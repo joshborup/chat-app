@@ -18,6 +18,10 @@ button:focus {
     align-items: center;
     height: 90vh;
     overflow: hidden;
+    @media (max-width: 599px) {
+        margin-top: 60px;
+    }
+
 
     .drawer-container{
         width: 25%;
@@ -25,7 +29,7 @@ button:focus {
         padding: 10px;
         justify-content: center;
         align-items: center;
-        @media (max-width: 600px) {
+        @media (max-width: 599px) {
             display: none;
         }
     }
@@ -83,7 +87,7 @@ button:focus {
     overflow: scroll;
     background: rgb(245, 245, 245);
     width: 100%;
-    @media (min-width:600px) {
+    @media (min-width:599px) {
         width: 750px / 1000px * 100%;
     }
 
@@ -143,7 +147,7 @@ button:focus {
 
                 background:rgb(255, 226, 226);
                 border-radius: 10px;
-                width: 80%;
+                width: 90%;
                 min-width: 300px;
                 position: relative;
                 padding: 8px 10px;
@@ -193,7 +197,8 @@ button:focus {
                     align-items: flex-start;
 
                     p {
-                        width: 100%;
+                        width: 85%;
+                        margin: 0 auto;
                         word-wrap: break-word;
                     }
                 }
@@ -213,7 +218,7 @@ button:focus {
                 position: absolute;
                 top: -20px;
                 left: initial;
-                right: -30px;
+                right: -24px;
                 width: 40px;
             }
 
@@ -236,9 +241,8 @@ button:focus {
         right: 0;
         display: flex;
 
-        @media (max-width:600px) {
+        @media (max-width:599px) {
             width: 100%;
-            
         }
 
         input {

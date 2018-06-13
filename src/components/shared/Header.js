@@ -8,16 +8,24 @@ import './header.css';
 export default class Header extends Component {
 
     state = {
-        user: ''
+        user: '',
+        toggle: true
     }
 
     componentDidMount(){
-
         axios.get('/user/user_data').then(response => {
             console.log(response)
             this.setState({
                 user: response.data[0]
             })
+        })
+    }
+
+    myToggle = () => {
+        this.setState(prevState => {
+            return {
+                toggle: !prevState.toggle
+            }
         })
     }
 
@@ -28,10 +36,10 @@ export default class Header extends Component {
              });
         });
         window.location.href = '/';
-      }
+    }
 
     render() {
-        console.log(this.state.user);
+        let mobileToggleClasses = this.state.toggle ? 'links-container-mobile short' : 'links-container-mobile tall';
         return (
             <div className='header-container'>
                 <div>
@@ -40,8 +48,14 @@ export default class Header extends Component {
                     </div>
                     {this.state.user ? 
                     <div className='inner-header-container'>
-                        <HeaderLinks />
-                        <button onClick={this.logout}>Logout</button>
+                        <HeaderLinks class='links-container-desktop' logout={this.logout}/>
+                        <HeaderLinks screenType='mobile' myToggle={this.myToggle} class={mobileToggleClasses} logout={this.logout}/>
+                        {/* <button className='toggle' onClick={this.myToggle}>toggle</button> */}
+                        <button className='toggle' onClick={this.myToggle}>
+                            <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
+                            <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
+                            <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
+                        </button>
                     </div>
                     :
                     <Login />
