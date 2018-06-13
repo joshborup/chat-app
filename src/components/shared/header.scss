@@ -2,7 +2,6 @@
 
 .header-container {
     background: rgb(211, 211, 211);
-    position: absolute;
     width: 100%;
     top: 0;
     display: flex;
@@ -19,24 +18,13 @@
     .inner-header-container {
         display: flex;
         flex-direction: row;
-        
-        button {
-           width: 100px;
-           height: 36px;
-           border: none;
-           @media (max-width:959px) {
-            position: absolute;
-            right: 50px;
-            top:11px;
-        }
-        }
     }
 
 
     >div {
         height: 100%;
         width: 100%;
-        max-width: 800px;
+        max-width: 1000px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -44,17 +32,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            @media (max-width:959px) {
-                display: none;
-            }
         }
     } 
 }
 
 
 
-@for $i from 1 through 4 {
-    .header-container{
+
+.header-container{
     
     ul{
         position: relative;
@@ -63,25 +48,25 @@
         flex-direction: column;
         height: 30px;
         
-        .link-#{$i} {
+        .link-1 {
             position: absolute;
-            transition: .1113s * $i ;
             color: white;
             top: -5px;
-            background: black;
             width: 100px;
             padding: 10px 20px;
-            z-index: 3 + (1/$i);
-
-            a {
+            a{
                 color: white;
+                text-decoration: none;
             }
         }
     }
-    ul:hover .link-#{$i}{
-        transform: translate(0px, ($i - 1) * 29px);
-    }
 
+    button {
+        width: 100px;
+        height: 36px;
+        border: none;
+        background: none;
+        color: white;
+        font-size: 16px;
     }
-
 }
