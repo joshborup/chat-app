@@ -1,6 +1,6 @@
 .home-container {
   background: black;
-  min-height: 92vh; }
+  min-height: 100vh; }
   .home-container .home-display-container {
     max-width: 1200px;
     margin: 0 auto;
