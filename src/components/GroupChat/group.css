@@ -25,7 +25,15 @@ button:focus {
     align-items: center; }
     @media (max-width: 599px) {
       .group-chatroom-container > div .drawer-container {
-        display: none; } }
+        position: fixed;
+        margin-top: 60px;
+        max-width: 300px;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 90%;
+        z-index: 2;
+        background: white; } }
 
 .user-card {
   width: 100%;
@@ -187,3 +195,27 @@ button:focus {
       background: #5955c0; }
     .messaging-container .message-input-container button:focus {
       outline: none; }
+
+.open .friends-toggle {
+  display: none; }
+
+.close .friends-toggle {
+  display: none; }
+
+@media (max-width: 599px) {
+  .open {
+    transform: translate(0px, 0px);
+    transition: .3s;
+    width: 350px; }
+    .open .friends-toggle {
+      display: initial;
+      position: absolute;
+      right: -54px; }
+  .close {
+    transform: translate(-300px, 0px);
+    transition: .3s;
+    width: 350px; }
+    .close .friends-toggle {
+      display: initial;
+      position: absolute;
+      right: -54px; } }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import socketIOClient from 'socket.io-client';
-import UsersList from './UsersLists';
+import UsersLists from './UsersLists';
 import MessageContainer from './MessageContainer';
 import myColors from '../styles/colors';
 import './group.css';
@@ -17,7 +17,7 @@ export default class Group extends Component {
           message: '',
           messages:[],
           name:'',
-          snackBarOpen: false,
+          open: true,
           justJoined:'',
           userslist:[],
           user: {
@@ -88,11 +88,13 @@ export default class Group extends Component {
         socket.emit('left', {message: 'just left'})
     }
 
-    snackBarClose = () => {
-        this.setState({ 
-            open: false 
+    drawerToggle = () => {
+        this.setState(prevState => { 
+            return {
+                open: !prevState.open 
+            }  
         });
-      };
+    };
 
     changeHandler = (key, value) => {
         this.setState({
@@ -143,6 +145,8 @@ export default class Group extends Component {
 
     render() {
         console.log(this.props.match.params.room)
+
+        console.log(this.state.open);
         return (
             
             <div className='group-chatroom-container'>
@@ -150,7 +154,7 @@ export default class Group extends Component {
                     this.state.user
                     ?
                     <div> 
-                        <UsersList justJoined={this.state.justJoined} snackBarClose={this.snackBarClose} snackBarOpen={this.state.snackBarOpen} usersList={this.state.userslist} csvData={this.state.messages} />
+                        <UsersLists open={this.state.open} usersList={this.state.userslist} drawerToggle={this.drawerToggle} />
                         <MessageContainer name={this.state.user.name}  enter={this.sendOnEnter} className='scroller' messages={this.state.messages} changeHandler={this.changeHandler} message={this.state.message} submitMessage={this.send}/>
                     </div>
                     :

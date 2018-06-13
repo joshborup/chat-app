@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-import { CSVLink } from 'react-csv';
-
 
 class ResponsiveDrawer extends Component {
 
   render() {
-
 
     let usersList = this.props.usersList.map((user) => {
         return <div className='user-card'>
@@ -28,9 +24,11 @@ class ResponsiveDrawer extends Component {
              </div>
      })
     
+    let open = this.props.open ? 'drawer-container open' : 'drawer-container close'
 
     return (
-        <div className='drawer-container'>
+        <div className={open}>
+            <button className='friends-toggle' onClick={this.props.drawerToggle}>Friends</button>
             {usersList}
         </div>
     );

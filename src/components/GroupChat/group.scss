@@ -30,9 +30,21 @@ button:focus {
         justify-content: center;
         align-items: center;
         @media (max-width: 599px) {
-            display: none;
+            position: fixed;
+            margin-top: 60px;
+            max-width: 300px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 90%;
+            z-index: 2;
+            background: white;
         }
+
+        
     }
+
+    
 }
 
 
@@ -277,4 +289,42 @@ button:focus {
             outline: none;
         }
     }
- }   
+ }
+
+ .open {
+    .friends-toggle {
+        display: none;
+    }
+ }
+ .close {
+    .friends-toggle {
+        display: none;
+    }
+ }
+
+@media (max-width:599px) {
+    .open {
+        transform: translate(0px, 0px);
+        transition:.3s;
+        width: 350px;
+        .friends-toggle {
+            display: initial;
+            position: absolute;
+            right: -54px;            
+        }
+    }
+
+    .close {
+        transform: translate(-300px, 0px);
+        transition:.3s;
+        width: 350px;
+        .friends-toggle {
+            display: initial;
+            position: absolute;
+            right: -54px;            
+        }
+    }
+
+    
+}
+

@@ -47,7 +47,7 @@
         .header-container > div .links-container-mobile {
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: space-evenly;
           align-items: center; } }
 
 .links-container-desktop {
@@ -71,7 +71,10 @@
       .links-container-desktop ul .link-1 a {
         color: white;
         text-decoration: none;
-        cursor: pointer; }
+        cursor: pointer;
+        transition: .2s; }
+      .links-container-desktop ul .link-1 a:hover {
+        color: #222222; }
   .links-container-desktop button {
     width: 100px;
     height: 36px;
@@ -103,7 +106,10 @@
       .links-container-mobile ul .link-1 a {
         color: white;
         text-decoration: none;
-        cursor: pointer; }
+        cursor: pointer;
+        transition: .2s; }
+      .links-container-mobile ul .link-1 a:hover {
+        color: #222222; }
   .links-container-mobile button {
     width: 100px;
     height: 36px;
