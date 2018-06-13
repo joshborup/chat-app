@@ -306,6 +306,7 @@ button:focus {
     .open {
         transform: translate(0px, 0px);
         transition:.3s;
+        transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
         width: 350px;
         .friends-toggle {
             display: initial;
@@ -317,6 +318,7 @@ button:focus {
     .close {
         transform: translate(-300px, 0px);
         transition:.3s;
+        transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
         width: 350px;
         .friends-toggle {
             display: initial;
