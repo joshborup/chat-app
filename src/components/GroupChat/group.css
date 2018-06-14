@@ -181,7 +181,7 @@ button:focus {
       border-right: none;
       background: #323232;
       padding-left: 5px; }
-    .messaging-container .message-input-container input:focus, .messaging-container .message-input-container textarea {
+    .messaging-container .message-input-container input:focus, .messaging-container .message-input-container textarea:focus {
       outline: none; }
     .messaging-container .message-input-container button {
       flex: 2;

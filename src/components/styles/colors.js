@@ -10,7 +10,7 @@ const colors = [
     {color: 'hotpink', hex: '#FFCCFF50'},
     {color: 'babyblue', hex: '#BAE1FF50'},
     {color: 'babygreen', hex: '#baffc950'},
-    {color: 'babyorange', hex: '#ffdfba50'},
+    {color: 'babyorange', hex: '#ffdfba50'}, 
     {color: 'babypurple', hex: '#dbdcff50'},
 ]
 
