@@ -1,7 +1,7 @@
 @import '../styles/_shared.scss';
 
 .header-container {
-    background: rgb(211, 211, 211);
+    background: rgb(50, 50, 50);
     width: 100%;
     top: 0;
     min-height: 60px;
@@ -94,7 +94,7 @@
             }
 
             a:hover {
-                color: #222222;
+                color: #bdbdbd;
             }
         }
     }
@@ -139,7 +139,7 @@
             }
 
             a:hover {
-                color: #222222;
+                color: #bdbdbd;
             }
         }
     }
@@ -173,7 +173,7 @@
     }
 
     .bar-open, .bar-closed {
-        border-bottom: #222222 2px solid;
+        border-bottom: white 2px solid;
         width: 95%;
         display: flex;
         flex-direction: column;

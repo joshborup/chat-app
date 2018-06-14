@@ -6,7 +6,7 @@ button:focus {
 .group-chatroom-container {
   min-height: 90vh;
   min-width: 100vw;
-  background: white; }
+  background: #c8c8c8; }
 
 .group-chatroom-container > div {
   display: flex;
@@ -33,7 +33,7 @@ button:focus {
         bottom: 0;
         width: 90%;
         z-index: 2;
-        background: white; } }
+        background: #c8c8c8; } }
 
 .user-card {
   width: 100%;
@@ -42,7 +42,7 @@ button:focus {
   justify-content: space-evenly;
   flex-direction: row;
   align-items: center;
-  background: #c4c3c3;
+  background: #e1e1e1;
   border-radius: 3px;
   font-family: "Hind Siliguri", sans-serif;
   color: #111111;
@@ -69,7 +69,7 @@ button:focus {
   height: 100%;
   padding: 0px 20px 25px;
   overflow: scroll;
-  background: whitesmoke;
+  background: #949494;
   width: 100%; }
   @media (min-width: 599px) {
     .messaging-container {
@@ -175,10 +175,11 @@ button:focus {
         width: 100%; } }
     .messaging-container .message-input-container input {
       flex: 9;
+      color: white;
       height: 40px;
       font-size: 16px;
       border: none;
-      background: lightgray;
+      background: #323232;
       padding-left: 5px; }
     .messaging-container .message-input-container input:focus {
       outline: none; }
