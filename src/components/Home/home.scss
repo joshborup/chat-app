@@ -18,6 +18,12 @@
         @media (max-width:599px) {
             margin-top: 60px;
         }
+
+        @media (min-width: 1199px) {
+            background-position-y: -150px;
+            height: 380px;
+            max-height: 380px;
+        }
         h1 {
             position: absolute;
             color: rgb(204, 202, 202);

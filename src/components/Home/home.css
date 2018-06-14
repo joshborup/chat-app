@@ -15,6 +15,11 @@
     @media (max-width: 599px) {
       .home-container .home-display-container {
         margin-top: 60px; } }
+    @media (min-width: 1199px) {
+      .home-container .home-display-container {
+        background-position-y: -150px;
+        height: 380px;
+        max-height: 380px; } }
     .home-container .home-display-container h1 {
       position: absolute;
       color: #cccaca;

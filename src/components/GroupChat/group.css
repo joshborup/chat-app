@@ -4,9 +4,10 @@ button:focus {
   cursor: pointer; }
 
 .group-chatroom-container {
-  min-height: 90vh;
+  min-height: 93.2vh;
   min-width: 100vw;
-  background: #1e1e1e; }
+  background: #1e1e1e;
+  height: 100%; }
 
 .group-chatroom-container > div {
   display: flex;
