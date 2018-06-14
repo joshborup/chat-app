@@ -75,8 +75,6 @@ button:focus {
   @media (min-width: 599px) {
     .messaging-container {
       width: 75%; } }
-  .messaging-container .spacer {
-    height: 20px; }
   .messaging-container .messages {
     display: flex;
     flex-direction: column;
@@ -174,7 +172,7 @@ button:focus {
     @media (max-width: 599px) {
       .messaging-container .message-input-container {
         width: 100%; } }
-    .messaging-container .message-input-container input {
+    .messaging-container .message-input-container input, .messaging-container .message-input-container textarea {
       flex: 9;
       color: white;
       height: 40px;
@@ -183,7 +181,7 @@ button:focus {
       border-right: none;
       background: #323232;
       padding-left: 5px; }
-    .messaging-container .message-input-container input:focus {
+    .messaging-container .message-input-container input:focus, .messaging-container .message-input-container textarea {
       outline: none; }
     .messaging-container .message-input-container button {
       flex: 2;
