@@ -1,16 +1,21 @@
+@import '../styles/_shared.scss';
 
 .home-container{
 
-    background: black;
     min-height: 100vh;
+    font-family: $font-stack;
+
 
     .home-display-container{
 
-        max-width: 1200px;
         margin: 0 auto;
+        height: 300px;
         max-height: 300px;
         overflow: hidden;
         position: relative;
+        background: url('./media/banner.png');
+        background-size: cover;
+        background-position: bottom;
         h1 {
             position: absolute;
             color: white;

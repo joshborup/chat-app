@@ -6,6 +6,13 @@ import monkey1 from './media/monkeylogo1.svg'
 import monkey2 from './media/monkeylogo2.svg'
 import monkey3 from './media/monkeylogo3.svg'
 import monkey4 from './media/monkeylogo4.svg'
+import monkey5 from './media/monkeylogo5.svg'
+import monkey6 from './media/monkeylogo6.svg'
+import monkey7 from './media/monkeylogo7.svg'
+import monkey8 from './media/monkeylogo8.svg'
+import monkey9 from './media/monkeylogo9.svg'
+import monkey10 from './media/monkeylogo10.svg'
+import monkey11 from './media/monkeylogo11.svg'
 import './header.css';
 
 export default class Header extends Component {
@@ -43,8 +50,8 @@ export default class Header extends Component {
 
     render() {
 
-        let num = Math.floor(Math.random() * (4 - 1) + 1);
-        let monkey = [monkey1, monkey2, monkey3, monkey4]
+        let num = Math.floor(Math.random() * (11 - 1) + 1);
+        let monkey = [monkey1, monkey2, monkey3, monkey4, monkey5, monkey6, monkey7, monkey8, monkey9, monkey10, monkey11]
 
         console.log(monkey1)
         let mobileToggleClasses = this.state.toggle ? 'links-container-mobile short' : 'links-container-mobile tall';

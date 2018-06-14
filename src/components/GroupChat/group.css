@@ -6,7 +6,7 @@ button:focus {
 .group-chatroom-container {
   min-height: 90vh;
   min-width: 100vw;
-  background: #c8c8c8; }
+  background: #1e1e1e; }
 
 .group-chatroom-container > div {
   display: flex;
@@ -33,7 +33,7 @@ button:focus {
         bottom: 0;
         width: 90%;
         z-index: 2;
-        background: #c8c8c8; } }
+        background: #1e1e1e; } }
 
 .user-card {
   width: 100%;
@@ -110,7 +110,6 @@ button:focus {
         .messaging-container .messages .individual-message-container .user-image-container-for-messages img {
           width: 100%; }
       .messaging-container .messages .individual-message-container .message-name-date {
-        background: #ffe2e2;
         border-radius: 10px;
         width: 90%;
         min-width: 300px;

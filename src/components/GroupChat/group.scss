@@ -8,7 +8,8 @@ button:focus {
 .group-chatroom-container {
     min-height: 90vh;
     min-width: 100vw;
-    background: rgb(200, 200, 200);
+    background: rgb(30, 30, 30);
+
 }
 
 .group-chatroom-container > div {
@@ -38,7 +39,7 @@ button:focus {
             bottom: 0;
             width: 90%;
             z-index: 2;
-            background: rgb(200, 200, 200);
+            background: rgb(30, 30, 30);
         }
 
         
@@ -157,7 +158,6 @@ button:focus {
 
             .message-name-date {
 
-                background:rgb(255, 226, 226);
                 border-radius: 10px;
                 width: 90%;
                 min-width: 300px;

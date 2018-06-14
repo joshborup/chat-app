@@ -1,12 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500");
 .home-container {
-  background: black;
-  min-height: 100vh; }
+  min-height: 100vh;
+  font-family: "Hind Siliguri", sans-serif; }
   .home-container .home-display-container {
-    max-width: 1200px;
     margin: 0 auto;
+    height: 300px;
     max-height: 300px;
     overflow: hidden;
-    position: relative; }
+    position: relative;
+    background: url("./media/banner.png");
+    background-size: cover;
+    background-position: bottom; }
     .home-container .home-display-container h1 {
       position: absolute;
       color: white;
