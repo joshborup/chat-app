@@ -6,13 +6,17 @@ const HeaderLinks = (props) => {
         <div className={props.class}>
             <ul>
                 <li onClick={props.myToggle} className='link-1'>
+                    <Link to='/'>Home</Link>
+                </li>
+            </ul>
+            <ul>
+                <li onClick={props.myToggle} className='link-1'>
                     <Link to='/group/cool'>Chat</Link>
                 </li>
             </ul>
-
             <ul>
                 <li onClick={props.myToggle} className='link-1'>
-                    <Link to='/'>profile</Link>
+                    <Link to='/user/profile'>profile</Link>
                 </li>
             </ul>
             <ul>

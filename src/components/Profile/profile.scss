@@ -1,6 +1,25 @@
+@import '../styles/_shared.scss';
+
 .profile-display-container {
-    padding-top: 70px;
+    padding-top: 15px;
     height: 100vh;
-    background: red;
+    background:$page-background;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width:599px) {
+        padding-top: 75px;
+    }
+
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+    }
 }

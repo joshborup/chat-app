@@ -53,7 +53,6 @@ export default class Header extends Component {
         let num = Math.floor(Math.random() * (11 - 1) + 1);
         let monkey = [monkey1, monkey2, monkey3, monkey4, monkey5, monkey6, monkey7, monkey8, monkey9, monkey10, monkey11]
 
-        console.log(monkey1)
         let mobileToggleClasses = this.state.toggle ? 'links-container-mobile short' : 'links-container-mobile tall';
         return (
             <div className='header-container'>
@@ -65,7 +64,6 @@ export default class Header extends Component {
                     <div className='inner-header-container'>
                         <HeaderLinks class='links-container-desktop' logout={this.logout}/>
                         <HeaderLinks screenType='mobile' myToggle={this.myToggle} class={mobileToggleClasses} logout={this.logout}/>
-                        {/* <button className='toggle' onClick={this.myToggle}>toggle</button> */}
                         <button className='toggle' onClick={this.myToggle}>
                             <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
                             <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>

@@ -52,12 +52,11 @@ class Login extends Component {
     return (
       <div className="login">
         <div>
-        
           {
           this.state.user
           ?
           ''
-           :
+          :
           <button className='login-button' onClick={this.login}>LOGIN!</button>}
         </div>
       </div>
@@ -66,3 +65,4 @@ class Login extends Component {
 }
 
 export default Login;
+

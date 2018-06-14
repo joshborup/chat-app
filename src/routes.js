@@ -9,7 +9,7 @@ export default (
     <Switch>
         <Route exact path='/' component={HomeContainer} />
         <Route path='/group/:room' component={Group} />
-        <Route path='/user' component={ProfileContainer} />
+        <Route path='/user/profile' component={ProfileContainer} />
         <Route basename='/callback' component={Callback} />
         <Redirect to='/' />
     </Switch>

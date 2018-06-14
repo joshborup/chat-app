@@ -1,25 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500");
 .home-container {
   min-height: 100vh;
-  font-family: "Hind Siliguri", sans-serif; }
+  font-family: "Hind Siliguri", sans-serif;
+  background: #f0f0f0; }
   .home-container .home-display-container {
     margin: 0 auto;
-    height: 300px;
-    max-height: 300px;
+    height: 320px;
+    max-height: 320px;
     overflow: hidden;
     position: relative;
     background: url("./media/banner.png");
     background-size: cover;
-    background-position: bottom; }
+    background-position: center center; }
+    @media (max-width: 599px) {
+      .home-container .home-display-container {
+        margin-top: 60px; } }
     .home-container .home-display-container h1 {
       position: absolute;
-      color: white;
+      color: #cccaca;
       top: 130px;
       left: 0;
       right: 0;
       margin: 0 auto;
-      font-size: 60px; }
-    .home-container .home-display-container .home-banner-background-video {
-      width: 100%;
-      margin: 0 auto;
-      max-width: 800px; }
+      font-size: 60px;
+      text-shadow: .2px .2px 1px black; }

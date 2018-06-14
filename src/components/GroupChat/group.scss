@@ -98,7 +98,7 @@ button:focus {
     height: 100%;
     padding: 0px 20px 25px;
     overflow: scroll;
-    background: rgb(148, 148, 148);
+    background:$page-background;
     width: 100%;
     @media (min-width:599px) {
         width: 750px / 1000px * 100%;
@@ -140,7 +140,7 @@ button:focus {
             }
 
             .user-image-container-for-messages{
-
+                background: white;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -262,7 +262,8 @@ button:focus {
             color: white;
             height: 40px;
             font-size: 16px;
-            border: none;
+            border: 2px solid rgb(114, 114, 114);
+            border-right: none;
             background: rgb(50, 50, 50);
             padding-left: 5px;
         }

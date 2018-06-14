@@ -1,15 +1,18 @@
 @import '../styles/_shared.scss';
 
 .header-container {
-    background: rgb(50, 50, 50);
+    background:linear-gradient(rgba(100,100,100,0.85), rgba(100,100,100,0.75), rgba(100,100,100,0.65)), url('./media/wood.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
-    top: 0;
     min-height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-family: $font-stack;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.452);
     z-index: 3;
     @media (max-width:599px) {
         position: fixed;
@@ -209,8 +212,9 @@
 
 
 .tall{
-    height: 150px;
+    height: 220px;
     margin-top: 40px;
+    padding: 10px 0px;
     opacity: 1;
     transition: .40s;
 }
