@@ -17,7 +17,7 @@ export default class Group extends Component {
           message: '',
           messages:[],
           name:'',
-          open: true,
+          open: false,
           justJoined:'',
           userslist:[],
           user: {
@@ -145,7 +145,7 @@ export default class Group extends Component {
 
     render() {
         console.log(this.props.match.params.room)
-
+        let opaque = this.state.open ? 'opaque-background show' : 'opaque-background hide';
         console.log(this.state.open);
         return (
             
@@ -155,6 +155,7 @@ export default class Group extends Component {
                     ?
                     <div> 
                         <UsersLists open={this.state.open} usersList={this.state.userslist} drawerToggle={this.drawerToggle} />
+                        <div onClick={this.drawerToggle} className={opaque}></div>
                         <MessageContainer name={this.state.user.name}  enter={this.sendOnEnter} className='scroller' messages={this.state.messages} changeHandler={this.changeHandler} message={this.state.message} submitMessage={this.send}/>
                     </div>
                     :

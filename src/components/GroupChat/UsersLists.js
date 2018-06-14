@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import friendsButton from './media/friends_button.svg'
 
 class ResponsiveDrawer extends Component {
 
@@ -27,10 +28,11 @@ class ResponsiveDrawer extends Component {
     let open = this.props.open ? 'drawer-container open' : 'drawer-container close'
 
     return (
-        <div className={open}>
-            <button className='friends-toggle' onClick={this.props.drawerToggle}>Friends</button>
-            {usersList}
-        </div>
+       
+            <div className={open}>
+                <button className='friends-toggle' onClick={this.props.drawerToggle}><img src={friendsButton}/></button>
+                {usersList}
+            </div>
     );
   }
 }

@@ -207,17 +207,48 @@ button:focus {
     transform: translate(0px, 0px);
     transition: .3s;
     transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-    width: 350px; }
+    width: 300px;
+    z-index: 4; }
     .open .friends-toggle {
-      display: initial;
+      display: flex;
       position: absolute;
-      right: -54px; }
+      right: -54px;
+      height: 38px;
+      width: 38px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border: none;
+      cursor: pointer; }
+      .open .friends-toggle img {
+        width: 40px; }
   .close {
     transform: translate(-300px, 0px);
     transition: .3s;
     transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-    width: 350px; }
+    width: 300px; }
     .close .friends-toggle {
-      display: initial;
+      display: flex;
       position: absolute;
-      right: -54px; } }
+      right: -54px;
+      height: 38px;
+      width: 38px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border: none;
+      cursor: pointer; }
+      .close .friends-toggle img {
+        width: 40px; }
+  .opaque-background {
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    z-index: 1;
+    background: rgba(12, 12, 12, 0.5); }
+  .show {
+    display: initial; }
+  .hide {
+    display: none; } }

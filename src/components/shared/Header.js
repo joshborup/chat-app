@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import Login from '../shared/Login/Login';
 import HeaderLinks from '../shared/HeaderLinks';
 import axios from 'axios';
-import monkey from './media/monkeylogo.svg'
+import monkey1 from './media/monkeylogo1.svg'
+import monkey2 from './media/monkeylogo2.svg'
+import monkey3 from './media/monkeylogo3.svg'
+import monkey4 from './media/monkeylogo4.svg'
 import './header.css';
 
 export default class Header extends Component {
@@ -39,12 +42,17 @@ export default class Header extends Component {
     }
 
     render() {
+
+        let num = Math.floor(Math.random() * (4 - 1) + 1);
+        let monkey = [monkey1, monkey2, monkey3, monkey4]
+
+        console.log(monkey1)
         let mobileToggleClasses = this.state.toggle ? 'links-container-mobile short' : 'links-container-mobile tall';
         return (
             <div className='header-container'>
                 <div>
                     <div>
-                        <img src={monkey} alt='monkey head logo' />
+                        <img src={monkey[num]} alt='monkey head logo' />
                     </div>
                     {this.state.user ? 
                     <div className='inner-header-container'>
