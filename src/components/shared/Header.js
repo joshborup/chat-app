@@ -40,10 +40,11 @@ export default class Header extends Component {
     }
 
     logout = () => {
+        sessionStorage.removeItem('messages');
         axios.post('/user/logout').then(() => {
-          this.setState({
-               user: null
-             });
+            this.setState({
+                user: null
+                });
         });
         window.location.href = '/';
     }

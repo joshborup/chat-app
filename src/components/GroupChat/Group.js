@@ -82,10 +82,18 @@ export default class Group extends Component {
                 user: response.data[0]
             })
         })
+        let storedData = sessionStorage.getItem('messages');
+        if(storedData){
+            let convertedJSON = JSON.parse(storedData);
+            this.setState({
+                messages: convertedJSON
+            })
+        }
     }
 
     componentWillUnmount(){
         socket.emit('left', {message: 'just left'})
+        sessionStorage.setItem('messages', JSON.stringify(this.state.messages));
     }
 
     drawerToggle = () => {
