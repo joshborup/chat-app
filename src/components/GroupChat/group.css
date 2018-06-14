@@ -5,7 +5,7 @@ button:focus {
 
 .group-chatroom-container {
   min-height: 93.2vh;
-  min-width: 100vw;
+  min-width: 100%;
   background: #1e1e1e;
   height: 100%; }
 
