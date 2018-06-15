@@ -60,10 +60,12 @@ export default class Header extends Component {
             <div className='header-container'>
                 <div>
                     <Link to='/'>
-                        <div>
+                        <div className='logo-container'>
                             <img src={monkey[num]} alt='monkey head logo' />
+                            <h1>MonkeyChat</h1>
                         </div>
                     </Link>
+                    
                     {this.state.user ? 
                     <div className='inner-header-container'>
                         <HeaderLinks class='links-container-desktop' logout={this.logout}/>

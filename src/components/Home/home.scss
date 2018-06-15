@@ -5,8 +5,10 @@
     min-height: 100vh;
     font-family: $font-stack;
     background:$page-background;
+
     
     .home-display-container{
+        
         .banner{
         margin: 0 auto;
         height: 320px;
@@ -39,21 +41,74 @@
     } 
 
     .explanation-icons {
-        height: 300px;
+        padding: 70px 0;
         width: 100%;
         display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (max-width:599px){
+            flex-direction: column;
             align-items: center;
+
+        }
+
+        >div {
+            background: rgb(224, 224, 224);
+            padding: 15px;
+            border-radius: 2px;
+            width: 225px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.678);
+
+            @media (max-width: 699px) {
+                width: 190px;
+            }
+        
+            h2 {
+                font-size: 24px;
+                margin: 0px 0 10px;
+            }
+
+            @media (max-width:599px){
+                margin: 20px 0px;
+                width: 250px;
+            }
+        }
         .icon-container {
             display: flex;
             flex-direction: row;
             justify-content: center;
+            flex-wrap: wrap;
             align-items: center;
-            width: 100px;
+            min-width: 135px;
+            min-height: 135px;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: .4s;
+            
+
+            img {
+                width: 100%;
+            }
         }
 
     }
         
+    }
+}
+
+
+.explanation-icons {
+    > div:hover {
+        .icon-container {
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.335);
+            background: rgb(255, 255, 255);
+        }
     }
 }

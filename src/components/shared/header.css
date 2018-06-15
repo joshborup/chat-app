@@ -14,13 +14,22 @@
     .header-container {
       position: fixed;
       top: 0; } }
-  .header-container img {
-    width: 60px; }
+  .header-container > div > a {
+    color: white;
+    font-size: 26px;
+    text-decoration: none; }
+  .header-container .logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
     @media (max-width: 599px) {
-      .header-container img {
+      .header-container .logo-container {
         position: absolute;
         left: 0;
         top: 0; } }
+    .header-container .logo-container img {
+      width: 60px; }
   .header-container .inner-header-container {
     display: flex;
     flex-direction: row; }
@@ -72,7 +81,8 @@
         color: white;
         text-decoration: none;
         cursor: pointer;
-        transition: .2s; }
+        transition: .2s;
+        font-size: 20px; }
       .links-container-desktop ul .link-1 a:hover {
         color: #bdbdbd; }
   .links-container-desktop button {

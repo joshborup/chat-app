@@ -243,6 +243,7 @@ button:focus {
     .message-input-container{
         position: fixed;
         bottom: 0;
+        max-height: 70px;
         width: 750px / 1000px * 100%;
         right: 0;
         display: flex;
@@ -250,10 +251,10 @@ button:focus {
             width: 100%;
         }
 
-        input, textarea {
+        textarea {
             flex: 9;
             color: white;
-            height: 40px;
+            min-height: 50px;
             font-size: 16px;
             border: 2px solid rgb(114, 114, 114);
             border-right: none;
@@ -261,13 +262,14 @@ button:focus {
             padding-left: 5px;
         }
 
-        input:focus, textarea:focus {
+        textarea:focus {
             outline: none;
         }
 
         button {
             flex: 2;
-            height: 40px;
+            height: 53px;
+            min-height: 50px;
             margin: 0;
             border: none;
             background: rgb(105,100,239);

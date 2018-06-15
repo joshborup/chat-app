@@ -166,26 +166,28 @@ button:focus {
   .messaging-container .message-input-container {
     position: fixed;
     bottom: 0;
+    max-height: 70px;
     width: 75%;
     right: 0;
     display: flex; }
     @media (max-width: 599px) {
       .messaging-container .message-input-container {
         width: 100%; } }
-    .messaging-container .message-input-container input, .messaging-container .message-input-container textarea {
+    .messaging-container .message-input-container textarea {
       flex: 9;
       color: white;
-      height: 40px;
+      min-height: 50px;
       font-size: 16px;
       border: 2px solid #727272;
       border-right: none;
       background: #323232;
       padding-left: 5px; }
-    .messaging-container .message-input-container input:focus, .messaging-container .message-input-container textarea:focus {
+    .messaging-container .message-input-container textarea:focus {
       outline: none; }
     .messaging-container .message-input-container button {
       flex: 2;
-      height: 40px;
+      height: 53px;
+      min-height: 50px;
       margin: 0;
       border: none;
       background: #6964ef;
