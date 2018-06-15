@@ -18,10 +18,21 @@
     > div > a {
             color: white;
             font-size: 26px;
-            text-decoration: none;
+            
             letter-spacing: 2.5px;
             text-decoration: line-through;
             text-decoration-color: rgb(116, 69, 29);
+
+            @media (max-width:599px){
+                font-size: 20px;
+                letter-spacing: 2.5px;
+            text-decoration: line-through;
+            text-decoration-color: rgb(116, 69, 29);
+            }
+
+            @media (max-width:340px){
+                font-size: 15px;
+            }
      }
 
     .logo-container {
@@ -33,6 +44,12 @@
             position: absolute;
             left: 0;
             top: 0;
+        }
+
+        h1 {
+            letter-spacing: 2.5px;
+            text-decoration: line-through;
+            text-decoration-color: rgb(116, 69, 29);
         }
          
         img {

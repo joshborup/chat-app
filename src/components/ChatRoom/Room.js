@@ -4,7 +4,7 @@ import socketIOClient from 'socket.io-client';
 import UsersLists from './UsersLists';
 import MessageContainer from './MessageContainer';
 import myColors from '../styles/colors';
-import './group.css';
+import './room.css';
 
 const socket = socketIOClient();
 

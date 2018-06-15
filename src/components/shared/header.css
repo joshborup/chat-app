@@ -17,10 +17,18 @@
   .header-container > div > a {
     color: white;
     font-size: 26px;
-    text-decoration: none;
     letter-spacing: 2.5px;
     text-decoration: line-through;
     text-decoration-color: #74451d; }
+    @media (max-width: 599px) {
+      .header-container > div > a {
+        font-size: 20px;
+        letter-spacing: 2.5px;
+        text-decoration: line-through;
+        text-decoration-color: #74451d; } }
+    @media (max-width: 340px) {
+      .header-container > div > a {
+        font-size: 15px; } }
   .header-container .logo-container {
     display: flex;
     flex-direction: row;
@@ -31,6 +39,10 @@
         position: absolute;
         left: 0;
         top: 0; } }
+    .header-container .logo-container h1 {
+      letter-spacing: 2.5px;
+      text-decoration: line-through;
+      text-decoration-color: #74451d; }
     .header-container .logo-container img {
       width: 60px; }
   .header-container .inner-header-container {

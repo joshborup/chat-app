@@ -35,7 +35,7 @@ export default class Callback extends Component {
         }
 
         return (
-            <div>
+            <div className='loading-gif'>
                 <img style={style} src={loader} />
             </div>
         );
