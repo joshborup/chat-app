@@ -251,7 +251,7 @@ button:focus {
             width: 100%;
         }
 
-        textarea {
+        input {
             flex: 9;
             color: white;
             min-height: 50px;
@@ -262,7 +262,7 @@ button:focus {
             padding-left: 5px;
         }
 
-        textarea:focus {
+        input:focus {
             outline: none;
         }
 

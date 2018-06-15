@@ -173,7 +173,7 @@ button:focus {
     @media (max-width: 599px) {
       .messaging-container .message-input-container {
         width: 100%; } }
-    .messaging-container .message-input-container textarea {
+    .messaging-container .message-input-container input {
       flex: 9;
       color: white;
       min-height: 50px;
@@ -182,7 +182,7 @@ button:focus {
       border-right: none;
       background: #323232;
       padding-left: 5px; }
-    .messaging-container .message-input-container textarea:focus {
+    .messaging-container .message-input-container input:focus {
       outline: none; }
     .messaging-container .message-input-container button {
       flex: 2;

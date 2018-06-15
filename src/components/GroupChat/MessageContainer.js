@@ -62,7 +62,7 @@ export default class MessageContainer extends Component {
                 </div>
 
                 <div className='message-input-container'>
-                    <textarea name='message' onChange={(e) => this.props.changeHandler(e.target.name, e.target.value)} value={this.props.message} />
+                    <input name='message' onChange={(e) => this.props.changeHandler(e.target.name, e.target.value)} value={this.props.message} />
                     <button onClick={this.props.submitMessage}>submit</button>
                 </div>
             </div>
