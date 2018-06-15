@@ -3,7 +3,7 @@
   min-height: 100vh;
   font-family: "Hind Siliguri", sans-serif;
   background: #f0f0f0; }
-  .home-container .home-display-container {
+  .home-container .home-display-container .banner {
     margin: 0 auto;
     height: 320px;
     max-height: 320px;
@@ -11,16 +11,17 @@
     position: relative;
     background: url("./media/banner.png");
     background-size: cover;
-    background-position: center center; }
+    background-position: center center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.245); }
     @media (max-width: 599px) {
-      .home-container .home-display-container {
+      .home-container .home-display-container .banner {
         margin-top: 60px; } }
     @media (min-width: 1199px) {
-      .home-container .home-display-container {
+      .home-container .home-display-container .banner {
         background-position-y: -150px;
         height: 380px;
         max-height: 380px; } }
-    .home-container .home-display-container h1 {
+    .home-container .home-display-container .banner h1 {
       position: absolute;
       color: #cccaca;
       top: 130px;
@@ -29,3 +30,16 @@
       margin: 0 auto;
       font-size: 60px;
       text-shadow: .2px .2px 1px black; }
+  .home-container .home-display-container .explanation-icons {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; }
+    .home-container .home-display-container .explanation-icons .icon-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100px; }

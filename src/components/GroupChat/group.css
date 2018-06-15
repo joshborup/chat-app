@@ -110,7 +110,7 @@ button:focus {
         .messaging-container .messages .individual-message-container .user-image-container-for-messages img {
           width: 100%; }
       .messaging-container .messages .individual-message-container .message-name-date {
-        border-radius: 10px;
+        border-radius: 2px;
         width: 90%;
         min-width: 300px;
         position: relative;

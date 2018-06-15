@@ -6,11 +6,8 @@ export default class MessageContainer extends Component {
         super(props)
         this.state = {
             id:0
-        }
-
-        
+        } 
     }
-
     scrollToBottom = () => {
         this.messagesEnd.scrollIntoView({ behavior: "smooth" });
       }

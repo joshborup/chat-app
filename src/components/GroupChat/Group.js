@@ -82,7 +82,7 @@ export default class Group extends Component {
                 user: response.data[0]
             })
         })
-        let storedData = sessionStorage.getItem(`messages-${this.props.match.params.room}`);
+        let storedData = localStorage.getItem(`messages-${this.props.match.params.room}`);
         if(storedData){
             let convertedJSON = JSON.parse(storedData);
             this.setState({
@@ -93,7 +93,7 @@ export default class Group extends Component {
 
     componentWillUnmount(){
         socket.emit('left', {message: 'just left'})
-        sessionStorage.setItem(`messages-${this.props.match.params.room}`, JSON.stringify(this.state.messages));
+        localStorage.setItem(`messages-${this.props.match.params.room}`, JSON.stringify(this.state.messages));
     }
 
     drawerToggle = () => {

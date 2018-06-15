@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from '../shared/Login/Login';
 import HeaderLinks from '../shared/HeaderLinks';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import monkey1 from './media/monkeylogo1.svg'
 import monkey2 from './media/monkeylogo2.svg'
@@ -40,7 +41,7 @@ export default class Header extends Component {
     }
 
     logout = () => {
-        sessionStorage.clear();
+        localStorage.clear();
         axios.post('/user/logout').then(() => {
             this.setState({
                 user: null
@@ -58,9 +59,11 @@ export default class Header extends Component {
         return (
             <div className='header-container'>
                 <div>
-                    <div>
-                        <img src={monkey[num]} alt='monkey head logo' />
-                    </div>
+                    <Link to='/'>
+                        <div>
+                            <img src={monkey[num]} alt='monkey head logo' />
+                        </div>
+                    </Link>
                     {this.state.user ? 
                     <div className='inner-header-container'>
                         <HeaderLinks class='links-container-desktop' logout={this.logout}/>
