@@ -9,13 +9,14 @@ export default class PersonalProfile extends Component {
     }
 
     componentDidMount(){
-
-        axios.get('/user/user_data').then(response => {
-            console.log(response)
+        
+            console.log('hit', localStorage.getItem('user'))
+            let user = JSON.parse(localStorage.getItem('user'))
             this.setState({
-                user: response.data[0]
+                user: user
             })
-        })
+        
+        
     }
     render() {
         return (

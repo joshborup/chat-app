@@ -4,16 +4,32 @@ import axios from 'axios';
 import './home.css';
 
 export default class HomeContainer extends Component {
+    constructor(){
+        super()
+        this.state = {
+            user:''
+        }
+    }
     componentDidMount(){
+        
         axios.get('/user/user_data').then(response => {
-            if(localStorage.getItem('user')){
-            let user = JSON.stringify(response.data[0])
+            this.setState({
+                user: response.data[0]
+            })
+           
+        })
+    }
+
+    componentWillUnmount(){
+        if(this.state.user){
+            let user = JSON.stringify(this.state.user)
             localStorage.setItem('user', user)
             console.log(localStorage.getItem('user'));
             }
-        })
     }
+
     render() {
+        console.log('--------------local storage', localStorage.getItem('user'))
         return (
             <div className='home-container'>
                 <HomeDisplay/>
