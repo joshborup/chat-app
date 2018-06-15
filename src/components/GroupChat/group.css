@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500");
+@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500|Montserrat:300,400");
 button:focus {
   outline: none;
   cursor: pointer; }
@@ -45,7 +45,7 @@ button:focus {
   align-items: center;
   background: #e1e1e1;
   border-radius: 3px;
-  font-family: "Hind Siliguri", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #111111;
   padding: 5px; }
   .user-card div:nth-child(2) {
@@ -78,7 +78,7 @@ button:focus {
   .messaging-container .messages {
     display: flex;
     flex-direction: column;
-    font-family: "Hind Siliguri", sans-serif;
+    font-family: "Montserrat", sans-serif;
     justify-content: center; }
     .messaging-container .messages .individual-message-container:first-child {
       margin-bottom: 10px; }

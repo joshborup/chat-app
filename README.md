@@ -51,3 +51,9 @@ Toggle = () => {
     })
 }
 ```
+
+
+# UX/UI checklist:
+
+* does chat data persist on refresh/window close (utilize local storage)
+* does database data have a fallback loading gif to be displayed while fetching data

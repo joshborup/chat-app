@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500");
+@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500|Montserrat:300,400");
 .profile-display-container {
   padding-top: 15px;
+  font-family: "Montserrat", sans-serif;
   height: 100vh;
   background: #f0f0f0;
   width: 100%;

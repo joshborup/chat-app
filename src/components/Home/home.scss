@@ -56,7 +56,10 @@
         }
 
         >div {
-            background: rgb(224, 224, 224);
+            background:linear-gradient(rgba(220,220,220,0.85),rgba(220,220,220,0.85)) ,url('../Home/media/car-background.svg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
             padding: 15px;
             border-radius: 2px;
             width: 225px;
@@ -65,6 +68,8 @@
             justify-content: flex-start;
             align-items: center;
             box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.678);
+            font-weight: 300;
+            
 
             @media (max-width: 699px) {
                 width: 190px;
@@ -106,9 +111,27 @@
 
 .explanation-icons {
     > div:hover {
-        .icon-container {
-            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.335);
-            background: rgb(255, 255, 255);
-        }
+        animation: shake .5s linear 1 forwards;
+    }
+}
+
+@keyframes shake {
+    0%{
+        transform: rotate(3deg)
+    }
+    20%{
+        transform: rotate(-3deg)
+    }
+    40%{
+        transform: rotate(3deg)
+    }
+    60%{
+        transform: rotate(-3deg)
+    }
+    80%{
+        transform: rotate(3deg)
+    }
+    100%{
+        transform: rotate(0deg)
     }
 }

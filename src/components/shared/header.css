@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500");
+@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500|Montserrat:300,400");
 .header-container {
   background: linear-gradient(rgba(100, 100, 100, 0.85), rgba(100, 100, 100, 0.85), rgba(100, 100, 100, 0.85));
   width: 100%;
@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Hind Siliguri", sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.452);
   z-index: 3; }
   @media (max-width: 599px) {
@@ -17,7 +17,10 @@
   .header-container > div > a {
     color: white;
     font-size: 26px;
-    text-decoration: none; }
+    text-decoration: none;
+    letter-spacing: 2.5px;
+    text-decoration: line-through;
+    text-decoration-color: #74451d; }
   .header-container .logo-container {
     display: flex;
     flex-direction: row;

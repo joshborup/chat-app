@@ -18,10 +18,9 @@ export default class PersonalProfile extends Component {
         })
     }
     render() {
-        console.log(this.state.user.name);
         return (
             <div>
-                <ProfileDisplay user={this.state.user}/>
+                {this.state.user ? <ProfileDisplay user={this.state.user}/> : 'please log in'}
             </div>
         );
     }
