@@ -8,7 +8,7 @@ button:focus {
 .group-chatroom-container {
     min-height: 93.2vh;
     min-width: 100%;
-    background: rgb(30, 30, 30);
+    background:linear-gradient(rgba(30,30,30, 0.9), rgba(30, 30, 30, 0.9)) ,url('./media/tiger.png');
     height: 100%;
 }
 
@@ -39,7 +39,7 @@ button:focus {
             bottom: 0;
             width: 90%;
             z-index: 2;
-            background: rgb(30, 30, 30);
+            background:linear-gradient(rgba(30,30,30, 0.9), rgba(30, 30, 30, 0.9)) ,url('./media/tiger.png');
         }
 
         
