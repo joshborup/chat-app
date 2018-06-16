@@ -11,7 +11,6 @@ export default class HomeContainer extends Component {
         }
     }
     componentDidMount(){
-        
         axios.get('/user/user_data').then(response => {
             this.setState({
                 user: response.data[0]
@@ -28,7 +27,6 @@ export default class HomeContainer extends Component {
     }
 
     render() {
-        console.log('--------------local storage', localStorage.getItem('user'))
         return (
             <div className='home-container'>
                 <HomeDisplay/>
