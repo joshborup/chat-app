@@ -21,11 +21,10 @@ export default class HomeContainer extends Component {
     }
 
     componentWillUnmount(){
-        if(this.state.user){
+        if (this.state.user) {
             let user = JSON.stringify(this.state.user)
-            localStorage.setItem('user', user)
-            console.log(localStorage.getItem('user'));
-            }
+            sessionStorage.setItem('user', user)
+        }
     }
 
     render() {

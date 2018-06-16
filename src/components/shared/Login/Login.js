@@ -37,6 +37,7 @@ class Login extends Component {
   }
 
   logout = () => {
+    sessionStorage.clear();
     axios.post('/user/logout').then(() => {
       this.setState({
            user: null
