@@ -24,15 +24,6 @@ class Header extends Component {
         toggle: true
     }
 
-    // componentDidMount(){
-    //     axios.get('/user/user_data').then(response => {
-    //         console.log(response)
-    //         this.setState({
-    //             user: response.data[0]
-    //         })
-    //     })
-    // }
-
     myToggle = () => {
         this.setState(prevState => {
             return {
