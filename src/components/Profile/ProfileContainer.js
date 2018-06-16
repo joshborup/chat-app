@@ -9,13 +9,13 @@ export default class PersonalProfile extends Component {
     }
 
     componentDidMount(){
-        
+        if(!localStorage.getItem('user')){
             console.log('hit', localStorage.getItem('user'))
             let user = JSON.parse(localStorage.getItem('user'))
             this.setState({
                 user: user
             })
-        
+        }
         
     }
     render() {
