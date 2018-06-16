@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from '../shared/Login/Login';
 import HeaderLinks from '../shared/HeaderLinks';
+import Persitance from '../../Persistance';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import monkey1 from './media/monkeylogo1.svg'
@@ -16,21 +17,21 @@ import monkey10 from './media/monkeylogo10.svg'
 import monkey11 from './media/monkeylogo11.svg'
 import './header.css';
 
-export default class Header extends Component {
+class Header extends Component {
 
     state = {
         user: '',
         toggle: true
     }
 
-    componentDidMount(){
-        axios.get('/user/user_data').then(response => {
-            console.log(response)
-            this.setState({
-                user: response.data[0]
-            })
-        })
-    }
+    // componentDidMount(){
+    //     axios.get('/user/user_data').then(response => {
+    //         console.log(response)
+    //         this.setState({
+    //             user: response.data[0]
+    //         })
+    //     })
+    // }
 
     myToggle = () => {
         this.setState(prevState => {
@@ -51,7 +52,7 @@ export default class Header extends Component {
     }
 
     render() {
-
+        let {user} = this.props;
         let num = Math.floor(Math.random() * (11 - 1) + 1);
         let monkey = [monkey1, monkey2, monkey3, monkey4, monkey5, monkey6, monkey7, monkey8, monkey9, monkey10, monkey11]
 
@@ -66,7 +67,7 @@ export default class Header extends Component {
                         </div>
                     </Link>
                     
-                    {this.state.user ? 
+                    {user ? 
                     <div className='inner-header-container'>
                         <HeaderLinks class='links-container-desktop' logout={this.logout}/>
                         <HeaderLinks screenType='mobile' myToggle={this.myToggle} class={mobileToggleClasses} logout={this.logout}/>
@@ -84,3 +85,5 @@ export default class Header extends Component {
         );
     }
 }
+
+export default Persitance(Header)
