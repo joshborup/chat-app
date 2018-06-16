@@ -18,6 +18,10 @@
             background: url('./media/banner.png');
             background-size: cover;
             background-position: center center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.245);
             @media (max-width:599px) {
                 margin-top: 60px;
@@ -28,16 +32,29 @@
             height: 380px;
             max-height: 380px;
         }
+
         h1 {
-            position: absolute;
             color: rgb(204, 202, 202);
-            top: 130px;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
             font-size: 60px;
             text-shadow: .2px .2px 1px black;
         }
+
+        h2 {
+            color: rgb(204, 202, 202);
+            font-size: 42px;
+            text-shadow: .2px .2px 1px black;
+        }
+
+        // h2 {
+        //     position: absolute;
+        //     color: rgb(204, 202, 202);
+        //     top: 150px;
+        //     left: 0;
+        //     right: 0;
+        //     margin: 0 auto;
+        //     font-size: 38px;
+        //     text-shadow: .2px .2px 1px black;
+        // }
     } 
 
     .explanation-icons {

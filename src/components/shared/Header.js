@@ -34,6 +34,7 @@ class Header extends Component {
 
     logout = () => {
         sessionStorage.clear();
+        localStorage.clear();
         axios.post('/user/logout').then(() => {
             this.setState({
                 user: null
