@@ -1,0 +1,63 @@
+@import '../styles/_shared.scss';
+.chat-container{
+    background: $page-background;
+    width: 100%;
+
+    .chat-display {
+        padding-top: 20px;
+        font-family: $font-stack;
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        margin: 0 auto;
+        min-height: 91vh;
+        width: 100%;
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .create-room {
+            button {
+                margin: 20px 0;
+                height: 40px;
+                width: 120px;
+                font-size: 18px;
+                border-radius: 19px;
+                box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.466);
+                transition: .2s;
+                border: none;
+                cursor: pointer;
+            }
+
+            button:hover {
+                box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
+            }
+
+            button:active {
+                box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.466);
+            }
+        }
+
+        .rooms {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 20px 0px;
+            
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .group, .random {
+                min-height: 400px;
+                min-width: 300px;
+                background: white;
+                box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
+            }
+        }
+    }
+}
