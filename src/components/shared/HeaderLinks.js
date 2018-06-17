@@ -11,7 +11,7 @@ const HeaderLinks = (props) => {
             </ul>
             <ul>
                 <li onClick={props.myToggle} className='link-1'>
-                    <Link to='/chat/group/cool'>Chat</Link>
+                    <Link to='/chat'>Chat</Link>
                 </li>
             </ul>
             <ul>

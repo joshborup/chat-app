@@ -12,10 +12,6 @@ const userInfo = (PassedComponent) =>
         console.log(cachedState);
         if (cachedState != "undefined" && JSON.parse(cachedState) != null ) {
 
-            console.log(cachedState != JSON.stringify(this.state));
-            console.log(cachedState == JSON.stringify(this.state));
-            console.log(cachedState);
-
             if( cachedState != JSON.stringify(this.state) ){
                 console.log('hit first');
                 this.setState(JSON.parse(cachedState))

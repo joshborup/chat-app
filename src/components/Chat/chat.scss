@@ -19,10 +19,16 @@
         }
 
         .create-room {
+            display: flex;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            justify-content: space-between;
+            align-items: center;
             button {
                 margin: 20px 0;
                 height: 40px;
-                width: 120px;
+                width: 180px;
                 font-size: 18px;
                 border-radius: 19px;
                 box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.466);
@@ -56,6 +62,7 @@
                 min-width: 300px;
                 background: white;
                 box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
+                padding: 10px;
             }
         }
     }

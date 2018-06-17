@@ -6,7 +6,9 @@ class ChatContainer extends Component {
     constructor(){
         super()
         this.state = {
-            user: ''
+            user: '',
+            groupRooms:[{name:'BoardGames', users: 70}, {name:'Gaming', users: 70}, {name:'Sports', users: 70}, {name:'Astronomy', users: 70}],
+            popularRooms: [{name:'NBAfinals', users: 70}, {name:'ASUfootball', users: 70}, {name:'Politics', users: 70}, {name:'JavaScript', users: 70}]
         }
     }
 
@@ -14,7 +16,7 @@ class ChatContainer extends Component {
         console.log(this.props)
         return (
             <div className='chat-container'>
-                <ChatDisplay />
+                <ChatDisplay groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
             </div>
         );
     }

@@ -14,20 +14,27 @@
     .chat-container .chat-display h1 {
       font-size: 48px;
       margin-bottom: 20px; }
-    .chat-container .chat-display .create-room button {
-      margin: 20px 0;
-      height: 40px;
-      width: 120px;
-      font-size: 18px;
-      border-radius: 19px;
-      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.466);
-      transition: .2s;
-      border: none;
-      cursor: pointer; }
-    .chat-container .chat-display .create-room button:hover {
-      box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466); }
-    .chat-container .chat-display .create-room button:active {
-      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.466); }
+    .chat-container .chat-display .create-room {
+      display: flex;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center; }
+      .chat-container .chat-display .create-room button {
+        margin: 20px 0;
+        height: 40px;
+        width: 180px;
+        font-size: 18px;
+        border-radius: 19px;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.466);
+        transition: .2s;
+        border: none;
+        cursor: pointer; }
+      .chat-container .chat-display .create-room button:hover {
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466); }
+      .chat-container .chat-display .create-room button:active {
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.466); }
     .chat-container .chat-display .rooms {
       display: flex;
       flex-direction: row;
@@ -40,4 +47,5 @@
         min-height: 400px;
         min-width: 300px;
         background: white;
-        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466); }
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
+        padding: 10px; }
