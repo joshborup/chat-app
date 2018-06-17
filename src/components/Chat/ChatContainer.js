@@ -8,7 +8,7 @@ class ChatContainer extends Component {
         this.state = {
             user: '',
             groupRooms:[{name:'BoardGames', users: 70}, {name:'Gaming', users: 70}, {name:'Sports', users: 70}, {name:'Astronomy', users: 70}],
-            popularRooms: [{name:'NBAfinals', users: 70}, {name:'ASUfootball', users: 70}, {name:'Politics', users: 70}, {name:'JavaScript', users: 70}]
+            popularRooms: [{name:'NBAfinals', users: 70}, {name:'ASUfootball', users: 70}, {name:'Politics', users: 70}, {name:'TOP_SHELF', users: 70}]
         }
     }
 

@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500|Montserrat:300,400");
+@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500|Montserrat:300,400,800");
 .header-container {
-  background: linear-gradient(rgba(100, 100, 100, 0.85), rgba(100, 100, 100, 0.85), rgba(100, 100, 100, 0.85));
+  background: linear-gradient(rgba(100, 100, 100, 0.9), rgba(100, 100, 100, 0.9), rgba(100, 100, 100, 0.9));
   width: 100%;
   min-height: 60px;
   display: flex;

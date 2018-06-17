@@ -12,6 +12,9 @@
         margin: 0 auto;
         min-height: 91vh;
         width: 100%;
+        @media (max-width:599px) {
+            padding-top: 80px;
+        }
 
         h1 {
             font-size: 48px;
@@ -25,6 +28,11 @@
             margin: 0 auto;
             justify-content: space-between;
             align-items: center;
+            @media (max-width:599px) {
+
+                justify-content: space-evenly;
+
+            }
             button {
                 margin: 20px 0;
                 height: 40px;
@@ -35,6 +43,11 @@
                 transition: .2s;
                 border: none;
                 cursor: pointer;
+                @media (max-width:599px) {
+                    font-size: 16px;
+                    width: 150px;
+
+                }
             }
 
             button:hover {
@@ -52,6 +65,10 @@
             justify-content: space-evenly;
             align-items: center;
             margin: 20px 0px;
+
+            @media (max-width:599px) {
+                flex-direction: column;
+            }
             
             h2 {
                 font-size: 22px;
@@ -59,10 +76,45 @@
 
             .group, .random {
                 min-height: 400px;
+                margin: 20px 0px;
                 min-width: 300px;
                 background: white;
                 box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
                 padding: 10px;
+
+                >*+* {
+                    margin: 10px 0px;
+                }
+
+                .room-list{
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    padding: 7.5px;
+                    background: rgb(245, 245, 245);
+                    border-top: solid rgb(212, 212, 212) 1px;
+                    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
+                    border-radius: 2px;
+
+                    >div:last-child {
+                        width: 60px;
+
+                        a{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: red;
+                            text-decoration: none;
+                            border-radius: 20px;
+                            width: 50px;
+                            height: 20px;
+                            font-weight: 800;
+                        }
+                        
+                    }
+
+                   
+                }
             }
         }
     }

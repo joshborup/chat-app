@@ -5,19 +5,29 @@ import {Link} from 'react-router-dom';
 const ChatDisplay = (props) => {
 
     let groupRooms = props.groupRooms.map((room)=>{
-        return <div>
-                    {room.name}
-                    {room.users}
+        return <div className='room-list'>
+                    <div>
+                        {room.name} ({room.users})
+                    </div>
+                    <div>
+                        <Link to={`/chat/group/${room.name}`}>
+                            Join
+                        </Link>
+                    </div>
                 </div>
-
     })
 
     let popularRooms = props.popularRooms.map((room)=>{
-        return <div>
-                    {room.name}
-                    {room.users}
+        return <div className='room-list'>
+                    <div>
+                        {room.name} ({room.users})
+                    </div>
+                    <div>
+                        <Link to={`/chat/group/${room.name}`}>
+                            Join
+                        </Link>
+                    </div>
                 </div>
-
     })
 
     return (
@@ -46,9 +56,6 @@ const ChatDisplay = (props) => {
                         Popular
                     </h2>
                     {popularRooms}
-                    <Link to='/chat/group/Science'>
-                    Science
-                    </Link>
                 </div>
             </div>
         </div>
