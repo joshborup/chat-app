@@ -4,37 +4,46 @@ import axios from 'axios';
 const userInfo = (PassedComponent) =>
   class UserInfo extends Component {
     state = {
-      user: ''
+      
     }
     
     componentDidMount(){
-        const cachedUser = sessionStorage.getItem('user');
-        console.log(cachedUser);
-        
-        if (cachedUser != "undefined" && JSON.parse(cachedUser) != null) {
-            this.setState({
-                user: JSON.parse(cachedUser)
-            });
-            return;
+        const cachedState = sessionStorage.getItem('state');
+        console.log(cachedState);
+        if (cachedState != "undefined" && JSON.parse(cachedState) != null ) {
+
+            console.log(cachedState != JSON.stringify(this.state));
+            console.log(cachedState == JSON.stringify(this.state));
+            console.log(cachedState);
+
+            if( cachedState != JSON.stringify(this.state) ){
+                console.log('hit first');
+                this.setState(JSON.parse(cachedState))
+                return
+            } else {
+                console.log('hit second');
+                sessionStorage.removeItem('state')
+                
+            }
         }
+        
         axios.get('/user/user_data').then(response => {
-            let user = response.data[0];
-            this.onSetResult(user)
-        })
+            let state = {...this.state, user: response.data[0]}
+            this.onSetResult(state)
+        }) 
     }
 
-    onSetResult = (user) => {
-        sessionStorage.setItem('user', JSON.stringify(user));
-        this.setState({
-            user: user
-        });
+    onSetResult = (state) => {
+        sessionStorage.setItem('state', JSON.stringify(state));
+        this.setState(state);
     }
 
     render() {
+        console.log(this.state)        
       return (
         <PassedComponent
           {...this.props}
-          user={this.state.user}
+          {...this.state}
         />
       )
     }

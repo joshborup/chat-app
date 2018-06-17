@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import ChatDisplay from './ChatDisplay';
+import Persistance from '../../Persistance';
 
-export default class ChatContainer extends Component {
+class ChatContainer extends Component {
+    constructor(){
+        super()
+        this.state = {
+            user: ''
+        }
+    }
+
     render() {
+        console.log(this.props)
         return (
             <div className='chat-container'>
                 <ChatDisplay />
@@ -10,3 +19,5 @@ export default class ChatContainer extends Component {
         );
     }
 }
+
+export default Persistance(ChatContainer);

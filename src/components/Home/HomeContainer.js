@@ -19,13 +19,6 @@ export default class HomeContainer extends Component {
         })
     }
 
-    componentWillUnmount(){
-        if (this.state.user) {
-            let user = JSON.stringify(this.state.user)
-            sessionStorage.setItem('user', user)
-        }
-    }
-
     render() {
         return (
             <div className='home-container'>

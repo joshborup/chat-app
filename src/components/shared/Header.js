@@ -43,7 +43,9 @@ class Header extends Component {
         window.location.href = '/';
     }
 
+
     render() {
+        console.log('props test', this.props);;
         let {user} = this.props;
         let num = Math.floor(Math.random() * (11 - 1) + 1);
         let monkey = [monkey1, monkey2, monkey3, monkey4, monkey5, monkey6, monkey7, monkey8, monkey9, monkey10, monkey11]
@@ -58,7 +60,6 @@ class Header extends Component {
                             <h1>MonkeyChat</h1>
                         </div>
                     </Link>
-                    
                     {user ? 
                     <div className='inner-header-container'>
                         <HeaderLinks class='links-container-desktop' logout={this.logout}/>

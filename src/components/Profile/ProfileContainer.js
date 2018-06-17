@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProfileDisplay from './ProfileDisplay';
 import Persistance from '../../Persistance';
+import axios from 'axios';
 import './profile.css';
 
 class PersonalProfile extends Component {
@@ -10,8 +11,12 @@ class PersonalProfile extends Component {
             user: this.props.user
         }
     }
+    componentDidMount(){
+        
+    }
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 {this.props.user ? <ProfileDisplay user={this.props.user}/> : 'please log in'}
