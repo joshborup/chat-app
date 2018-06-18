@@ -30,8 +30,7 @@ class Users {
             names: namesArray,
             count: namesArray.length
         }
-        console.log('nameArray ==============', namesArray);
-        console.log('listObj ==============',list);
+
         return list;
     }
 
