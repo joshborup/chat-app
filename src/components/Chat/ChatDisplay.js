@@ -48,6 +48,7 @@ const ChatDisplay = (props) => {
                     <h2>
                         General
                     </h2>
+                    <input placeholder='Search Rooms' className='search' type='text' name='search' />
                     {groupRooms}
                 </div>
 

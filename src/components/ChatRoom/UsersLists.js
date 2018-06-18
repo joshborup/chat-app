@@ -31,6 +31,14 @@ class ResponsiveDrawer extends Component {
        
             <div className={open}>
                 <button className='friends-toggle' onClick={this.props.drawerToggle}><img src={friendsButton}/></button>
+                <div className='room-info'>
+                    <div>
+                        Room: {this.props.room}
+                    </div>
+                    <div>
+                        Online: {this.props.count}
+                    </div>
+                </div>
                 {usersList}
             </div>
     );

@@ -42,6 +42,11 @@ button:focus {
             background:linear-gradient(rgba(30,30,30, 0.9), rgba(30, 30, 30, 0.9)) ,url('./media/tiger.png');
         }
 
+        .room-info {
+            color: white;
+            font-family: $font-stack;
+            font-size: 18px;
+        }
         
     }
 
@@ -364,4 +369,6 @@ button:focus {
         display: none;
     }
 }
+
+
 

@@ -5,7 +5,6 @@ class Users {
 
     async AddUserData(id, name, picture, room, color){
         let users = {id, name, picture, room, color}
-        console.log('innneer', users);
         this.users.push(users)
         return users;
     }
@@ -27,7 +26,23 @@ class Users {
             return user;
         })
 
-        return namesArray;
+        let list = {
+            names: namesArray,
+            count: namesArray.length
+        }
+        console.log('nameArray ==============', namesArray);
+        console.log('listObj ==============',list);
+        return list;
+    }
+
+    GetRoomCount(room){
+        let userCount = [] 
+        users.filter(e => {
+            if(e.room == room){
+                userCount.push(room)
+            }
+        })
+        return userCount.length
     }
 
 }

@@ -14,6 +14,7 @@ export default class Group extends Component {
 
         this.state = {
           baseURL: this.props.match.params.room,
+          count: null,
           message: '',
           messages:[],
           name:'',
@@ -48,29 +49,11 @@ export default class Group extends Component {
             })
         })
 
-        
-
         socket.on('users_list', (userslist)=> {
-            if(this.state.userslist.length < userslist.length){
-                console.log('userslist', userslist)
-                console.log('state userslist', this.state.userslist)
-                let listCopy = userslist.slice()
-                let newJoin = listCopy.pop().name
                 this.setState({
-                    userslist: userslist,
-                    snackBarOpen: true,
-                    justJoined: newJoin
+                    userslist: userslist.names,
+                    count: userslist.count
                 })
-                setTimeout(()=> {
-                    this.setState({ 
-                        snackBarOpen: false
-                    });
-                }, 2000)
-            } else{
-                this.setState({
-                    userslist: userslist
-                })
-            }
         })
         
     }
@@ -162,7 +145,7 @@ export default class Group extends Component {
                     this.state.user
                     ?
                     <div> 
-                        <UsersLists open={this.state.open} usersList={this.state.userslist} drawerToggle={this.drawerToggle} />
+                        <UsersLists room={this.state.baseURL} count={this.state.count} open={this.state.open} usersList={this.state.userslist} drawerToggle={this.drawerToggle} />
                         <div onClick={this.drawerToggle} className={opaque}></div>
                         <MessageContainer name={this.state.user.name}  enter={this.sendOnEnter} className='scroller' messages={this.state.messages} changeHandler={this.changeHandler} message={this.state.message} submitMessage={this.send}/>
                     </div>
