@@ -5,7 +5,7 @@ class ResponsiveDrawer extends Component {
 
   render() {
 
-    let usersList = this.props.usersList.map((user) => {
+    let usersList = this.props.usersList ? this.props.usersList.map((user) => {
         return <div className='user-card'>
  
                  <div>
@@ -23,7 +23,7 @@ class ResponsiveDrawer extends Component {
                  </div>
  
              </div>
-     })
+     }) : 'loading';
     
     let open = this.props.open ? 'drawer-container open' : 'drawer-container close'
 
