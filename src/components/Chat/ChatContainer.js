@@ -37,7 +37,6 @@ class ChatContainer extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div className='chat-container'>
                 <ChatDisplay search={this.search} changeHandler={this.changeHandler} groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
