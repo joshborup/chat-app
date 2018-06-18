@@ -98,7 +98,7 @@
           background: #e1e1e1; }
         .chat-container .chat-display .rooms .group .room-list, .chat-container .chat-display .rooms .random .room-list {
           display: flex;
-          justify-content: space-evenly;
+          justify-content: space-between;
           align-items: center;
           padding: 7.5px;
           background: whitesmoke;

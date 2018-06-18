@@ -8,6 +8,7 @@ class ChatContainer extends Component {
         super()
         this.state = {
             user: '',
+            opened: false,
             groupRooms:null,
             popularRooms: [{name:'NBAfinals', users: 70}, {name:'ASUfootball', users: 70}, {name:'Politics', users: 70}, {name:'TOP_SHELF', users: 70}]
         }
@@ -36,10 +37,19 @@ class ChatContainer extends Component {
         })
     }
 
+    toggle = () => {
+        this.setState((prevState) => {
+            return {
+                opened: !prevState.opened
+            }
+        })
+    }
+
     render() {
+        console.log(this.state.opened)
         return (
             <div className='chat-container'>
-                <ChatDisplay search={this.search} changeHandler={this.changeHandler} groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
+                <ChatDisplay opened={this.state.opened} toggle={this.toggle} search={this.search} changeHandler={this.changeHandler} groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
             </div>
         );
     }

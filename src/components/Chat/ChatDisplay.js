@@ -2,6 +2,7 @@ import React from 'react';
 import './chat.css';
 import {Link} from 'react-router-dom';
 import loader from '../shared/Login/loader.gif';
+import Modal from '../Chat/Modal';
 
 const ChatDisplay = (props) => {
 
@@ -16,7 +17,7 @@ const ChatDisplay = (props) => {
                         </Link>
                     </div>
                 </div>
-    }) : <div className='loader'><img src={loader}/></div>
+    }) : <div className='loader'><img src={loader}/></div>;
 
     let popularRooms = props.popularRooms.map((room)=>{
         return <div className='room-list'>
@@ -31,12 +32,14 @@ const ChatDisplay = (props) => {
                 </div>
     })
 
+    console.log(props.opened)
+
     return (
         <div className='chat-display'>
            <h1>Select a room</h1>
 
             <div className='create-room'>
-                <button>
+                <button onClick={props.toggle}>
                     Create Room
                 </button>
                 <button>
@@ -62,6 +65,7 @@ const ChatDisplay = (props) => {
                     {popularRooms}
                 </div>
             </div>
+            {props.opened ? <Modal opened={props.opened} />: ''}
         </div>
     );
 };
