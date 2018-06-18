@@ -50,6 +50,7 @@ export default class Group extends Component {
         })
 
         socket.on('users_list', (userslist)=> {
+                console.log(userslist);
                 this.setState({
                     userslist: userslist.names,
                     count: userslist.count
