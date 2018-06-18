@@ -86,7 +86,7 @@
         background: white;
         box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
         padding: 10px;
-        min-height: 290px;
+        min-height: 300px;
         max-height: 450px; }
         .chat-container .chat-display .rooms .group > * + *, .chat-container .chat-display .rooms .random > * + * {
           margin: 10px 0px; }
