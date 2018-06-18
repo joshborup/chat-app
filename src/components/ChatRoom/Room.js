@@ -125,7 +125,7 @@ export default class Group extends Component {
             timestamp: timestamp
         }
 
-        if(e.key == 'Enter'  && this.state.message){
+        if( e.key == 'Enter'  && this.state.message ){
             socket.emit("message", messageObj) 
             this.setState({
                 message: ''
