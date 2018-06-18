@@ -42,6 +42,7 @@ io.use(sharedSession(session, {
 
 const routeGroup = require('./Routes/routeGroup');
 const routeUser = require('./Routes/routeUser')
+const chatApi = require('./Routes/chatApi');
 
 app.use(bodyParser.json());
 
@@ -49,12 +50,11 @@ app.use('/group', routeGroup);
 
 app.use('/user', routeUser);
 
+app.use('/api', chatApi);
+
 require('./Socket/socketGroup')(io, Users);
 
 app.get('*', test);
-
-
-
 
 //used for github webhook to run git pull and npm run build
 

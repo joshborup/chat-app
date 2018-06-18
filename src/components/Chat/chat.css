@@ -49,7 +49,6 @@
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
-      align-items: center;
       margin: 20px 0px; }
       @media (max-width: 599px) {
         .chat-container .chat-display .rooms {
@@ -59,6 +58,11 @@
       .chat-container .chat-display .rooms .group {
         flex: 3;
         max-width: 640px; }
+        .chat-container .chat-display .rooms .group .loader {
+          width: 200px;
+          height: 200px;
+          margin: 0 auto;
+          img-width: 100%; }
         .chat-container .chat-display .rooms .group .search:focus {
           outline: none; }
         .chat-container .chat-display .rooms .group .search {
@@ -86,8 +90,8 @@
         background: white;
         box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
         padding: 10px;
-        min-height: 300px;
-        max-height: 450px; }
+        max-height: 500px;
+        overflow-y: scroll; }
         .chat-container .chat-display .rooms .group > * + *, .chat-container .chat-display .rooms .random > * + * {
           margin: 10px 0px; }
         .chat-container .chat-display .rooms .group .room-list:hover, .chat-container .chat-display .rooms .random .room-list:hover {

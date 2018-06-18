@@ -1,21 +1,22 @@
 import React from 'react';
 import './chat.css';
 import {Link} from 'react-router-dom';
+import loader from '../shared/Login/loader.gif';
 
 const ChatDisplay = (props) => {
 
-    let groupRooms = props.groupRooms.map((room)=>{
+    let groupRooms = props.groupRooms ? props.groupRooms.map((room)=>{
         return <div className='room-list'>
                     <div>
-                        {room.name} ({room.users})
+                        {room.room_name}
                     </div>
                     <div>
-                        <Link to={`/chat/group/${room.name}`}>
+                        <Link to={`/chat/group/${room.room_name}`}>
                             Join
                         </Link>
                     </div>
                 </div>
-    })
+    }) : <div className='loader'><img src={loader}/></div>
 
     let popularRooms = props.popularRooms.map((room)=>{
         return <div className='room-list'>
@@ -48,7 +49,9 @@ const ChatDisplay = (props) => {
                     <h2>
                         General
                     </h2>
-                    <input placeholder='Search Rooms' className='search' type='text' name='search' />
+                    <div>
+                        <input name='search' onChange={(e) => props.changeHandler(e.target.name, e.target.value)} placeholder='Search Rooms' className='search' type='text' name='search' />
+                    </div>
                     {groupRooms}
                 </div>
 
