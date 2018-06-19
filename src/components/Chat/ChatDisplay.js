@@ -65,7 +65,7 @@ const ChatDisplay = (props) => {
             </div>
             {props.opened ? 
             <div>
-                <Modal toggle={props.toggle} modalName={props.modalName} />
+                <Modal reausableChangeHandler={props.reausableChangeHandler} createRoomName={props.createRoomName} toggle={props.toggle} modalName={props.modalName} />
             </div>
             : null}
         </div>

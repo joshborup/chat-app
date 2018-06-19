@@ -7,6 +7,7 @@ class ChatContainer extends Component {
     constructor(){
         super()
         this.state = {
+            createRoomName: '',
             user: '',
             opened: false,
             groupRooms:null,
@@ -20,6 +21,12 @@ class ChatContainer extends Component {
             this.setState({
                 groupRooms: response.data
             })
+        })
+    }
+
+    reausableChangeHandler = (key, val) => {
+        this.setState({
+                [key]: val
         })
     }
 
@@ -51,7 +58,7 @@ class ChatContainer extends Component {
         console.log(this.state.opened)
         return (
             <div className='chat-container'>
-                <ChatDisplay modalName={this.state.modalName} opened={this.state.opened} toggle={this.toggle} search={this.search} changeHandler={this.changeHandler} groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
+                <ChatDisplay reausableChangeHandler={this.reausableChangeHandler} createRoomName={this.state.createRoomName} modalName={this.state.modalName} opened={this.state.opened} toggle={this.toggle} search={this.search} changeHandler={this.changeHandler} groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
             </div>
         );
     }

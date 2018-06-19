@@ -63,7 +63,8 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: center; }
+          align-items: center;
+          margin-bottom: 30px; }
           .chat-container .chat-display .chat-modal-container .chat-modal .room-type-info input {
             width: 90%;
             margin-top: 5px;
@@ -76,6 +77,21 @@
             box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466); }
           .chat-container .chat-display .chat-modal-container .chat-modal .room-type-info input:focus {
             outline: none; }
+        .chat-container .chat-display .chat-modal-container .chat-modal .mybuttons {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center; }
+          .chat-container .chat-display .chat-modal-container .chat-modal .mybuttons button {
+            height: 40px;
+            width: 100px;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
+            font-size: 16px; }
+          .chat-container .chat-display .chat-modal-container .chat-modal .mybuttons button:active {
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.466); }
         @media (max-width: 599px) {
           .chat-container .chat-display .chat-modal-container .chat-modal {
             max-width: 340px; } }
