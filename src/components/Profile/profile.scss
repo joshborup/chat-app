@@ -1,7 +1,7 @@
 @import '../styles/_shared.scss';
 
 .profile-display-container {
-    padding-top: 15px;
+    
     font-family: $font-stack;
     height: 100vh;
     background:$page-background;
@@ -9,8 +9,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .custom-banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 200px;
+        background: green;
+    }
+
+    .profile-info {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: red;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     @media (max-width:599px) {
-        padding-top: 75px;
+        padding-top: 60px;
     }
 
     .profile-image-container {

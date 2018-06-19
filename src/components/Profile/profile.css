@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500|Montserrat:300,400,800");
 .profile-display-container {
-  padding-top: 15px;
   font-family: "Montserrat", sans-serif;
   height: 100vh;
   background: #f0f0f0;
@@ -8,9 +7,26 @@
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .profile-display-container .custom-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 200px;
+    background: green; }
+  .profile-display-container .profile-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: red;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
   @media (max-width: 599px) {
     .profile-display-container {
-      padding-top: 75px; } }
+      padding-top: 60px; } }
   .profile-display-container .profile-image-container {
     width: 150px;
     height: 150px;
