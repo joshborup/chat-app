@@ -34,7 +34,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "now-start": "node server/index.js",
+    "deploy": "now --public --dotenv=.env.prod -d"
+  },
+  "now":{
+    "alias":"monkey-chat"
   },
   "proxy": "http://localhost:4001",
   "homepage": "https://www.superscarystuff.com"
