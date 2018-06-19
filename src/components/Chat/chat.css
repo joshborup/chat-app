@@ -17,6 +17,74 @@
     .chat-container .chat-display h1 {
       font-size: 48px;
       margin-bottom: 20px; }
+    .chat-container .chat-display .chat-modal-container {
+      position: fixed;
+      height: 100vh;
+      overflow: hidden;
+      width: 100vw;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fade-in .2s ease-in-out 1 forwards; }
+
+@keyframes fade-in {
+  0% {
+    background: rgba(0, 0, 0, 0); }
+  100% {
+    background: rgba(0, 0, 0, 0.466); } }
+      .chat-container .chat-display .chat-modal-container .modal-background {
+        position: absolute;
+        height: 100vh;
+        overflow: hidden;
+        width: 100vw;
+        top: 0;
+        left: 0; }
+      .chat-container .chat-display .chat-modal-container .chat-modal {
+        height: 250px;
+        position: fixed;
+        max-width: 400px;
+        width: 100%;
+        background: #f0f0f0;
+        animation: fly-in .33s ease-in-out 1 forwards;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 3px;
+        z-index: 6; }
+        .chat-container .chat-display .chat-modal-container .chat-modal h2 {
+          font-size: 28px;
+          margin: 0 0 15px; }
+        .chat-container .chat-display .chat-modal-container .chat-modal .room-type-info {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .chat-container .chat-display .chat-modal-container .chat-modal .room-type-info input {
+            width: 90%;
+            margin-top: 5px;
+            padding: 0 10px;
+            font-size: 16px;
+            height: 40px;
+            border-radius: 25px;
+            border: none;
+            border-top: 1px solid #adadad;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466); }
+          .chat-container .chat-display .chat-modal-container .chat-modal .room-type-info input:focus {
+            outline: none; }
+        @media (max-width: 599px) {
+          .chat-container .chat-display .chat-modal-container .chat-modal {
+            max-width: 340px; } }
+
+@keyframes fly-in {
+  0% {
+    transform: translate(0, 50vh) scale(0.2); }
+  100% {
+    transform: translate(0, 0) scale(1); } }
     .chat-container .chat-display .create-room {
       display: flex;
       width: 100%;
@@ -52,7 +120,8 @@
       margin: 20px 0px; }
       @media (max-width: 599px) {
         .chat-container .chat-display .rooms {
-          flex-direction: column; } }
+          flex-direction: column;
+          align-items: center; } }
       .chat-container .chat-display .rooms h2 {
         font-size: 22px; }
       .chat-container .chat-display .rooms .group {

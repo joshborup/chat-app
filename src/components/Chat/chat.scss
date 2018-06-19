@@ -21,6 +21,105 @@
             margin-bottom: 20px;
         }
 
+        
+
+        .chat-modal-container {
+           position: fixed;
+           height: 100vh;
+           overflow: hidden;
+           width: 100vw;
+           z-index: 3;
+           top: 0;
+           left: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           animation: fade-in .2s ease-in-out 1 forwards;
+           
+           @keyframes fade-in  {
+               0% {
+                background: rgba(0, 0, 0, 0);
+               }
+
+               100% {
+                background: rgba(0, 0, 0, 0.466);
+                }
+           }
+
+
+           .modal-background {
+                position: absolute;
+                height: 100vh;
+                overflow: hidden;
+                width: 100vw;
+                top: 0;
+                left: 0;
+           }
+           
+
+           .chat-modal {
+               height: 250px;
+               position: fixed;
+               max-width: 400px;
+               width: 100%;
+               background: rgb(240, 240, 240);
+               animation: fly-in .33s ease-in-out 1 forwards;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               padding: 10px;
+               border-radius: 3px;
+               z-index: 6;
+
+               h2 {
+                   font-size: 28px;
+                   margin: 0 0 15px;
+               }
+
+               .room-type-info {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    
+                    input {
+                        width: 90%;
+                        margin-top: 5px;
+                        padding: 0 10px;
+                        font-size: 16px;
+                        height: 40px;
+                        border-radius: 25px;
+                        border: none;
+                        border-top: 1px solid rgb(173, 173, 173);
+                        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
+                    }
+
+                    input:focus {
+                        outline: none;
+                    }
+               }
+
+               @media (max-width:599px) {
+                    max-width: 340px;
+               }
+
+               
+           }
+
+           @keyframes fly-in  {
+               0% {
+                    transform: translate(0, 50vh) scale(.2);
+
+               }
+
+               100% {
+                transform: translate(0, 0) scale(1);
+                }
+           }
+        }
+
         .create-room {
             display: flex;
             width: 100%;
@@ -67,6 +166,7 @@
 
             @media (max-width:599px) {
                 flex-direction: column;
+                align-items: center;
             }
             
             h2 {

@@ -32,14 +32,12 @@ const ChatDisplay = (props) => {
                 </div>
     })
 
-    console.log(props.opened)
-
     return (
         <div className='chat-display'>
            <h1>Select a room</h1>
 
             <div className='create-room'>
-                <button onClick={props.toggle}>
+                <button onClick={() => props.toggle('Create Room')}>
                     Create Room
                 </button>
                 <button>
@@ -65,9 +63,14 @@ const ChatDisplay = (props) => {
                     {popularRooms}
                 </div>
             </div>
-            {props.opened ? <Modal opened={props.opened} />: ''}
+            {props.opened ? 
+            <div>
+                <Modal toggle={props.toggle} modalName={props.modalName} />
+            </div>
+            : null}
         </div>
     );
 };
 
 export default ChatDisplay;
+
