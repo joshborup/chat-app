@@ -5,6 +5,7 @@
 
     .chat-display {
         padding-top: 80px;
+
         font-family: $font-stack;
         display: flex;
         flex-direction: column;
@@ -69,7 +70,7 @@
                flex-direction: column;
                align-items: center;
                padding: 10px;
-               border-radius: 3px;
+               border-radius: 5px;
                z-index: 6;
 
                h2 {

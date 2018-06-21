@@ -3,6 +3,8 @@
 .header-container {
     background:linear-gradient(rgb(100,100,100),rgb(95,95,95));
     width: 100%;
+    position: fixed;
+    top: 0;
     min-height: 60px;
     display: flex;
     flex-direction: row;

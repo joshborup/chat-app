@@ -5,7 +5,7 @@ const ProfileDisplay = (props) => {
 
     let style = {
         banner :{
-            background: 'url(http://res.cloudinary.com/saturnslist/image/upload/v1529442385/smaller.jpg)',
+            background: 'url(https://res.cloudinary.com/saturnslist/image/upload/v1529442385/smaller.jpg)',
             backgroundPosition: 'center center',
             backgroundAttachment: 'fixed'
         }
