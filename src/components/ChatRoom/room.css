@@ -4,7 +4,7 @@ button:focus {
   cursor: pointer; }
 
 .group-chatroom-container {
-  min-height: 93.2vh;
+  min-height: 100vh;
   min-width: 100%;
   background: linear-gradient(rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.9)), url("./media/tiger.png");
   height: 100%; }
@@ -13,7 +13,7 @@ button:focus {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden; }
   @media (max-width: 599px) {
     .group-chatroom-container > div {
@@ -21,11 +21,12 @@ button:focus {
   .group-chatroom-container > div .drawer-container {
     width: 25%;
     height: 100%;
-    padding: 10px;
+    padding: 80px 0 0;
     justify-content: center;
     align-items: center; }
     @media (max-width: 599px) {
       .group-chatroom-container > div .drawer-container {
+        padding: 10px 0 0;
         position: fixed;
         margin-top: 60px;
         max-width: 300px;

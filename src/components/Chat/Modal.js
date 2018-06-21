@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Modal = (props) => {
+    
     return (
         <div className='chat-modal-container'>
         <div onClick={() => props.toggle('Create Room')} className='modal-background'></div>
