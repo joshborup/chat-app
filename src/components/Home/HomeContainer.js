@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HomeDisplay from './HomeDisplay';
 import axios from 'axios';
+import Footer from '../shared/Footer';
 import './home.css';
 
 export default class HomeContainer extends Component {
@@ -20,9 +21,12 @@ export default class HomeContainer extends Component {
     }
 
     render() {
-        return (
-            <div className='home-container'>
-                <HomeDisplay/>
+       return (
+            <div>
+                <div className={'home-container'}>
+                    <HomeDisplay />
+                </div>
+                <Footer />
             </div>
         );
     }
