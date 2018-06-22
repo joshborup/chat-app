@@ -1,5 +1,6 @@
 const express = require('express');
 const userRouter = express.Router();
+const cloudinary = require('cloudinary');
 const axios = require('axios');
 
 userRouter.post('/login', (req, res) => {
@@ -34,5 +35,36 @@ userRouter.post('/logout', (req, res) => {
     req.session.destroy();
     res.status(200).send('logged out');
 })
+
+userRouter.post('/edit_profile_background', (req, res) => {
+    const db = req.app.get('db');
+    let { profileBackground } = req.body;
+    console.log(profileBackground, req.session.user[0].id);
+
+    
+    db.update_background([profileBackground, req.session.user[0].id]).then(response => {
+        console.log('response :', response);
+        res.send('success!')
+    }).catch(err => console.log(err))
+})
+
+userRouter.get('/upload', (req, res) => {
+
+    // get a timestamp in seconds which is UNIX format
+        const timestamp = Math.round((new Date()).getTime() / 1000);
+    
+    // cloudinary API secret stored in the .env file
+        const api_secret  = process.env.CLOUDINARY_SECRET_API;
+    
+    // user built in cloudinary api sign request function to  create hashed signature with your api secret and UNIX timestamp
+        const signature = cloudinary.utils.api_sign_request({ timestamp: timestamp }, api_secret);
+    
+    // make a signature object to send to your react app
+        const payload = {
+            signature: signature,
+            timestamp: timestamp
+        };
+            res.json(payload);
+    })
 
 module.exports = userRouter;

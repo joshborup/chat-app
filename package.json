@@ -9,6 +9,7 @@
     "auth0-js": "^9.5.1",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "cloudinary": "^1.11.0",
     "connect-pg-simple": "^5.0.0",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
@@ -23,6 +24,7 @@
     "react": "^16.3.2",
     "react-csv": "^1.0.14",
     "react-dom": "^16.3.2",
+    "react-dropzone": "^4.2.11",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "socket.io": "^2.1.1",
@@ -38,8 +40,8 @@
     "now-start": "node server/index.js",
     "deploy": "now --public --dotenv=.env.prod -d"
   },
-  "now":{
-    "alias":"monkey-chat"
+  "now": {
+    "alias": "monkey-chat"
   },
   "proxy": "http://localhost:4001",
   "homepage": "https://www.superscarystuff.com"

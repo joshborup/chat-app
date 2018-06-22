@@ -31,13 +31,18 @@ const userInfo = (PassedComponent) =>
 
     onSetResult = (state) => {
         sessionStorage.setItem('state', JSON.stringify(state));
-        this.setState(state);
+        this.setState({...state});
+    }
+
+    refreshPersistWhenUpdating = () => {
+        this.setState({...this.state})
     }
 
     render() {
         console.log(this.state)        
       return (
         <PassedComponent
+          refreshPersistWhenUpdating={this.refreshPersistWhenUpdating}
           {...this.props}
           {...this.state}
         />

@@ -1,5 +1,7 @@
 
-  
+.loading-gif {
+  padding-top: 40px;
+}
 .login button {
    
     font-weight: 500;
@@ -24,6 +26,8 @@
     .login button {
       font-weight: 500;
       font-size: 12px;
+      cursor: pointer;
+
     }
   }
 

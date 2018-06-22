@@ -1,7 +1,8 @@
 @import '../styles/_shared.scss';
 
 .header-container {
-    background:linear-gradient(rgb(100,100,100),rgb(95,95,95));
+    background:linear-gradient(rgba(95,95,95,0.45),rgba(95,95,95,0.45)) ,url('../Home/media/car-background.svg');
+    background-size: cover;
     width: 100%;
     position: fixed;
     top: 0;
@@ -20,7 +21,7 @@
     > div > a {
             color: white;
             font-size: 26px;
-            
+            cursor: pointer;
             letter-spacing: 2.5px;
             text-decoration: line-through;
             text-decoration-color: rgb(116, 69, 29);

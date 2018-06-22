@@ -14,7 +14,41 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 300px; }
+    min-height: 300px;
+    overflow: hidden;
+    position: relative; }
+    @media (max-width: 599px) {
+      .profile-display-container .custom-banner {
+        min-height: 250px; } }
+    .profile-display-container .custom-banner .user-name {
+      position: relative; }
+    .profile-display-container .custom-banner .upload-form {
+      color: white;
+      position: absolute;
+      right: 20px;
+      background: #2f9aff;
+      padding: 10px;
+      top: 20px; }
+      @media (max-width: 599px) {
+        .profile-display-container .custom-banner .upload-form {
+          font-size: 10px; } }
+    .profile-display-container .custom-banner .custom-banner-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%; }
+      .profile-display-container .custom-banner .custom-banner-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        min-width: 100%;
+        width: 100%;
+        min-height: 300px; }
+        @media (max-width: 599px) {
+          .profile-display-container .custom-banner .custom-banner-image img {
+            min-height: 250px; } }
   .profile-display-container .profile-info {
     max-width: 1200px;
     margin: 0 auto;
@@ -32,7 +66,36 @@
     height: 150px;
     border-radius: 50%;
     border: solid 2px white;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative;
+    animation: colorful 2s linear infinite forwards; }
+
+@keyframes colorful {
+  0% {
+    border-top-color: rgba(0, 128, 0, 0.5);
+    border-right-color: rgba(255, 255, 0, 0.5);
+    border-bottom-color: rgba(0, 0, 255, 0.5);
+    border-left-color: rgba(255, 0, 0, 0.5); }
+  25% {
+    border-top-color: rgba(255, 0, 0, 0.5);
+    border-right-color: rgba(0, 128, 0, 0.5);
+    border-bottom-color: rgba(255, 255, 0, 0.5);
+    border-left-color: rgba(0, 0, 255, 0.5); }
+  50% {
+    border-top-color: rgba(0, 0, 255, 0.5);
+    border-right-color: rgba(255, 0, 0, 0.5);
+    border-bottom-color: rgba(0, 128, 0, 0.5);
+    border-left-color: rgba(255, 255, 0, 0.5); }
+  75% {
+    border-top-color: rgba(255, 255, 0, 0.5);
+    border-right-color: rgba(0, 0, 255, 0.5);
+    border-bottom-color: rgba(255, 0, 0, 0.5);
+    border-left-color: rgba(0, 128, 0, 0.5); }
+  100% {
+    border-top-color: rgba(0, 128, 0, 0.5);
+    border-right-color: rgba(255, 255, 0, 0.5);
+    border-bottom-color: rgba(0, 0, 255, 0.5);
+    border-left-color: rgba(255, 0, 0, 0.5); } }
     .profile-display-container .profile-image-container img {
       width: 100%; }
   .profile-display-container h1 {

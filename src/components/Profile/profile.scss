@@ -18,6 +18,51 @@
         align-items: center;
         width: 100%;
         min-height: 300px;
+        overflow: hidden;
+        position: relative;
+
+        @media (max-width:599px){
+            min-height: 250px;
+        }
+
+        .user-name {
+            position: relative;
+            
+        }
+
+        .upload-form {
+            color: white;
+            position: absolute;
+            right: 20px;
+            background: rgb(47, 154, 255);
+            padding: 10px;
+            top: 20px;
+
+            @media (max-width:599px){
+                font-size: 10px;
+            }
+        }
+
+        .custom-banner-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                min-width: 100%;
+                width: 100%;
+                min-height: 300px;
+                @media (max-width:599px){
+                    min-height: 250px;
+                }
+            }
+        }
     }
 
     .profile-info {
@@ -41,6 +86,41 @@
         border-radius: 50%;
         border: solid 2px white;
         overflow: hidden;
+        position: relative;
+        animation: colorful 2s linear infinite forwards;
+
+        @keyframes colorful {
+            0% {
+                border-top-color: rgba(0, 128, 0, 0.5);
+                border-right-color: rgba(255, 255, 0, 0.5);
+                border-bottom-color: rgba(0, 0, 255, 0.5);
+                border-left-color: rgba(255, 0, 0, 0.5);
+              }
+              25% {
+                border-top-color: rgba(255, 0, 0, 0.5);
+                border-right-color: rgba(0, 128, 0, 0.5);
+                border-bottom-color: rgba(255, 255, 0, 0.5);
+                border-left-color: rgba(0, 0, 255, 0.5);
+              }
+              50% {
+                border-top-color: rgba(0, 0, 255, 0.5);
+                border-right-color: rgba(255, 0, 0, 0.5);
+                border-bottom-color: rgba(0, 128, 0, 0.5);
+                border-left-color: rgba(255, 255, 0, 0.5);
+              }
+              75% {
+                border-top-color: rgba(255, 255, 0, 0.5);
+                border-right-color: rgba(0, 0, 255, 0.5);
+                border-bottom-color: rgba(255, 0, 0, 0.5);
+                border-left-color: rgba(0, 128, 0, 0.5);
+              }
+              100% {
+                border-top-color: rgba(0, 128, 0, 0.5);
+                border-right-color: rgba(255, 255, 0, 0.5);
+                border-bottom-color: rgba(0, 0, 255, 0.5);
+                border-left-color: rgba(255, 0, 0, 0.5);
+              }
+        }
 
         img {
             width: 100%;

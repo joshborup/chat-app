@@ -16,8 +16,8 @@
             overflow: hidden;
             position: relative;
             background: url('./media/banner.png');
+            background-position: center;
             background-size: cover;
-            background-position: center center;
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -28,7 +28,7 @@
             }
 
         @media (min-width: 1199px) {
-            background-position-y: -150px;
+            background-position-y: -100px;
             height: 380px;
             max-height: 380px;
         }
@@ -69,7 +69,7 @@
         }
 
         >div {
-            background:linear-gradient(rgba(220,220,220,0.85),rgba(220,220,220,0.85)) ,url('../Home/media/car-background.svg');
+            background:linear-gradient(rgba(220,220,220,0.25),rgba(220,220,220,0.85)) ,url('../Home/media/car-background.svg');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
