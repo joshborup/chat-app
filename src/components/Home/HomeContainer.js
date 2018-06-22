@@ -23,7 +23,7 @@ export default class HomeContainer extends Component {
     render() {
        return (
             <div>
-                <div className={'home-container'}>
+                <div className='home-container'>
                     <HomeDisplay />
                 </div>
                 <Footer />
