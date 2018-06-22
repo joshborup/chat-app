@@ -5,12 +5,16 @@ import axios from 'axios';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/devmountain/image/upload';
 
 export default class UploadForm extends Component {
-    
+    constructor(props){
+        super(props)
+        this.state = {
+
+        }
+    }
 
     handleImageUpload = (file) => {
 
 //axios call to server to request hashed signature
-
         axios.get('/user/upload').then(response => {
         
 //form data for signed uploads

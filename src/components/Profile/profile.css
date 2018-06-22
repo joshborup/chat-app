@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500|Montserrat:300,400,800");
 .profile-display-container {
   font-family: "Montserrat", sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   background: #f0f0f0;
   width: 100%;
   padding: 60px 0 0;
@@ -52,7 +52,6 @@
   .profile-display-container .profile-info {
     max-width: 1200px;
     margin: 0 auto;
-    background: red;
     padding: 20px;
     width: 100%;
     display: flex;

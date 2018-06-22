@@ -3,7 +3,7 @@
 .profile-display-container {
     
     font-family: $font-stack;
-    height: 100vh;
+    min-height: 100vh;
     background:$page-background;
     width: 100%;
     padding: 60px 0 0;
@@ -68,7 +68,6 @@
     .profile-info {
         max-width: 1200px;
         margin: 0 auto;
-        background: red;
         padding: 20px;
         width: 100%;
         display: flex;

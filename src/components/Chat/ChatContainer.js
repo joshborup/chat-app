@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChatDisplay from './ChatDisplay';
 import Persistance from '../../Persistance';
+import Footer from '../shared/Footer'
 import axios from 'axios';
 
 class ChatContainer extends Component {
@@ -56,8 +57,11 @@ class ChatContainer extends Component {
 
     render() {
         return (
-            <div className='chat-container'>
-                <ChatDisplay {...this.props} reausableChangeHandler={this.reausableChangeHandler} createRoomName={this.state.createRoomName} modalName={this.state.modalName} opened={this.state.opened} toggle={this.toggle} search={this.search} changeHandler={this.changeHandler} groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
+            <div>
+                <div className='chat-container'>
+                    <ChatDisplay {...this.props} reausableChangeHandler={this.reausableChangeHandler} createRoomName={this.state.createRoomName} modalName={this.state.modalName} opened={this.state.opened} toggle={this.toggle} search={this.search} changeHandler={this.changeHandler} groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
+                </div>
+                <Footer/>
             </div>
         );
     }

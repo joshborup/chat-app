@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import loader from './loader.gif';
+import * as animationData from '../media/lego_loader.json'
+import Lottie from 'react-lottie';
 
 export default class Callback extends Component {
     constructor(props){
@@ -30,13 +31,20 @@ export default class Callback extends Component {
 
     render() {
 
-        const style = {
-            width: '200px'
-        }
+        const defaultOptions = {
+            loop: true,
+            autoplay: true, 
+            animationData: animationData,
+            rendererSettings: {
+              preserveAspectRatio: 'xMidYMid slice'
+            }
+          };
+    
 
         return (
             <div className='loading-gif'>
-                <img style={style} src={loader} />
+                <Lottie options={defaultOptions}
+                width={'600px'}/>
             </div>
         );
     }

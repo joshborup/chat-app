@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ProfileDisplay from './ProfileDisplay';
 import Persistance from '../../Persistance';
 import axios from 'axios';
+import myStore from '../shared/myStore';
+import Footer from '../shared/Footer';
 import './profile.css';
 
 class PersonalProfile extends Component {
@@ -9,12 +11,19 @@ class PersonalProfile extends Component {
         super(props)
         this.state = {
             user: this.props.user,
-            profileBackground: ''
+            profileBackground: '',
+            toggle: false,
+            email: ''
+           
         }
+        
+    }
+
+    componentDidMount(){
+        console.log('this.props.user.email :', this.props.user);
     }
 
     uploadedImage = (profileBackground) => {
-        
         axios.post('/user/edit_profile_background', {profileBackground: profileBackground}).then(response => {
             let data = sessionStorage.getItem('state');
             let parsedData = JSON.parse(data)
@@ -28,11 +37,43 @@ class PersonalProfile extends Component {
         })
     }
 
+    toggle = () => {
+        this.setState((prevState) => {
+            return {
+                clicked: !prevState.clicked
+            }
+        })
+    }
+
+    changeHandler = (key, value) => {
+        this.setState({
+            [key]:value
+        })
+    }
+
+    submit = () => {
+        this.setState({
+            email: this.state.email
+        })
+        // myStore('state', 'email', this.state.email)
+    }
+
     render() {
-        console.log(this.props.user)
         return (
             <div>
-                {this.props.user ? <ProfileDisplay profileBackground={this.state.profileBackground}  uploadedImage={this.uploadedImage} user={this.props.user}/> : 'please log in'}
+                <div>
+                    {this.props.user ?
+                     <ProfileDisplay
+                        email={this.state.email}
+                        submit={this.submit}
+                        toggle={{data: this.state.toggle, func: this.toggle}} 
+                        clickedFunc={this.clickedFunc} clicked={this.state.clicked} 
+                        profileBackground={this.state.profileBackground}  
+                        uploadedImage={this.uploadedImage} 
+                        user={this.props.user}
+                        changeHandler={this.changeHandler}/> : 'please log in'}
+                </div>
+                <Footer/>
             </div>
         );
     }
