@@ -73,6 +73,86 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+
+        .save-button, .edit-button {
+            height: 40px;
+            width: 150px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .save-button{
+            background: rgb(47, 255, 57);
+        }
+        .edit-button{
+            background: rgb(43, 43, 255);
+        }
+        
+        >div:first-child{
+            font-weight: bolder;
+        }
+
+        .facebook, .instagram, .linkedin{
+            
+            display: flex;
+
+            #facebook, #instagram, #linkedin {
+                width: 100%;
+                margin: 0 0px;
+                border: 1px solid black;
+                font-size: 16px;
+                padding: 10px;
+                border:none;
+                border-radius: 3px;
+                border-top:rgba(0,0,0,.1) 1px solid;
+                box-shadow: 0px 4px 10px rgba(0,0,0,.2);
+                background: rgba(255, 0, 0, 0.026);
+                
+            }
+
+            ::placeholder {
+                font-size: 22px;
+            }
+
+            #facebook:focus, #instagram:focus, #linkedin:focus {
+                outline: none;
+              }
+        }
+
+        .about-me, .facebook, .instagram, .linkedin{
+            margin: 10px 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+            font-weight: 500;
+            font-size:20px;
+            
+
+            textarea {
+                flex: 1;
+                height:100%;
+                margin: 0 20px;
+                border: 1px solid black;
+                font-size: 16px;
+                padding: 10px;
+                border:none;
+                border-radius: 3px;
+                border-top:rgba(0,0,0,.1) 1px solid;
+                box-shadow: 0px 4px 10px rgba(0,0,0,.2);
+                background: rgba(255, 0, 0, 0.026);
+              }
+              
+              textarea:focus {
+                outline: none;
+              }
+        }
     }
 
     @media (max-width:599px) {

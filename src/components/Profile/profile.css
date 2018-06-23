@@ -57,6 +57,61 @@
     display: flex;
     flex-direction: column;
     align-items: center; }
+    .profile-display-container .profile-info .save-button, .profile-display-container .profile-info .edit-button {
+      height: 40px;
+      width: 150px;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 3px;
+      cursor: pointer; }
+    .profile-display-container .profile-info .save-button {
+      background: #2fff39; }
+    .profile-display-container .profile-info .edit-button {
+      background: #2b2bff; }
+    .profile-display-container .profile-info > div:first-child {
+      font-weight: bolder; }
+    .profile-display-container .profile-info .facebook, .profile-display-container .profile-info .instagram, .profile-display-container .profile-info .linkedin {
+      display: flex; }
+      .profile-display-container .profile-info .facebook #facebook, .profile-display-container .profile-info .facebook #instagram, .profile-display-container .profile-info .facebook #linkedin, .profile-display-container .profile-info .instagram #facebook, .profile-display-container .profile-info .instagram #instagram, .profile-display-container .profile-info .instagram #linkedin, .profile-display-container .profile-info .linkedin #facebook, .profile-display-container .profile-info .linkedin #instagram, .profile-display-container .profile-info .linkedin #linkedin {
+        width: 100%;
+        margin: 0 0px;
+        border: 1px solid black;
+        font-size: 16px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        border-top: rgba(0, 0, 0, 0.1) 1px solid;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 0, 0, 0.026); }
+      .profile-display-container .profile-info .facebook ::placeholder, .profile-display-container .profile-info .instagram ::placeholder, .profile-display-container .profile-info .linkedin ::placeholder {
+        font-size: 22px; }
+      .profile-display-container .profile-info .facebook #facebook:focus, .profile-display-container .profile-info .facebook #instagram:focus, .profile-display-container .profile-info .facebook #linkedin:focus, .profile-display-container .profile-info .instagram #facebook:focus, .profile-display-container .profile-info .instagram #instagram:focus, .profile-display-container .profile-info .instagram #linkedin:focus, .profile-display-container .profile-info .linkedin #facebook:focus, .profile-display-container .profile-info .linkedin #instagram:focus, .profile-display-container .profile-info .linkedin #linkedin:focus {
+        outline: none; }
+    .profile-display-container .profile-info .about-me, .profile-display-container .profile-info .facebook, .profile-display-container .profile-info .instagram, .profile-display-container .profile-info .linkedin {
+      margin: 10px 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 80px;
+      font-weight: 500;
+      font-size: 20px; }
+      .profile-display-container .profile-info .about-me textarea, .profile-display-container .profile-info .facebook textarea, .profile-display-container .profile-info .instagram textarea, .profile-display-container .profile-info .linkedin textarea {
+        flex: 1;
+        height: 100%;
+        margin: 0 20px;
+        border: 1px solid black;
+        font-size: 16px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        border-top: rgba(0, 0, 0, 0.1) 1px solid;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 0, 0, 0.026); }
+      .profile-display-container .profile-info .about-me textarea:focus, .profile-display-container .profile-info .facebook textarea:focus, .profile-display-container .profile-info .instagram textarea:focus, .profile-display-container .profile-info .linkedin textarea:focus {
+        outline: none; }
   @media (max-width: 599px) {
     .profile-display-container {
       padding-top: 60px; } }

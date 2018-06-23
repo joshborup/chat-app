@@ -4,10 +4,8 @@ import Upload from '../shared/Upload';
 
 const ProfileDisplay = (props) => {
 
-
+    console.log('props :', props.toggle.data);
     let userImage = props.user.picture ? props.user.picture : loader;
-
-    let email = props.email ? props.email : '';
 
     return (
         <div className='profile-display-container'>
@@ -26,9 +24,29 @@ const ProfileDisplay = (props) => {
             </div>
             <div className='profile-info'>
                 <div>
-                    {props.user.email}
-                    {/* <input name='email' onChange={(e) => props.changeHandler(e.target.name, e.target.value)}  value={email} /> */}
+                    Email: {props.user.email}
                 </div>
+
+                <div className='about-me'>
+                    <label for='aboutMe'>About me: </label>
+                    <textarea disabled={props.toggle.data} id='aboutMe' name='aboutMe' onChange={(e)=> props.changeHandler(e.target.name, e.target.value)} value={props.aboutMe}/>
+                </div>
+
+                <div className='facebook'> 
+                    <label for='facebook'>https://www.facebook.com/</label>
+                    <input placeholder='username' disabled={props.toggle.data} id='facebook' name='facebook' onChange={(e)=> props.changeHandler(e.target.name, e.target.value)} value={props.facebook}/>
+                </div>
+
+                <div className='instagram'> 
+                    <label for='instagram'>https://www.instagram.com/</label>
+                    <input placeholder='username' disabled={props.toggle.data} id='instagram' name='instagram' onChange={(e)=> props.changeHandler(e.target.name, e.target.value)} value={props.instagram}/>
+                </div>
+
+                <div className='linkedin'> 
+                    <label for='linkedin'>https://www.linkedin.com/in/</label>
+                    <input placeholder='username' disabled={props.toggle.data} id='linkedin' name='linkedin' onChange={(e)=> props.changeHandler(e.target.name, e.target.value)} value={props.linkedin}/>
+                </div>
+                {props.toggle.data ? <button className='edit-button' onClick={() => props.toggle.func()}>Edit Profile</button> : <button className='save-button' onClick={() => props.update()}>save</button>}
             </div>
         </div>
     );

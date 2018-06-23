@@ -12,9 +12,12 @@ class PersonalProfile extends Component {
         this.state = {
             user: this.props.user,
             profileBackground: '',
-            toggle: false,
-            email: ''
-           
+            toggle: true,
+            email: '',
+            aboutMe: '',
+            facebook:'',
+            instagram:'',
+            linkedin:''
         }
         
     }
@@ -40,7 +43,7 @@ class PersonalProfile extends Component {
     toggle = () => {
         this.setState((prevState) => {
             return {
-                clicked: !prevState.clicked
+                toggle: !prevState.toggle
             }
         })
     }
@@ -51,14 +54,28 @@ class PersonalProfile extends Component {
         })
     }
 
-    submit = () => {
-        this.setState({
-            email: this.state.email
-        })
-        // myStore('state', 'email', this.state.email)
+    update = () => {
+       let update = {
+            aboutMe: this.state.aboutMe,
+            facebook: this.state.facebook,
+            instagram: this.state.instagram,
+            linkedin: this.state.linkedin,
+        }
+        console.log('update :', update);
+        // axios.post('/user/update_profile', update).then((response)=> {
+        //     this.setState({
+        //         aboutMe: response.data[0].aboutMe,
+        //         facebook: response.data[0].facebook,
+        //         instagram: response.data[0].instagram,
+        //         linkedin: response.data[0].linkedin,
+        //     })
+        //     this.toggle();
+        // })
+        this.toggle();
     }
 
     render() {
+
         return (
             <div>
                 <div>
@@ -71,7 +88,13 @@ class PersonalProfile extends Component {
                         profileBackground={this.state.profileBackground}  
                         uploadedImage={this.uploadedImage} 
                         user={this.props.user}
-                        changeHandler={this.changeHandler}/> : 'please log in'}
+                        changeHandler={this.changeHandler}
+                        aboutMe={this.state.aboutMe}
+                        facebook={this.state.facebook}
+                        instagram={this.state.instagram}
+                        linkedin={this.state.linkedin}
+                        update={this.update}
+                        /> : 'please log in'}
                 </div>
                 <Footer/>
             </div>
