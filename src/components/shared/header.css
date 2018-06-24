@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500|Montserrat:300,400,800");
 .header-container {
-  background: linear-gradient(rgba(95, 95, 95, 0.45), rgba(95, 95, 95, 0.45)), url("../Home/media/car-background.svg");
+  background: linear-gradient(rgba(95, 95, 95, 0.25), rgba(95, 95, 95, 0.25)), url("../Home/media/car-background.svg");
   background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   position: fixed;
-  background-position: -2px center;
+  background-position: center center;
   top: 0;
   min-height: 60px;
   display: flex;
@@ -17,7 +18,9 @@
   @media (max-width: 599px) {
     .header-container {
       position: fixed;
-      top: 0; } }
+      top: 0;
+      background-size: 250%;
+      background-repeat: no-repeat; } }
   .header-container > div > a {
     color: white;
     font-size: 26px;
@@ -114,6 +117,7 @@
     font-size: 16px; }
 
 .links-container-mobile {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

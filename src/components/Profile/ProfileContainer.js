@@ -23,7 +23,7 @@ class PersonalProfile extends Component {
     }
 
     componentDidMount(){
-        console.log('this.props.user.email :', this.props.user);
+        console.log('this.props.user: ', this.props.user);
     }
 
     uploadedImage = (profileBackground) => {
