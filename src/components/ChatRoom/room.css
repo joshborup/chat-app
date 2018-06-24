@@ -20,13 +20,13 @@ button:focus {
       margin-top: 60px; } }
   .group-chatroom-container > div .drawer-container {
     width: 25%;
-    padding: 80px 0 0;
+    padding: 80px 5px 0;
     height: 100%;
     justify-content: center;
     align-items: center; }
     @media (max-width: 599px) {
       .group-chatroom-container > div .drawer-container {
-        padding: 10px 0 0;
+        padding: 10px 5px 0;
         position: fixed;
         margin-top: 60px;
         max-width: 300px;
@@ -73,13 +73,14 @@ button:focus {
 .messaging-container {
   position: relative;
   height: 100%;
-  padding: 65px 20px 55px;
+  padding: 25px 20px 55px 0;
   overflow: scroll;
   background: #f0f0f0;
   width: 100%; }
   @media (min-width: 599px) {
     .messaging-container {
-      width: 75%; } }
+      width: 75%;
+      padding: 65px 20px 55px; } }
   .messaging-container .messages {
     display: flex;
     flex-direction: column;
@@ -109,65 +110,61 @@ button:focus {
         max-width: 50px;
         min-width: 50px;
         flex: 1;
-        border-radius: 50%;
+        border-radius: 15%;
         overflow: hidden;
         box-shadow: 0px 1px 5px #888888; }
         .messaging-container .messages .individual-message-container .user-image-container-for-messages img {
           width: 100%; }
       .messaging-container .messages .individual-message-container .message-name-date {
         border-radius: 2px;
-        width: 90%;
+        width: 100%;
         min-width: 300px;
         position: relative;
         padding: 8px 10px;
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        top: 20px;
-        box-shadow: 0px 1px 5px #888888be; }
+        flex-direction: row;
+        align-items: flex-start; }
         @media (max-width: 500px) {
           .messaging-container .messages .individual-message-container .message-name-date {
             min-width: 150px;
             max-width: 100%; } }
-        @media (min-width: 1150px) {
-          .messaging-container .messages .individual-message-container .message-name-date {
-            width: 85%; } }
         .messaging-container .messages .individual-message-container .message-name-date .corner {
-          position: absolute;
-          top: -20px;
-          left: -24px;
-          right: initial;
-          width: 40px; }
+          width: 32px;
+          margin: 0 10px; }
         .messaging-container .messages .individual-message-container .message-name-date div {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
+          justify-content: flex-start;
           width: 100%; }
         .messaging-container .messages .individual-message-container .message-name-date .name-date {
-          color: #888888; }
-        .messaging-container .messages .individual-message-container .message-name-date .message-text {
+          color: #888888;
           display: flex;
-          margin-bottom: 10px;
-          justify-content: flex-start;
-          align-items: flex-start; }
-          .messaging-container .messages .individual-message-container .message-name-date .message-text p {
-            width: 85%;
-            margin: 0 auto;
-            word-wrap: break-word; }
+          flex-direction: column;
+          padding: 0  10px; }
+          .messaging-container .messages .individual-message-container .message-name-date .name-date .time-text {
+            font-size: 12px;
+            text-align: justify;
+            position: relative;
+            top: 2.5px; }
+          .messaging-container .messages .individual-message-container .message-name-date .name-date .name-text {
+            font-weight: bolder;
+            margin-right: 10px;
+            color: black; }
+          .messaging-container .messages .individual-message-container .message-name-date .name-date .message-text {
+            text-align: left;
+            width: 100%;
+            word-wrap: break-word;
+            color: black;
+            padding: 8px 50px 0 0; }
     .messaging-container .messages .individual-message-container.myself .message-name-date {
-      background: #d7e1ff;
-      order: 1;
-      position: relative; }
+      order: 1; }
       .messaging-container .messages .individual-message-container.myself .message-name-date .corner {
-        position: absolute;
-        top: -20px;
-        left: initial;
-        right: -24px;
-        width: 40px; }
+        width: 32px;
+        margin: 0 10px; }
     .messaging-container .messages .individual-message-container.myself .user-image-container-for-messages {
       order: 2; }
   .messaging-container .messages > * + * {
-    margin: 15px 0px; }
+    margin: 5px 0px; }
   .messaging-container .message-input-container {
     position: fixed;
     bottom: 0;

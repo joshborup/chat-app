@@ -10,16 +10,19 @@ const Message = (props) => {
     return (
         <div className={stylingForSelf}>
             
-            <div style={{background: props.color}} className='message-name-date'>
+            <div className='message-name-date'>
                 <div className='user-image-container-for-messages corner'>
                     <img src={props.picture} />
                 </div>
-                <div className='message-text'>
-                    <p>{props.message}</p>
-                </div>
                 <div className='name-date'>
-                    <p>{props.name}</p>
-                    <p>{props.timestamp}</p>
+                    <div>
+                        <p className='name-text'>{props.name}</p>
+                        <p className='time-text'>{props.timestamp}</p>
+                    </div>
+                    
+                    <div>
+                        <p className='message-text'>{props.message}</p>
+                    </div>
                 </div>
             </div>
         </div>

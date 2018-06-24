@@ -26,19 +26,18 @@ export default class MessageContainer extends Component {
         
         let messages = this.props.messages.map((e, i) => {
 
-                if(e.name == this.props.name){
+                // if(e.name == this.props.name){
 
-                return <Message 
-                            key={i}
-                            name={e.name}
-                            message={e.message}
-                            picture={e.picture}
-                            timestamp={e.timestamp}
-                            self={true}
-                            color={e.color}
-                            border={{borderRightColor: e.color}}
-                        />
-                } else {
+                // return <Message 
+                //             key={i}
+                //             name={e.name}
+                //             message={e.message}
+                //             picture={e.picture}
+                //             timestamp={e.timestamp}
+                //             self={true}
+                            
+                //         />
+                // } else {
 
                     return <Message 
                             key={i}
@@ -47,11 +46,10 @@ export default class MessageContainer extends Component {
                             picture={e.picture}
                             timestamp={e.timestamp}
                             self={false}
-                            color={e.color}
-                            border={{borderLeftColor: e.color}}
+                            
                         />
 
-                }
+                // }
         }) 
 
         return (

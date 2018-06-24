@@ -30,7 +30,7 @@ export default class Group extends Component {
 
         let connectionObj={
             room: this.state.baseURL,
-            color: myColors()
+            // color: myColors()
         }
         
         socket.emit('room', connectionObj);
