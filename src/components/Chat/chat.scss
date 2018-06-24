@@ -200,9 +200,17 @@
                 max-width: 640px;
             
                 .loader {
-                    width: 200px;
-                    height: 200px;
+                    width: 350px;
+                    height: 350px;
                     margin: 0 auto;
+                    position: relative;
+                    p {
+                        position: absolute;
+                        top:70%;
+                        margin: 0 auto;
+                        left: 0;
+                        right: 0;
+                    }
                     img: {
                         width: 100%;
                     }

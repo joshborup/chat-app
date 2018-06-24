@@ -1,10 +1,20 @@
 import React from 'react';
 import './chat.css';
 import {Link} from 'react-router-dom';
-import loader from '../shared/Login/loader.gif';
 import Modal from '../Chat/Modal';
+import * as animationData from '../shared/media/lego_loader.json'
+import Lottie from 'react-lottie';
 
 const ChatDisplay = (props) => {
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true, 
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      };
 
     let groupRooms = props.groupRooms ? props.groupRooms.map((room)=>{
         return <div className='room-list'>
@@ -17,7 +27,10 @@ const ChatDisplay = (props) => {
                         </Link>
                     </div>
                 </div>
-    }) : <div className='loader'><img src={loader}/></div>;
+    }) : <div className='loader'><Lottie options={defaultOptions}
+    />
+    <p>Loading...</p>
+    </div>;
 
     let popularRooms = props.popularRooms.map((room)=>{
         return <div className='room-list'>

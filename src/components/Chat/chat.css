@@ -143,10 +143,17 @@
         flex: 3;
         max-width: 640px; }
         .chat-container .chat-display .rooms .group .loader {
-          width: 200px;
-          height: 200px;
+          width: 350px;
+          height: 350px;
           margin: 0 auto;
+          position: relative;
           img-width: 100%; }
+          .chat-container .chat-display .rooms .group .loader p {
+            position: absolute;
+            top: 70%;
+            margin: 0 auto;
+            left: 0;
+            right: 0; }
         .chat-container .chat-display .rooms .group .search:focus {
           outline: none; }
         .chat-container .chat-display .rooms .group .search {
