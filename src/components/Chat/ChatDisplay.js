@@ -2,6 +2,7 @@ import React from 'react';
 import './chat.css';
 import {Link} from 'react-router-dom';
 import Modal from '../Chat/Modal';
+import generateName from 'sillyname';
 import * as animationData from '../shared/media/lego_loader.json'
 import Lottie from 'react-lottie';
 
@@ -44,6 +45,8 @@ const ChatDisplay = (props) => {
                     </div>
                 </div>
     })
+
+
     return (
         <div className='chat-display'>
            <h1>Select a room</h1>
@@ -52,9 +55,11 @@ const ChatDisplay = (props) => {
                 <button onClick={() => props.toggle('Create Room')}>
                     Create Room
                 </button>
-                <button>
-                    Random Room
-                </button>
+                <Link to={`/chat/group/${generateName().split(' ').join('')}`}>
+                    <button>
+                        Random Room
+                    </button>
+                </Link>
             </div>
 
            <div className='rooms'>

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import ChatDisplay from './ChatDisplay';
 import Persistance from '../../Persistance';
+import socketIOClient from 'socket.io-client';
 import Footer from '../shared/Footer'
 import axios from 'axios';
+
+const socket = socketIOClient();
 
 class ChatContainer extends Component {
     constructor(){
@@ -13,8 +16,15 @@ class ChatContainer extends Component {
             opened: false,
             groupRooms:null,
             modalName: '',
-            popularRooms: [{name:'NBAfinals', users: 70}, {name:'ASUfootball', users: 70}, {name:'Politics', users: 70}, {name:'TOP_SHELF', users: 70}]
+            popularRooms: []
         }
+
+        socket.on('user_room_count', (roomsAndUserCount) => {
+            console.log(roomsAndUserCount);
+            this.setState({
+                popularRooms: roomsAndUserCount
+            })
+        })
     }
 
     componentDidMount(){

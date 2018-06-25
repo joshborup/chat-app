@@ -3,7 +3,7 @@ import axios from 'axios';
 import socketIOClient from 'socket.io-client';
 import UsersLists from './UsersLists';
 import MessageContainer from './MessageContainer';
-import myColors from '../styles/colors';
+
 import './room.css';
 
 const socket = socketIOClient();
@@ -30,7 +30,6 @@ export default class Group extends Component {
 
         let connectionObj={
             room: this.state.baseURL,
-            // color: myColors()
         }
         
         socket.emit('room', connectionObj);
