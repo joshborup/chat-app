@@ -13,6 +13,7 @@ class PersonalProfile extends Component {
             user: this.props.user,
             profileBackground: '',
             toggle: true,
+            backLoaderToggle: false,
             email: '',
             aboutMe: '',
             facebook:'',
@@ -23,7 +24,17 @@ class PersonalProfile extends Component {
     }
 
     componentDidMount(){
-        console.log('this.props.user: ', this.props.user);
+        axios.get('/user/profile_data').then(response => {
+            console.log('response.data.length :', response.data);
+            if(response.data.length){
+                this.setState({
+                    aboutMe: response.data[0].about_me,
+                    facebook: response.data[0].facebook,
+                    instagram: response.data[0].instagram,
+                    linkedin: response.data[0].linkedin
+                })
+            }
+        })
     }
 
     uploadedImage = (profileBackground) => {
@@ -54,6 +65,16 @@ class PersonalProfile extends Component {
         })
     }
 
+    backLoaderToggleFunc = () => {
+        this.setState((prevState) => {
+            return {
+                backLoaderToggle: !prevState.backLoaderToggle
+            }
+        })
+    }
+
+
+
     update = () => {
        let update = {
             aboutMe: this.state.aboutMe,
@@ -62,20 +83,20 @@ class PersonalProfile extends Component {
             linkedin: this.state.linkedin,
         }
         console.log('update :', update);
-        // axios.post('/user/update_profile', update).then((response)=> {
-        //     this.setState({
-        //         aboutMe: response.data[0].aboutMe,
-        //         facebook: response.data[0].facebook,
-        //         instagram: response.data[0].instagram,
-        //         linkedin: response.data[0].linkedin,
-        //     })
-        //     this.toggle();
-        // })
-        this.toggle();
+        axios.post('/user/update_profile', {update}).then((response)=> {
+            // this.setState({
+            //     aboutMe: response.data[0].aboutMe,
+            //     facebook: response.data[0].facebook,
+            //     instagram: response.data[0].instagram,
+            //     linkedin: response.data[0].linkedin,
+            // })
+            console.log('response.data :', response.data);
+            this.toggle();
+        })
     }
 
     render() {
-
+        console.log('this.state.backLoaderToggleFunc :', this.state.aboutMe);
         return (
             <div>
                 <div>
@@ -84,7 +105,8 @@ class PersonalProfile extends Component {
                         email={this.state.email}
                         submit={this.submit}
                         toggle={{data: this.state.toggle, func: this.toggle}} 
-                        clickedFunc={this.clickedFunc} clicked={this.state.clicked} 
+                        backLoaderToggleFunc={this.backLoaderToggleFunc}
+                        backLoaderToggle={this.state.backLoaderToggle} 
                         profileBackground={this.state.profileBackground}  
                         uploadedImage={this.uploadedImage} 
                         user={this.props.user}

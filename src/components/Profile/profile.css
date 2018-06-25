@@ -20,6 +20,10 @@
     @media (max-width: 599px) {
       .profile-display-container .custom-banner {
         min-height: 250px; } }
+    .profile-display-container .custom-banner .background-loader {
+      position: absolute;
+      top: 30px;
+      right: 0px; }
     .profile-display-container .custom-banner .user-name {
       position: relative; }
     .profile-display-container .custom-banner .upload-form {
@@ -98,6 +102,9 @@
       height: 80px;
       font-weight: 500;
       font-size: 20px; }
+      @media (max-width: 599px) {
+        .profile-display-container .profile-info .about-me, .profile-display-container .profile-info .facebook, .profile-display-container .profile-info .instagram, .profile-display-container .profile-info .linkedin {
+          font-size: 16px; } }
       .profile-display-container .profile-info .about-me textarea, .profile-display-container .profile-info .facebook textarea, .profile-display-container .profile-info .instagram textarea, .profile-display-container .profile-info .linkedin textarea {
         flex: 1;
         height: 100%;

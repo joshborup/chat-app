@@ -1,4 +1,5 @@
 DROP TABLE rooms;
+DROP TABLE profile;
 DROP TABLE users;
 
 CREATE TABLE users(
@@ -8,7 +9,18 @@ CREATE TABLE users(
     ,picture TEXT NOT NULL
     ,email TEXT NOT NULL
     ,email_verified BOOLEAN NOT NULL
+    ,profile_background TEXT
 );
+
+CREATE TABLE profile(
+    id SERIAL PRIMARY KEY
+    user_id INTEGER not null references users(id)
+    , aboutMe TEXT
+    , facebook TEXT
+    , instagram TEXT
+    , linkedin TEXT
+)
+
 
 CREATE TABLE rooms(
     id SERIAL PRIMARY KEY

@@ -16,7 +16,7 @@ export default class UploadForm extends Component {
 
 //axios call to server to request hashed signature
         axios.get('/user/upload').then(response => {
-        
+        this.props.backLoaderToggleFunc()
 //form data for signed uploads
 
         let formData = new FormData();
@@ -28,6 +28,7 @@ export default class UploadForm extends Component {
 //axios call to cloudinary using the URL set at top of page
         axios.post(CLOUDINARY_UPLOAD_URL, formData).then(response => {
             this.props.uploadedImage(response.data.secure_url);
+            this.props.backLoaderToggleFunc();
             }).catch( err => {
                 console.log(err);
             }) 
