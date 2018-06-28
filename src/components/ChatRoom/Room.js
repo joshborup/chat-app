@@ -36,7 +36,7 @@ export default class Group extends Component {
         
 
         socket.on('message', (message)=>{
-            console.log(message)
+           
             let messages;
             if(message.message){
                 messages = [...this.state.messages, message]
@@ -49,7 +49,7 @@ export default class Group extends Component {
         })
 
         socket.on('users_list', (userslist)=> {
-                console.log(userslist);
+                
                 this.setState({
                     userslist: userslist.names,
                     count: userslist.count
@@ -60,7 +60,7 @@ export default class Group extends Component {
 
     componentDidMount(){
         axios.get('/user/user_data').then(response => {
-            console.log(response)
+           
             this.setState({
                 user: response.data[0]
             })
@@ -135,9 +135,9 @@ export default class Group extends Component {
 
 
     render() {
-        console.log(this.props.match.params.room)
+       
         let opaque = this.state.open ? 'opaque-background show' : 'opaque-background hide';
-        console.log(this.state.open);
+        
         return (
             
             <div className='group-chatroom-container'>

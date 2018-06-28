@@ -13,10 +13,10 @@ userRouter.post('/login', (req, res) => {
         db.authenticate_user(sub).then(response => {
             if(!response.length){
                 db.create_user([sub, nickname, picture, email, email_verified]).then(user => {
-                    console.log('user :', user);
+                    
                     req.session.user = user
                     db.create_profile(user[0].id).then(()=> {
-                        console.log('profile created');
+                       
                     })
                     res.status(200).send('Success')
                 })
@@ -43,13 +43,6 @@ userRouter.post('/logout', (req, res) => {
 userRouter.post('/update_profile', (req, res) => {
     const db = req.app.get('db');
     let { update } = req.body;
-    console.log('update :', {
-        user_id: req.session.user[0].id,
-        aboutMe: update.aboutMe,
-        facebook: update.facebook,
-        instagram: update.instagram,
-        linkedin: update.linkedin
-    });
 
     db.update_profile({
         user_id: req.session.user[0].id,
@@ -58,7 +51,7 @@ userRouter.post('/update_profile', (req, res) => {
         instagram: update.instagram,
         linkedin: update.linkedin
     }).then(response => {
-        console.log('updated', response);
+       
         res.status(200).json(response);
     }).catch(err => console.log('err :', err))
 })
@@ -74,11 +67,10 @@ userRouter.get('/profile_data', (req, res) => {
 userRouter.post('/edit_profile_background', (req, res) => {
     const db = req.app.get('db');
     let { profileBackground } = req.body;
-    console.log(profileBackground, req.session.user[0].id);
 
     
     db.update_background([profileBackground, req.session.user[0].id]).then(response => {
-        console.log('response :', response);
+    
         res.send('success!')
     }).catch(err => console.log(err))
 })

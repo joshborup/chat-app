@@ -17,6 +17,11 @@ module.exports = (io, Users) => {
             io.in(connectionObj.room).emit('users_list', userslist)
         });
 
+        socket.on('get_users', (filler) => {
+            
+            io.emit('user_room_count', users.GetRoomsAndUserCount())
+        })
+
         socket.on('message', (messageObj)=> {
             messageObj.color = socket.handshake.session.user.color;
             io.in(messageObj.room).emit('message', messageObj)

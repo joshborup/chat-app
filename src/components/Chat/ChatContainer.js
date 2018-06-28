@@ -19,8 +19,9 @@ class ChatContainer extends Component {
             popularRooms: []
         }
 
+        socket.emit('get_users', 'userConnected');
+
         socket.on('user_room_count', (roomsAndUserCount) => {
-            console.log(roomsAndUserCount);
             this.setState({
                 popularRooms: roomsAndUserCount
             })
@@ -33,6 +34,7 @@ class ChatContainer extends Component {
                 groupRooms: response.data
             })
         })
+        
     }
 
     reausableChangeHandler = (key, val) => {
