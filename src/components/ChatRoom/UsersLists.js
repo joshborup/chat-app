@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import friendsButton from './media/friends_button.svg';
+import closeFriends from '../shared/media/closeFriends.svg';
 import {Link} from 'react-router-dom';
 
 class ResponsiveDrawer extends Component {
@@ -36,7 +37,7 @@ class ResponsiveDrawer extends Component {
     return (
        
             <div className={open}>
-                <button className='friends-toggle' onClick={this.props.drawerToggle}><img src={friendsButton}/></button>
+                <button className='friends-toggle' onClick={this.props.drawerToggle}>{this.props.open ? <img src={closeFriends}/> : <img src={friendsButton}/>  }</button>
                 <div className='room-info'>
                     <div>
                         Room: {this.props.room}

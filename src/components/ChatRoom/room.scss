@@ -325,7 +325,7 @@ button:focus {
         z-index: 4;
         .friends-toggle {
             display: flex;
-            position: absolute;
+            position: fixed;
             right: -54px;   
             height: 38px;
             width: 38px;
@@ -349,7 +349,7 @@ button:focus {
         .friends-toggle {
             display: flex;
             position: absolute;
-            right: -54px;
+            right: -384px;
             height: 38px;
             width: 38px;
             border-radius: 50%;
