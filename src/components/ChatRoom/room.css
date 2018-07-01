@@ -36,6 +36,8 @@ button:focus {
         width: 90%;
         z-index: 2;
         background: linear-gradient(rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.9)), url("./media/tiger.png"); } }
+    .group-chatroom-container > div .drawer-container a {
+      text-decoration: none; }
     .group-chatroom-container > div .drawer-container .room-info {
       color: white;
       font-family: "Montserrat", sans-serif;

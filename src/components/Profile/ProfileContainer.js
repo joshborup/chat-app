@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ProfileDisplay from './ProfileDisplay';
 import Persistance from '../../Persistance';
 import axios from 'axios';
-import myStore from '../shared/myStore';
 import Footer from '../shared/Footer';
 import './profile.css';
 

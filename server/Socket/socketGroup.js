@@ -7,8 +7,7 @@ module.exports = (io, Users) => {
         
         socket.on('room', (connectionObj) => {
             if(socket.handshake.session.user){
-                users.AddUserData(socket.id, socket.handshake.session.user[0].name, socket.handshake.session.user[0].picture, connectionObj.room);
-                socket.handshake.session.user.color = connectionObj.color;
+                users.AddUserData(socket.handshake.session.user[0].id, socket.id, socket.handshake.session.user[0].name, socket.handshake.session.user[0].picture, connectionObj.room);
                 socket.join(connectionObj.room);
             }
             

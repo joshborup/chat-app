@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
-import friendsButton from './media/friends_button.svg'
+import friendsButton from './media/friends_button.svg';
+import {Link} from 'react-router-dom';
 
 class ResponsiveDrawer extends Component {
 
-  render() {
 
+
+  render() {
+    console.log(this.props.usersList);
     let usersList = this.props.usersList ? this.props.usersList.map((user) => {
-        return <div className='user-card'>
+        
+        return <Link key={user.id} to={`/user/user_profile/${user.id}`}>
+            <div className='user-card'>
  
                  <div>
                      <img src={user.picture} />
@@ -23,6 +28,7 @@ class ResponsiveDrawer extends Component {
                  </div>
  
              </div>
+             </Link>
      }) : 'loading';
     
     let open = this.props.open ? 'drawer-container open' : 'drawer-container close'

@@ -3,15 +3,25 @@ class Users {
         this.users = [];
     }
 
-    async AddUserData(id, name, picture, room, color){
-        let users = {id, name, picture, room, color}
-        this.users.push(users)
-        return users;
+    async AddUserData(id, socket_id, name, picture, room){
+        let user = {id, socket_id, name, picture, room}
+
+        // this.users.filter((user, index) => {
+        //     if(this.users[index].id user.id)
+        // })
+
+  
+        if (JSON.stringify(this.users).includes(`${id}`) && JSON.stringify(this.users).includes(`${name}`)){
+            return 
+        }else {
+            this.users.push(user)
+            return user;
+        }
     }
 
-    RemoveUser(id){
+    RemoveUser(socket_id){
 
-        let indexOfuserToRemove = this.users.findIndex((user) => user.id == id);
+        let indexOfuserToRemove = this.users.findIndex((user) => user.socket_id == socket_id);
         if(indexOfuserToRemove !== -1){
             let room = this.users[indexOfuserToRemove].room
             this.users.splice(indexOfuserToRemove, 1);

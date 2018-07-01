@@ -42,6 +42,11 @@ button:focus {
             z-index: 2;
             background:linear-gradient(rgba(30,30,30, 0.9), rgba(30, 30, 30, 0.9)) ,url('./media/tiger.png');
         }
+
+        a {
+            text-decoration: none;
+        }
+
         .room-info {
             color: white;
             font-family: $font-stack;

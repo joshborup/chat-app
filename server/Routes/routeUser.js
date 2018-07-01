@@ -68,11 +68,20 @@ userRouter.post('/edit_profile_background', (req, res) => {
     const db = req.app.get('db');
     let { profileBackground } = req.body;
 
-    
     db.update_background([profileBackground, req.session.user[0].id]).then(response => {
     
         res.send('success!')
     }).catch(err => console.log(err))
+})
+
+
+userRouter.get('/user_profile/:id', (req, res) => {
+    const db = req.app.get('db');
+    const { id } = req.params;
+
+    db.get_profile_by_id(id).then(user => {
+        res.status(200).json(user);
+    })
 })
 
 userRouter.get('/upload', (req, res) => {
