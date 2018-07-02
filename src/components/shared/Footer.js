@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import * as animationData from './media/sky.json'
+import * as animationData from './media/color.json'
 import './footer.css';
 
 const Footer = (props) => {
@@ -14,12 +14,18 @@ const Footer = (props) => {
         }
       };
 
+    const style = {
+        position: "absolute",
+        left: "-50px"
+    }
+
     return (
         <div className='footer-container'>
             <div>
-                <Lottie options={defaultOptions}
+                <Lottie style={style} options={defaultOptions}
                 height={400}
-                width={'100%'}/>
+                width={'110%'}
+                />
             </div>
             <div className='footer-content'>
                 <h2>Footer</h2>

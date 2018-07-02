@@ -14,6 +14,7 @@ export default class Group extends Component {
 
         this.state = {
           baseURL: this.props.match.params.room,
+          private: this.props.match.params.type,
           count: null,
           message: '',
           messages:[],
@@ -25,11 +26,12 @@ export default class Group extends Component {
               name:''
           }
         }
-
+        console.log('this.props.match.query  :', this.props.match);
         this.bottomScroll = React.createRef();
-
+        
         let connectionObj={
             room: this.state.baseURL,
+            type: this.state.private
         }
         
         socket.emit('room', connectionObj);

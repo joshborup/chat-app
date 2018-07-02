@@ -16,6 +16,7 @@ class ChatContainer extends Component {
             opened: false,
             groupRooms:null,
             modalName: '',
+            type: 'group',
             popularRooms: []
         }
 
@@ -66,12 +67,21 @@ class ChatContainer extends Component {
             }
         })
     }
-
+    privateRoom = () => {
+        this.setState((prevState) => {
+            let roomType = prevState.type == 'group' ?  'private' :'group';
+            return {
+                private: !prevState.private, 
+                type: roomType
+            }
+        })
+    }
+    
     render() {
         return (
             <div>
                 <div className='chat-container'>
-                    <ChatDisplay {...this.props} reausableChangeHandler={this.reausableChangeHandler} createRoomName={this.state.createRoomName} modalName={this.state.modalName} opened={this.state.opened} toggle={this.toggle} search={this.search} changeHandler={this.changeHandler} groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
+                    <ChatDisplay {...this.props} roomType={this.state.type} privateRoom={this.privateRoom} private={this.state.private} reausableChangeHandler={this.reausableChangeHandler} createRoomName={this.state.createRoomName} modalName={this.state.modalName} opened={this.state.opened} toggle={this.toggle} search={this.search} changeHandler={this.changeHandler} groupRooms={this.state.groupRooms} popularRooms={this.state.popularRooms} />
                 </div>
                 <Footer/>
             </div>

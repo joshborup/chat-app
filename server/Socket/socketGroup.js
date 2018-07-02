@@ -7,18 +7,20 @@ module.exports = (io, Users) => {
         
         socket.on('room', (connectionObj) => {
             if(socket.handshake.session.user){
-                users.AddUserData(socket.handshake.session.user[0].id, socket.id, socket.handshake.session.user[0].name, socket.handshake.session.user[0].picture, connectionObj.room);
+                users.AddUserData(socket.handshake.session.user[0].id, socket.id, socket.handshake.session.user[0].name, socket.handshake.session.user[0].picture, connectionObj.room, connectionObj.type);
                 socket.join(connectionObj.room);
             }
             
             let userslist = users.GetUserList(connectionObj.room)
-            io.emit('user_room_count', users.GetRoomsAndUserCount())
+            let groupRooms = users.GetRoomsAndUserCount().filter(rooms => rooms.type != 'private')
+            io.emit('user_room_count', groupRooms)
             io.in(connectionObj.room).emit('users_list', userslist)
         });
 
         socket.on('get_users', (filler) => {
-            
-            io.emit('user_room_count', users.GetRoomsAndUserCount())
+
+            let groupRooms = users.GetRoomsAndUserCount().filter(rooms => rooms.type != 'private')
+            io.emit('user_room_count', groupRooms)
         })
 
         socket.on('message', (messageObj)=> {
@@ -29,7 +31,8 @@ module.exports = (io, Users) => {
         socket.on('left', (left)=> {
             let room = users.RemoveUser(socket.id)
             let userslist = users.GetUserList(room)
-            io.emit('user_room_count', users.GetRoomsAndUserCount())
+            let groupRooms = users.GetRoomsAndUserCount().filter(rooms => rooms.type != 'private')
+            io.emit('user_room_count', groupRooms)
             io.in(room).emit('users_list', userslist)   
         })
 

@@ -43,7 +43,7 @@ const PubProfileDisplay = (props) => {
                         ''}
                         { props.pubUser.linkedin ?
                         <div>
-                            <a target='_blank' href={`https://www.instagram.com/${props.pubUser.linkedin}`}>
+                            <a target='_blank' href={`https://www.linkedin.com/in/${props.pubUser.linkedin}`}>
                             <img src={linkedin}/>
                             </a>
                         </div>
