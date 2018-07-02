@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PubProfileDisplay from './PubProfileDisplay';
 import axios from 'axios';
 import Persistance from '../../Persistance';
+import Footer from '../shared/Footer';
 import './pubprofile.css';
 
 class PublicProfileContainer extends Component {
@@ -38,7 +39,10 @@ class PublicProfileContainer extends Component {
             <div className='pub-profile-container'>
                {this.state.user != undefined
                 ?
+                <div>
                 <PubProfileDisplay {...this.state}/>
+                <Footer />
+                </div>
                 :
                 'Please Log-in or Create an Account'
                }

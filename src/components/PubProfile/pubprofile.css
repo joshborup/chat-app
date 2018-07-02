@@ -10,6 +10,101 @@
   align-items: center; }
   .pub-profile-container > div {
     width: 100%;
+    padding: 0px 0 0 0; }
+  .pub-profile-container .custom-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    position: relative; }
+    @media (max-width: 599px) {
+      .pub-profile-container .custom-banner {
+        min-height: 250px; } }
+    .pub-profile-container .custom-banner .user-name {
+      position: relative; }
+    .pub-profile-container .custom-banner .custom-banner-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%; }
+      .pub-profile-container .custom-banner .custom-banner-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        min-width: 100%;
+        width: 100%;
+        min-height: 300px; }
+        @media (max-width: 599px) {
+          .pub-profile-container .custom-banner .custom-banner-image img {
+            min-height: 250px; } }
+  .pub-profile-container .profile-image-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: solid 2px white;
+    overflow: hidden;
+    position: relative;
+    animation: colorful 2s linear infinite forwards; }
+
+@keyframes colorful {
+  0% {
+    border-top-color: rgba(0, 128, 0, 0.5);
+    border-right-color: rgba(255, 255, 0, 0.5);
+    border-bottom-color: rgba(0, 0, 255, 0.5);
+    border-left-color: rgba(255, 0, 0, 0.5); }
+  25% {
+    border-top-color: rgba(255, 0, 0, 0.5);
+    border-right-color: rgba(0, 128, 0, 0.5);
+    border-bottom-color: rgba(255, 255, 0, 0.5);
+    border-left-color: rgba(0, 0, 255, 0.5); }
+  50% {
+    border-top-color: rgba(0, 0, 255, 0.5);
+    border-right-color: rgba(255, 0, 0, 0.5);
+    border-bottom-color: rgba(0, 128, 0, 0.5);
+    border-left-color: rgba(255, 255, 0, 0.5); }
+  75% {
+    border-top-color: rgba(255, 255, 0, 0.5);
+    border-right-color: rgba(0, 0, 255, 0.5);
+    border-bottom-color: rgba(255, 0, 0, 0.5);
+    border-left-color: rgba(0, 128, 0, 0.5); }
+  100% {
+    border-top-color: rgba(0, 128, 0, 0.5);
+    border-right-color: rgba(255, 255, 0, 0.5);
+    border-bottom-color: rgba(0, 0, 255, 0.5);
+    border-left-color: rgba(255, 0, 0, 0.5); } }
+    .pub-profile-container .profile-image-container img {
+      width: 100%; }
+  .pub-profile-container h1 {
+    font-size: 28px;
+    color: white;
+    margin: 10px; }
+
+.pub-profile-content {
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px; }
+  .pub-profile-content > div {
+    width: 100%;
     max-width: 1200px;
-    padding: 20px 0 0 0;
-    background: red; }
+    padding: 30px 0 0 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; }
+    .pub-profile-content > div h3 {
+      font-weight: 700;
+      margin-right: 15px; }
+  .pub-profile-content .social {
+    display: flex;
+    flex-direction: row;
+    width: 100%; }
+    .pub-profile-content .social > div {
+      max-width: 100px;
+      margin: 0 10px; }
+      .pub-profile-content .social > div img {
+        width: 100%; }
