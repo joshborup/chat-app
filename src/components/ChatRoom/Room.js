@@ -26,16 +26,21 @@ export default class Group extends Component {
               name:''
           }
         }
-        console.log('this.props.match.query  :', this.props.match);
+        console.log('this.props.match.query:', this.props.match);
         this.bottomScroll = React.createRef();
         
         let connectionObj={
-            room: this.state.baseURL,
-            type: this.state.private
+            room: this.props.match.params.room,
+            type: this.props.match.params.type
         }
         
         socket.emit('room', connectionObj);
-        
+
+        socket.on('random', (roomName) => {
+            this.setState({
+                baseURL: roomName
+            });
+        })
 
         socket.on('message', (message)=>{
            
@@ -51,7 +56,7 @@ export default class Group extends Component {
         })
 
         socket.on('users_list', (userslist)=> {
-                
+                console.log(userslist)
                 this.setState({
                     userslist: userslist.names,
                     count: userslist.count
@@ -101,7 +106,7 @@ export default class Group extends Component {
         
         let messageObj = {
             message: this.state.message,
-            room: this.props.match.params.room,
+            room: this.state.baseURL,
             name: this.state.user.name,
             picture: this.state.user.picture,
             timestamp: timestamp
@@ -121,7 +126,7 @@ export default class Group extends Component {
         
         let messageObj = {
             message: this.state.message,
-            room: this.props.match.params.room,
+            room: this.state.baseURL,
             name: this.state.user.name,
             picture: this.state.user.picture,
             timestamp: timestamp

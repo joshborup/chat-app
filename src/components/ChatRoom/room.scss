@@ -8,7 +8,7 @@ button:focus {
 .group-chatroom-container {
     min-height: 100vh;
     min-width: 100%;
-    background:linear-gradient(rgba(30,30,30, 0.9), rgba(30, 30, 30, 0.9)) ,url('./media/tiger.png');
+    background:linear-gradient(rgba(30,30,30, 0.7), rgba(30, 30, 30, 0.7)) ,url('../Home/media/car-background.svg');
     height: 100%;
 }
 
@@ -40,7 +40,7 @@ button:focus {
             bottom: 0;
             width: 90%;
             z-index: 2;
-            background:linear-gradient(rgba(30,30,30, 0.9), rgba(30, 30, 30, 0.9)) ,url('./media/tiger.png');
+            background:linear-gradient(rgba(30,30,30, 0.7), rgba(30, 30, 30, 0.7)) ,url('../Home/media/car-background.svg');
         }
 
         a {
@@ -275,7 +275,9 @@ button:focus {
             font-size: 16px;
             border: 2px solid rgb(114, 114, 114);
             border-right: none;
-            background: rgb(50, 50, 50);
+            background:linear-gradient(rgba(30,30,30, 0.8), rgba(30, 30, 30, 0.8)) ,url('../Home/media/car-background.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
             padding-left: 5px;
         }
 

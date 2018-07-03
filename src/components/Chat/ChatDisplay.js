@@ -57,7 +57,12 @@ const ChatDisplay = (props) => {
                 </button>
                 <Link to={`/chat/group/${generateName().split(' ').join('')}`}>
                     <button>
-                        Random Room
+                        Quick Chat
+                    </button>
+                </Link>
+                <Link to={`/chat/random/${generateName().split(' ').join('')}`}>
+                    <button>
+                        Random Chat
                     </button>
                 </Link>
             </div>

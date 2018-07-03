@@ -3,11 +3,9 @@ class Users {
         this.users = [];
     }
 
-    async AddUserData(id, socket_id, name, picture, room, type){
+   AddUserData(id, socket_id, name, picture, room, type){
         let user = {id, socket_id, name, picture, room, type}
         let index = this.GetRoomsAndUserCount().findIndex(elem => elem.name == room)
-        console.log('index != -1 :', index != -1);
-        console.log('this.GetRoomsAndUserCount()[index].type != type :', this.GetRoomsAndUserCount()[index]);
         if(index != -1){
             if(this.GetRoomsAndUserCount()[index].type != type){
                 
@@ -45,7 +43,23 @@ class Users {
             names: namesArray,
             count: namesArray.length
         }
+        console.log(list)
+        return list;
+    }
 
+
+    GetRandomUserList(room, array){
+        let users = array.filter(user => user.room === room);
+
+        let namesArray = users.map(user => {
+            return user;
+        })
+
+        let list = {
+            names: namesArray,
+            count: namesArray.length
+        }
+        console.log(list)
         return list;
     }
 
@@ -77,6 +91,28 @@ class Users {
         })
 
         roomsAndCount.sort((a,b) => b.count - a.count) 
+        return roomsAndCount;
+    }
+
+    GetRandomRoomsAndUserCount(){
+    
+        let roomsArray = []
+        for(let i = 0; i < this.users.length; i++){
+            if(!roomsArray.includes(this.users[i].room)){
+                roomsArray.push(this.users[i])
+            }
+        }
+        let roomsAndCount = roomsArray.map(room => {
+            let count = this.users.filter((user)=> user.room == room.room)
+            return {
+                name: room.room,
+                users: count.length,
+                type: room.type
+            }
+        })
+
+        roomsAndCount.sort((a,b) => b.count - a.count)
+        console.log(roomsAndCount);
         return roomsAndCount;
     }
 
