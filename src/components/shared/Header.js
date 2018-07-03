@@ -71,7 +71,7 @@ class Header extends Component {
                         </button>
                     </div>
                     :
-                    <Login />
+                    <Login label='LOGIN' />
                     }
                 </div>
             </div>

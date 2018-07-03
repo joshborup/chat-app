@@ -1,6 +1,8 @@
 @import '../styles/_shared.scss';
 .footer-container {
-    background: rgb(180, 180, 180);
+    background:linear-gradient(rgba(0, 0, 0, 0.486),rgba(0, 0, 0, 0.486)) ,url('../Home/media/car-background.svg');
+    background-size: 110%;
+    background-repeat: no-repeat;
     color: white;
     height: 200px;
     overflow: hidden;
@@ -12,13 +14,7 @@
     font-family: $font-stack;
 }
 
-.footer-container > div:first-child {
-    position: absolute;
-    right: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
+
 
 .footer-content {
     position: relative;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import * as auth0 from 'auth0-js';
 import axios from 'axios';
 import './login.css';
@@ -58,7 +57,7 @@ class Login extends Component {
           ?
           ''
           :
-          <button className='login-button' onClick={this.login}>LOGIN | REGISTER</button>}
+          <button className='login-button' onClick={this.login}>{this.props.label}</button>}
         </div>
       </div>
     );

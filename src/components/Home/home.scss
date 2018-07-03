@@ -14,9 +14,11 @@
             height: 320px;
             max-height: 320px;
             overflow: hidden;
+            z-index: 2;
             position: relative;
-            background: url('./media/banner.png');
+            background: url('./media/banner2.jpg');
             background-position: center;
+            background-repeat: no-repeat;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -24,20 +26,47 @@
             align-items: center;
             margin-top: 60px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.245);
+
+            
             
             @media (max-width:599px) {
             }
 
         @media (min-width: 1199px) {
-            background-position-y: -100px;
+            
             height: 380px;
             max-height: 380px;
         }
 
+        .home-login{
+              overflow: hidden;
+              height: 65px;
+            .login-button {
+                position: relative;
+                width: 140px;
+                height: 40px;
+                margin: 20px 0px;
+                z-index: 2;
+                font-size: 22px;
+                background: rgba(99, 1, 99, 0.493);
+                border: #ffffff5b 1px solid;
+                border-radius: 3px;
+                box-shadow: 0px 5px 0px rgb(70, 1, 70);
+
+                
+            }
+            
+            .login-button:active {
+                margin-top: 24px;
+                box-shadow: 0px 1px 0px rgb(70, 1, 70);
+            }
+        } 
         h1 {
             color: #ffffff;
             font-size: 60px;
             text-shadow: .2px .2px 1px black;
+            position: relative;
+            z-index: 2;
             @media (max-width:599px) {
                 font-size: 46px;
             }
@@ -45,6 +74,8 @@
 
         h2 {
             color: #ffffff;
+            position: relative;
+            z-index: 2;
             font-size: 42px;
             text-shadow: .2px .2px 1px black;
             @media (max-width:599px) {
