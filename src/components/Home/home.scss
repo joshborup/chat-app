@@ -30,6 +30,9 @@
             
             
             @media (max-width:599px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
         @media (min-width: 1199px) {
@@ -38,9 +41,19 @@
             max-height: 380px;
         }
 
+        .login {
+        
+
+            @media (max-width: 599px) {
+                position: initial;
+            }
+        }
+
+
         .home-login{
               overflow: hidden;
               height: 65px;
+              
             .login-button {
                 position: relative;
                 width: 140px;
@@ -49,7 +62,7 @@
                 z-index: 2;
                 font-size: 22px;
                 background: rgba(99, 1, 99, 0.493);
-                border: #ffffff5b 1px solid;
+                border: #6b6a6a75 1px solid;
                 border-radius: 3px;
                 box-shadow: 0px 5px 0px rgb(70, 1, 70);
 

@@ -20,10 +20,18 @@
     align-items: center;
     margin-top: 60px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.245); }
+    @media (max-width: 599px) {
+      .home-container .home-display-container .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center; } }
     @media (min-width: 1199px) {
       .home-container .home-display-container .banner {
         height: 380px;
         max-height: 380px; } }
+    @media (max-width: 599px) {
+      .home-container .home-display-container .banner .login {
+        position: initial; } }
     .home-container .home-display-container .banner .home-login {
       overflow: hidden;
       height: 65px; }
@@ -35,7 +43,7 @@
         z-index: 2;
         font-size: 22px;
         background: rgba(99, 1, 99, 0.493);
-        border: #ffffff5b 1px solid;
+        border: #6b6a6a75 1px solid;
         border-radius: 3px;
         box-shadow: 0px 5px 0px #460146; }
       .home-container .home-display-container .banner .home-login .login-button:active {
