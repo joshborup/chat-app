@@ -24,14 +24,14 @@
         height: 380px;
         max-height: 380px; } }
     .home-container .home-display-container .banner h1 {
-      color: #cccaca;
+      color: #ffffff;
       font-size: 60px;
       text-shadow: .2px .2px 1px black; }
       @media (max-width: 599px) {
         .home-container .home-display-container .banner h1 {
           font-size: 46px; } }
     .home-container .home-display-container .banner h2 {
-      color: #cccaca;
+      color: #ffffff;
       font-size: 42px;
       text-shadow: .2px .2px 1px black; }
       @media (max-width: 599px) {
