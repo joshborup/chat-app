@@ -3,6 +3,7 @@ import './chat.css';
 import {Link} from 'react-router-dom';
 import Modal from '../Chat/Modal';
 import generateName from 'sillyname';
+import search from './media/magnifying-glass-1976105.svg'
 import * as animationData from '../shared/media/lego_loader.json'
 import Lottie from 'react-lottie';
 
@@ -79,7 +80,8 @@ const ChatDisplay = (props) => {
                         General
                     </h2>
                     <div>
-                        <input name='search' onChange={(e) => props.changeHandler(e.target.name, e.target.value)} placeholder='Search Rooms' className='search' type='text' name='search' />
+                        <img className='search-icon' src={search} alt='search-icon'/>
+                        <input name='search' onChange={(e) => props.changeHandler(e.target.name, e.target.value)} placeholder='Search Rooms ...' className='search' type='text' name='search' />
                     </div>
                     {groupRooms}
                 </div>

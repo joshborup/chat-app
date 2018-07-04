@@ -229,6 +229,7 @@
             .group {
                 flex: 3;
                 max-width: 640px;
+                position: relative;
             
                 .loader {
                     width: 350px;
@@ -266,12 +267,19 @@
                     background-size: cover;
                     background-repeat: no-repeat;
                     color: white;
+                }
 
+                .search-icon{
+                    position: absolute;
+                    width: 35px;
+                    top: 44px;
+                    right: 20px;
                     
                 }
 
                 .search::placeholder {
-                    color: white;
+                    color: rgb(230, 230, 230);
+                    text-shadow: 1px 1px 1px black;
                 }
                 @media (max-width:599px) {
                     max-width: 440px;

@@ -164,7 +164,8 @@
         font-size: 22px; }
       .chat-container .chat-display .rooms .group {
         flex: 3;
-        max-width: 640px; }
+        max-width: 640px;
+        position: relative; }
         .chat-container .chat-display .rooms .group .loader {
           width: 350px;
           height: 350px;
@@ -193,8 +194,14 @@
           background-size: cover;
           background-repeat: no-repeat;
           color: white; }
+        .chat-container .chat-display .rooms .group .search-icon {
+          position: absolute;
+          width: 35px;
+          top: 44px;
+          right: 20px; }
         .chat-container .chat-display .rooms .group .search::placeholder {
-          color: white; }
+          color: #e6e6e6;
+          text-shadow: 1px 1px 1px black; }
         @media (max-width: 599px) {
           .chat-container .chat-display .rooms .group {
             max-width: 440px;

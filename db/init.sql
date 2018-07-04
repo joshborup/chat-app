@@ -1,5 +1,5 @@
-DROP TABLE rooms;
 DROP TABLE profile;
+DROP TABLE rooms;
 DROP TABLE users;
 
 CREATE TABLE users(
@@ -15,20 +15,23 @@ CREATE TABLE users(
 CREATE TABLE profile(
     id SERIAL PRIMARY KEY
     , user_id INTEGER not null references users(id)
-    , aboutMe TEXT
+    , about_me TEXT
     , facebook TEXT
     , instagram TEXT
     , linkedin TEXT
-)
-
+);
 
 CREATE TABLE rooms(
     id SERIAL PRIMARY KEY
     ,room_name TEXT not null
-    ,room_admin INTERGER not null references users(id)
+    ,room_admin INTEGER not null references users(id)
     ,date_created TEXT not null
     ,date_last_used TEXT
 );
+
+SELECT * FROM users;
+SELECT * FROM profile;
+SELECT * FROM rooms;
 
 INSERT INTO rooms (room_name, room_admin, date_created, date_last_used) VALUES ('BoardGames', 1, 'Mon Jun 18 2018 11:11:40', 'Mon Jun 18 2018 11:11:40');
 INSERT INTO rooms (room_name, room_admin, date_created, date_last_used) VALUES ('Gaming', 1, 'Mon Jun 18 2018 11:11:40', 'Mon Jun 18 2018 11:11:40');
