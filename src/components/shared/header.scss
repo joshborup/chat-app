@@ -123,6 +123,7 @@
         .link-1 {
             position: absolute;
             color: white;
+            text-shadow: 1px 1px 1px black;  
             top: -5px;
             width: 100px;
             padding: 10px 20px;
@@ -135,7 +136,7 @@
             }
 
             a:hover {
-                color: #bdbdbd;
+                color: #DCDCDC!important;
             }
         }
     }

@@ -15,6 +15,9 @@ export default (
         <Route path='/user/profile' component={ProfileContainer} />
         <Route path='/user/user_profile/:id' component={PubProfileContainer} />
         <Route basename='/callback' component={Callback} />
-        <Redirect to='/' />
+        <Route path='/' render={() => {
+            return <Redirect to='/'/>
+        }}/>
+        
     </Switch>
 )

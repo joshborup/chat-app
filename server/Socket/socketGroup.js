@@ -26,7 +26,6 @@ module.exports = (io, Users) => {
                     case 'random':
                         let availableRooms = users.GetRandomRoomsAndUserCount().filter(room => room.users < 2);
                         if(availableRooms.length){
-                            console.log(availableRooms[0].name)
                             
                             connectionObj.room = availableRooms[0].name;
                             

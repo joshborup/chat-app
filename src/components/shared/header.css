@@ -97,6 +97,7 @@
     .links-container-desktop ul .link-1 {
       position: absolute;
       color: white;
+      text-shadow: 1px 1px 1px black;
       top: -5px;
       width: 100px;
       padding: 10px 20px; }
@@ -107,7 +108,7 @@
         transition: .2s;
         font-size: 20px; }
       .links-container-desktop ul .link-1 a:hover {
-        color: #bdbdbd; }
+        color: #DCDCDC !important; }
   .links-container-desktop button {
     width: 100px;
     height: 36px;

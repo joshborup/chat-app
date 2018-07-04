@@ -62,8 +62,8 @@ class Header extends Component {
                     </Link>
                     {user ? 
                     <div className='inner-header-container'>
-                        <HeaderLinks class='links-container-desktop' logout={this.logout}/>
-                        <HeaderLinks screenType='mobile' myToggle={this.myToggle} class={mobileToggleClasses} logout={this.logout}/>
+                        <HeaderLinks  class='links-container-desktop' logout={this.logout}/>
+                        <HeaderLinks  screenType='mobile' myToggle={this.myToggle} class={mobileToggleClasses} logout={this.logout}/>
                         <button className='toggle' onClick={this.myToggle}>
                             <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
                             <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>

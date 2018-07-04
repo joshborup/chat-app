@@ -184,9 +184,15 @@
                 width: 180px;
                 min-width: 180px;
                 font-size: 18px;
+                text-shadow: 1px 1px 1px black;  
                 border-radius: 19px;
+                background:linear-gradient(rgba(197, 197, 197, 0.35),rgba(197, 197, 197, 0.35)) ,url('../Home/media/car-background.svg');
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
                 box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.466);
                 transition: .2s;
+                color: white;
                 border: none;
                 cursor: pointer;
                 @media (max-width:599px) {
@@ -255,6 +261,17 @@
                     border: none;
                     border-top: 1px solid rgb(173, 173, 173);
                     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.466);
+                    background:linear-gradient(rgba(197, 197, 197, 0.3),rgba(197, 197, 197, 0.3)) ,url('../Home/media/car-background.svg');
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    color: white;
+
+                    
+                }
+
+                .search::placeholder {
+                    color: white;
                 }
                 @media (max-width:599px) {
                     max-width: 440px;

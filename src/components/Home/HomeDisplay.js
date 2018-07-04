@@ -15,13 +15,14 @@ const HomeDisplay = (props) => {
         }
       };
 
-      const style = {
+    const style = {
         position: "absolute",
         background:"#49273e54",
         left: '-50px',
         top: '-50px',
         zIndex: 0
     }
+    
     return (
         <div className='home-display-container'>
             <div className='banner'>

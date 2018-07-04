@@ -3,6 +3,7 @@ const path = require('path');
 const { test } = require('./function')
 const groupRouter = express.Router();
 
+
 groupRouter.get('/*', test)
 
 

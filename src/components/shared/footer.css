@@ -19,3 +19,6 @@
   padding: 15px 0; }
   .footer-content h2 {
     font-size: 34px; }
+  .footer-content p {
+    position: relative;
+    top: -20px; }

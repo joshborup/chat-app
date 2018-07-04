@@ -10,7 +10,7 @@ class Users {
             if(this.GetRoomsAndUserCount()[index].type != type){
                 
                 user.type = this.GetRoomsAndUserCount()[index].type
-                console.log(user)
+                
             }
 
         }
@@ -43,7 +43,6 @@ class Users {
             names: namesArray,
             count: namesArray.length
         }
-        console.log(list)
         return list;
     }
 
@@ -59,7 +58,6 @@ class Users {
             names: namesArray,
             count: namesArray.length
         }
-        console.log(list)
         return list;
     }
 
@@ -112,7 +110,6 @@ class Users {
         })
 
         roomsAndCount.sort((a,b) => b.count - a.count)
-        console.log(roomsAndCount);
         return roomsAndCount;
     }
 

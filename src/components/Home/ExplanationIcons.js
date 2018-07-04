@@ -11,7 +11,7 @@ const ExplanationIcon = () => {
                         <img src={groupChat}/>
                     </div>
                     <h2>Group Chat</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                    <p>Organize a group chat with your friends, or join an established room to chat about your favorite subjects.</p>
                 </div>
 
                <div>
@@ -19,7 +19,7 @@ const ExplanationIcon = () => {
                         <img src={privateChat}/>
                     </div>
                     <h2>Private Chat</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                    <p>Looking for a private place where you can collaborate with a team or friends, you can create private rooms that wont be listed</p>
                 </div>
 
                 <div>
@@ -27,7 +27,7 @@ const ExplanationIcon = () => {
                         <img src={randomChat}/>
                     </div>
                     <h2>Random Chat</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                    <p>We pick one other random user and drop them in the room with you. When you hit the random chat button, you will always have a new experience</p>
                 </div>
             </div>
     );
