@@ -10,6 +10,8 @@ button:focus {
     min-width: 100%;
     background:linear-gradient(rgba(30,30,30, 0.7), rgba(30, 30, 30, 0.7)) ,url('../Home/media/car-background.svg');
     height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .group-chatroom-container > div {
@@ -41,6 +43,8 @@ button:focus {
             width: 90%;
             z-index: 2;
             background:linear-gradient(rgba(30,30,30, 0.7), rgba(30, 30, 30, 0.7)) ,url('../Home/media/car-background.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         a {
@@ -351,7 +355,7 @@ button:focus {
         .friends-toggle {
             display: flex;
             position: absolute;
-            right: -384px;
+            right: -390px;
             height: 38px;
             width: 38px;
             border-radius: 50%;

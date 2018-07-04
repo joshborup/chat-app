@@ -142,7 +142,7 @@ export default class Group extends Component {
 
 
     render() {
-       
+        console.log()
         let opaque = this.state.open ? 'opaque-background show' : 'opaque-background hide';
         
         return (
@@ -152,7 +152,7 @@ export default class Group extends Component {
                     this.state.user
                     ?
                     <div> 
-                        <UsersLists room={this.state.baseURL} count={this.state.count} open={this.state.open} usersList={this.state.userslist} drawerToggle={this.drawerToggle} />
+                        <UsersLists roomType={this.props.match.params.type} room={this.state.baseURL} count={this.state.count} open={this.state.open} usersList={this.state.userslist} drawerToggle={this.drawerToggle} />
                         <div onClick={this.drawerToggle} className={opaque}></div>
                         <MessageContainer name={this.state.user.name}  enter={this.sendOnEnter} className='scroller' messages={this.state.messages} changeHandler={this.changeHandler} message={this.state.message} submitMessage={this.send}/>
                     </div>

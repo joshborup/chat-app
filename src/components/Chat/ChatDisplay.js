@@ -18,7 +18,7 @@ const ChatDisplay = (props) => {
       };
 
     let groupRooms = props.groupRooms ? props.groupRooms.map((room)=>{
-        return <div className='room-list'>
+        return <div key={room.room_name} className='room-list'>
                     <div>
                         {room.room_name}
                     </div>
@@ -34,7 +34,7 @@ const ChatDisplay = (props) => {
     </div>;
 
     let popularRooms = props.popularRooms.map((room)=>{
-        return <div className='room-list'>
+        return <div key={room.name} className='room-list'>
                     <div>
                         {room.name} ({room.users})
                     </div>
@@ -52,19 +52,25 @@ const ChatDisplay = (props) => {
            <h1>Select a room</h1>
 
             <div className='create-room'>
-                <button onClick={() => props.toggle('Create Room')}>
-                    Create Room
-                </button>
-                <Link to={`/chat/group/${generateName().split(' ').join('')}`}>
-                    <button>
-                        Quick Chat
+                <div>
+                    <button onClick={() => props.toggle('Create Room')}>
+                        Create Room
                     </button>
-                </Link>
-                <Link to={`/chat/random/${generateName().split(' ').join('')}`}>
-                    <button>
-                        Random Chat
-                    </button>
-                </Link>
+                </div>
+                <div>
+                    <Link to={`/chat/group/${generateName().split(' ').join('')}`}>
+                        <button>
+                            Quick Chat
+                        </button>
+                    </Link>
+                </div>
+                <div>
+                    <Link to={`/chat/random/${generateName().split(' ').join('')}`}>
+                        <button>
+                            Random Chat
+                        </button>
+                    </Link>
+                </div>
             </div>
 
            <div className='rooms'>

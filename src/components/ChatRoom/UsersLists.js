@@ -42,6 +42,11 @@ class ResponsiveDrawer extends Component {
                     <div>
                         Room: {this.props.room}
                     </div>
+
+                    <div>
+                        {this.props.roomType}
+                    </div>
+
                     <div>
                         Online: {this.props.count}
                     </div>

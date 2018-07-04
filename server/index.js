@@ -46,9 +46,13 @@ const chatApi = require('./Routes/chatApi');
 
 app.use(bodyParser.json());
 
+
+
 app.use('/group', routeGroup);
 
 app.use('/user', routeUser);
+
+
 
 app.use('/api', chatApi);
 
