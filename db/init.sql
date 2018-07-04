@@ -14,7 +14,7 @@ CREATE TABLE users(
 
 CREATE TABLE profile(
     id SERIAL PRIMARY KEY
-    user_id INTEGER not null references users(id)
+    , user_id INTEGER not null references users(id)
     , aboutMe TEXT
     , facebook TEXT
     , instagram TEXT

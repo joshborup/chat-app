@@ -1,7 +1,7 @@
 UPDATE profile
-set about_me = ${aboutMe},
-    facebook = ${facebook},
-    instagram = ${instagram},
-    linkedin = ${linkedin}
-WHERE user_id = ${user_id}
+set about_me = $1,
+    facebook = $2,
+    instagram = $3,
+    linkedin = $4
+WHERE user_id = $5
 RETURNING *;
