@@ -11,7 +11,7 @@ class ResponsiveDrawer extends Component {
     console.log(this.props.usersList);
     let usersList = this.props.usersList ? this.props.usersList.map((user) => {
         
-        return <Link key={user.id} to={`/user/user_profile/${user.id}`}>
+        return <Link key={user.id} to={`/user/user_profiles/${user.id}`}>
             <div className='user-card'>
  
                  <div>

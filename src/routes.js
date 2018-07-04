@@ -13,7 +13,7 @@ export default (
         <Route path='/chat/:type/:room' component={Room} />
         <Route path='/chat' component={ChatContainer} />
         <Route path='/user/profile' component={ProfileContainer} />
-        <Route path='/user/user_profile/:id' component={PubProfileContainer} />
+        <Route path='/user/user_profiles/:id' component={PubProfileContainer} />
         <Route basename='/callback' component={Callback} />
         <Route path='/' render={() => {
             return <Redirect to='/'/>
