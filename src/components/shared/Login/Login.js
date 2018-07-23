@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as auth0 from 'auth0-js';
 import axios from 'axios';
+import { AppContext } from '../../../ContextProvider';
 import './login.css';
 
 
@@ -52,12 +53,15 @@ class Login extends Component {
     return (
       <div className="login">
         <div>
-          {
-          this.state.user
-          ?
-          ''
-          :
-          <button className='login-button' onClick={this.login}>{this.props.label}</button>}
+
+          <AppContext.Consumer>
+                {(context) => {
+
+                    return  context.user ? ''
+                                          :
+                    <button className='login-button' onClick={this.login}>{this.props.label}</button>}
+        }
+        </AppContext.Consumer>
         </div>
       </div>
     );

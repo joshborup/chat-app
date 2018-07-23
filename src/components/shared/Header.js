@@ -4,6 +4,7 @@ import HeaderLinks from '../shared/HeaderLinks';
 import Persitance from '../../Persistance';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { AppContext } from '../../ContextProvider';
 import monkey1 from './media/monkeylogo1.svg'
 import monkey2 from './media/monkeylogo2.svg'
 import monkey3 from './media/monkeylogo3.svg'
@@ -60,19 +61,21 @@ class Header extends Component {
                             <h1>MonkeyChat</h1>
                         </div>
                     </Link>
-                    {user ? 
-                    <div className='inner-header-container'>
-                        <HeaderLinks  class='links-container-desktop' logout={this.logout}/>
-                        <HeaderLinks  screenType='mobile' myToggle={this.myToggle} class={mobileToggleClasses} logout={this.logout}/>
-                        <button className='toggle' onClick={this.myToggle}>
-                            <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
-                            <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
-                            <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
-                        </button>
-                    </div>
-                    :
-                    <Login label='LOGIN' />
-                    }
+                    <AppContext.Consumer>
+                        {(context) => {
+                        return  context.user ? <div className='inner-header-container'>
+                            <HeaderLinks  class='links-container-desktop' logout={this.logout}/>
+                            <HeaderLinks  screenType='mobile' myToggle={this.myToggle} class={mobileToggleClasses} logout={this.logout}/>
+                            <button className='toggle' onClick={this.myToggle}>
+                                <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
+                                <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
+                                <span className={!this.state.toggle ? 'bar-open' : 'bar-closed'}></span>
+                            </button>
+                        </div>
+                        :
+                        <Login label='LOGIN' />
+                        }}
+                    </AppContext.Consumer>
                 </div>
             </div>
         );

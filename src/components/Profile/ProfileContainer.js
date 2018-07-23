@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ProfileDisplay from './ProfileDisplay';
-import Persistance from '../../Persistance';
 import axios from 'axios';
 import Footer from '../shared/Footer';
+import { AppContext } from '../../ContextProvider';
 import './profile.css';
 
 class PersonalProfile extends Component {
@@ -20,20 +20,6 @@ class PersonalProfile extends Component {
             linkedin:''
         }
         
-    }
-
-    componentDidMount(){
-        axios.get('/user/profile_data').then(response => {
-            console.log('response.data.length :', response.data);
-            if(response.data.length){
-                this.setState({
-                    aboutMe: response.data[0].about_me,
-                    facebook: response.data[0].facebook,
-                    instagram: response.data[0].instagram,
-                    linkedin: response.data[0].linkedin
-                })
-            }
-        })
     }
 
     uploadedImage = (profileBackground) => {
@@ -98,9 +84,13 @@ class PersonalProfile extends Component {
         console.log('this.state.backLoaderToggleFunc :', this.state.aboutMe);
         return (
             <div>
+                
                 <div>
-                    {this.props.user ?
-                     <ProfileDisplay
+                <AppContext.Consumer>
+                {(context) => {
+                    
+
+                     return  context.user ?  <ProfileDisplay
                         email={this.state.email}
                         submit={this.submit}
                         toggle={{data: this.state.toggle, func: this.toggle}} 
@@ -108,14 +98,17 @@ class PersonalProfile extends Component {
                         backLoaderToggle={this.state.backLoaderToggle} 
                         profileBackground={this.state.profileBackground}  
                         uploadedImage={this.uploadedImage} 
-                        user={this.props.user}
+                        user={context.user}
                         changeHandler={this.changeHandler}
-                        aboutMe={this.state.aboutMe}
-                        facebook={this.state.facebook}
-                        instagram={this.state.instagram}
-                        linkedin={this.state.linkedin}
+                        aboutMe={context.aboutMe}
+                        facebook={context.facebook}
+                        instagram={context.instagram}
+                        linkedin={context.linkedin}
                         update={this.update}
-                        /> : 'please log in'}
+                        /> 
+                        : 'please log in'}
+                    }
+                    </AppContext.Consumer>
                 </div>
                 <Footer/>
             </div>
@@ -123,4 +116,4 @@ class PersonalProfile extends Component {
     }
 }
 
-export default Persistance(PersonalProfile);
+export default PersonalProfile;
