@@ -72,7 +72,7 @@ userRouter.post('/edit_profile_background', (req, res) => {
     db.update_background([profileBackground, req.session.user[0].id]).then(response => {
         req.session.user[0].profile_background = response[0].profile_background
         console.log('=================fdsfg,',req.session.user[0].profile_background)
-        res.status(200).json(response[0])
+        res.status(200).json(req.session.user[0])
     }).catch(err => console.log(err))
 })
 

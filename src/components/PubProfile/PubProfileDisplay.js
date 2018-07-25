@@ -4,7 +4,7 @@ import instagram from './media/instagram.svg';
 import linkedin from './media/linkedin.svg';
 
 const PubProfileDisplay = (props) => {
-    console.log(props);
+    console.log('---------------------',props);
     return (
         <div>
             <div className='custom-banner'>
