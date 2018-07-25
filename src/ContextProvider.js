@@ -13,10 +13,42 @@ export default class ContextProvider extends Component {
             facebook: '',
             instagram: '',
             linkedin: '',
+            toggle: true,
             methods:{
                 getProfile: () => {
                     
-                }
+                },
+                changeHandler: (key, value) => {
+                    this.setState({
+                        [key]:value
+                    })
+                },
+                toggle: () => {
+                    this.setState((prevState) => {
+                        console.log('prevState',prevState)
+                        return {
+                            toggle: !prevState.toggle
+                        }
+                    })
+                },            
+                update: () => {
+                    let update = {
+                         aboutMe: this.state.aboutMe,
+                         facebook: this.state.facebook,
+                         instagram: this.state.instagram,
+                         linkedin: this.state.linkedin,
+                     }
+                     axios.post('/user/update_profile', {update}).then((response)=> {
+                         this.setState({
+                             aboutMe: response.data[0].aboutMe,
+                             facebook: response.data[0].facebook,
+                             instagram: response.data[0].instagram,
+                             linkedin: response.data[0].linkedin,
+                         })
+                         console.log('response.data :', response.data);
+                         this.state.methods.toggle();
+                     })
+                 }
             }
             
         }

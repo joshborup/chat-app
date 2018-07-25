@@ -11,13 +11,7 @@ class PersonalProfile extends Component {
         this.state = {
             user: this.props.user,
             profileBackground: '',
-            toggle: true,
             backLoaderToggle: false,
-            email: '',
-            aboutMe: '',
-            facebook:'',
-            instagram:'',
-            linkedin:''
         }
         
     }
@@ -36,19 +30,8 @@ class PersonalProfile extends Component {
         })
     }
 
-    toggle = () => {
-        this.setState((prevState) => {
-            return {
-                toggle: !prevState.toggle
-            }
-        })
-    }
+    
 
-    changeHandler = (key, value) => {
-        this.setState({
-            [key]:value
-        })
-    }
 
     backLoaderToggleFunc = () => {
         this.setState((prevState) => {
@@ -60,25 +43,7 @@ class PersonalProfile extends Component {
 
 
 
-    update = () => {
-       let update = {
-            aboutMe: this.state.aboutMe,
-            facebook: this.state.facebook,
-            instagram: this.state.instagram,
-            linkedin: this.state.linkedin,
-        }
-        console.log('update :', update);
-        axios.post('/user/update_profile', {update}).then((response)=> {
-            // this.setState({
-            //     aboutMe: response.data[0].aboutMe,
-            //     facebook: response.data[0].facebook,
-            //     instagram: response.data[0].instagram,
-            //     linkedin: response.data[0].linkedin,
-            // })
-            console.log('response.data :', response.data);
-            this.toggle();
-        })
-    }
+    
 
     render() {
         console.log('this.state.backLoaderToggleFunc :', this.state.aboutMe);
@@ -93,18 +58,18 @@ class PersonalProfile extends Component {
                      return  context.user ?  <ProfileDisplay
                         email={this.state.email}
                         submit={this.submit}
-                        toggle={{data: this.state.toggle, func: this.toggle}} 
+                        toggle={{data: context.toggle, func: context.methods.toggle}} 
                         backLoaderToggleFunc={this.backLoaderToggleFunc}
                         backLoaderToggle={this.state.backLoaderToggle} 
                         profileBackground={this.state.profileBackground}  
                         uploadedImage={this.uploadedImage} 
                         user={context.user}
-                        changeHandler={this.changeHandler}
+                        changeHandler={context.methods.changeHandler}
                         aboutMe={context.aboutMe}
                         facebook={context.facebook}
                         instagram={context.instagram}
                         linkedin={context.linkedin}
-                        update={this.update}
+                        update={context.methods.update}
                         /> 
                         : 'please log in'}
                     }

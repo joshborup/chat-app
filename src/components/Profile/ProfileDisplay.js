@@ -6,7 +6,7 @@ import Lottie from 'react-lottie';
 
 const ProfileDisplay = (props) => {
 
-    console.log('props :', props.toggle.data);
+    console.log('props :', props);
     let userImage = props.user.picture ? props.user.picture : loader;
 
     const defaultOptions = {

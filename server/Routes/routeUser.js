@@ -42,6 +42,7 @@ userRouter.post('/logout', (req, res) => {
 userRouter.post('/update_profile', (req, res) => {
     const db = req.app.get('db');
     let { update } = req.body;
+    console.log(update)
     console.log(req.session.user[0].id)
     db.update_profile([
         update.aboutMe,
