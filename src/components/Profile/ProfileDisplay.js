@@ -18,11 +18,13 @@ const ProfileDisplay = (props) => {
         }
       };
 
+ 
+
     return (
         <div className='profile-display-container'>
             <div className='custom-banner'>
                 <div className='custom-banner-image'>
-                    {props.profileBackground ? <img src={props.profileBackground}/> : <img src={props.user.profile_background}/>}
+                    <img src={props.user.profile_background}/>
                 </div>
                 <div className='profile-image-container'>
                     <img src={userImage} alt='user image provided by auth0 or social provider'/>

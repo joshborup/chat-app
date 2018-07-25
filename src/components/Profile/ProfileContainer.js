@@ -10,25 +10,12 @@ class PersonalProfile extends Component {
         super(props)
         this.state = {
             user: this.props.user,
-            profileBackground: '',
             backLoaderToggle: false,
         }
         
     }
 
-    uploadedImage = (profileBackground) => {
-        axios.post('/user/edit_profile_background', {profileBackground: profileBackground}).then(response => {
-            let data = sessionStorage.getItem('state');
-            let parsedData = JSON.parse(data)
-            parsedData.user.profile_background = profileBackground;
-            let stringifiedData = JSON.stringify(parsedData)
-            sessionStorage.setItem('state', stringifiedData)
-            this.setState({
-                profileBackground: profileBackground
-            })
-
-        })
-    }
+    
 
     
 
@@ -61,8 +48,8 @@ class PersonalProfile extends Component {
                         toggle={{data: context.toggle, func: context.methods.toggle}} 
                         backLoaderToggleFunc={this.backLoaderToggleFunc}
                         backLoaderToggle={this.state.backLoaderToggle} 
-                        profileBackground={this.state.profileBackground}  
-                        uploadedImage={this.uploadedImage} 
+                        profileBackground={context.profileBackground}  
+                        uploadedImage={context.methods.uploadedImage} 
                         user={context.user}
                         changeHandler={context.methods.changeHandler}
                         aboutMe={context.aboutMe}

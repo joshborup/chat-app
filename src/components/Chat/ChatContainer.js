@@ -89,4 +89,4 @@ class ChatContainer extends Component {
     }
 }
 
-export default Persistance(ChatContainer);
+export default ChatContainer;

@@ -13,11 +13,9 @@ export default class ContextProvider extends Component {
             facebook: '',
             instagram: '',
             linkedin: '',
+            profileBackground:'',
             toggle: true,
             methods:{
-                getProfile: () => {
-                    
-                },
                 changeHandler: (key, value) => {
                     this.setState({
                         [key]:value
@@ -48,7 +46,18 @@ export default class ContextProvider extends Component {
                          console.log('response.data :', response.data);
                          this.state.methods.toggle();
                      })
-                 }
+                 },
+                 uploadedImage: (profileBackground) => {
+
+                    axios.post('/user/edit_profile_background', {profileBackground: profileBackground}).then(response => {
+                        console.log('response ===================================',  response);
+                        
+                        this.setState({
+                            user: response.data
+                        })
+            
+                    })
+                }
             }
             
         }
@@ -63,21 +72,25 @@ export default class ContextProvider extends Component {
             return axios.get('/user/profile_data')
         }
 
-        axios.all([getProfile(), getUser()]).then(axios.spread((profile, user) => {
-            console.log(user.data[0]);
+
+        axios.all([getProfile(), getUser()]).then(axios.spread((profile, user)=> {
+
             if(profile.data.length && user.data[0]){
                 this.setState({
                     user: user.data[0],
                     aboutMe: profile.data[0].about_me,
                     facebook: profile.data[0].facebook,
                     instagram: profile.data[0].instagram,
-                    linkedin: profile.data[0].linkedin
+                    linkedin: profile.data[0].linkedin,
+                    profileBackground: user.data[0].profile_background
                 })
             }
         }))
     }
 
     render() {
+
+        console.log('kjhjhljhljhj======-------------------------',this.state.profileBackground)
         return  <AppContext.Provider value={this.state}>
                      {this.props.children}
                 </AppContext.Provider>

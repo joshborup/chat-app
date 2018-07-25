@@ -51,4 +51,4 @@ class PublicProfileContainer extends Component {
     }
 }
 
-export default Persistance(PublicProfileContainer);
+export default PublicProfileContainer;

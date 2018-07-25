@@ -42,7 +42,6 @@ userRouter.post('/logout', (req, res) => {
 userRouter.post('/update_profile', (req, res) => {
     const db = req.app.get('db');
     let { update } = req.body;
-    console.log(update)
     console.log(req.session.user[0].id)
     db.update_profile([
         update.aboutMe,
@@ -67,10 +66,13 @@ userRouter.get('/profile_data', (req, res) => {
 userRouter.post('/edit_profile_background', (req, res) => {
     const db = req.app.get('db');
     let { profileBackground } = req.body;
+    console.log('profileBackground :', profileBackground);
+    console.log('req.session.user[0].id :', req.session.user[0].id);
 
     db.update_background([profileBackground, req.session.user[0].id]).then(response => {
-    
-        res.send('success!')
+        req.session.user[0].profile_background = response[0].profile_background
+        console.log('=================fdsfg,',req.session.user[0].profile_background)
+        res.status(200).json(response[0])
     }).catch(err => console.log(err))
 })
 

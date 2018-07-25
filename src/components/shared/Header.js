@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Login from '../shared/Login/Login';
 import HeaderLinks from '../shared/HeaderLinks';
-import Persitance from '../../Persistance';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { AppContext } from '../../ContextProvider';
@@ -34,8 +33,7 @@ class Header extends Component {
     }
 
     logout = () => {
-        sessionStorage.clear();
-        localStorage.clear();
+    
         axios.post('/user/logout').then(() => {
             this.setState({
                 user: null
@@ -82,4 +80,4 @@ class Header extends Component {
     }
 }
 
-export default Persitance(Header)
+export default Header
